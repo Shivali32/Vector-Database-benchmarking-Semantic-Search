@@ -1,0 +1,57 @@
+TITLE: Organoiodine compound
+
+Organoiodine compounds are organic compounds that contain one or more carbon–iodine bonds.  They occur widely in organic chemistry, but are relatively rare in nature.  The thyroxine hormones are organoiodine compounds that are required for health and the reason for government-mandated iodization of salt.
+
+Structure, bonding, general properties
+Almost all organoiodine compounds feature iodide connected to one carbon center.  These are usually classified as derivatives of I−. Some organoiodine compounds feature iodine in higher oxidation states.
+
+The C–I bond is the weakest of the carbon–halogen bonds.  These bond strengths correlate with the electronegativity of the halogen, decreasing in the order F > Cl > Br > I.  This periodic order also follows the atomic radius of halogens and the length of the carbon-halogen bond. For example, in the molecules represented by CH3X, where X is a halide, the carbon-X bonds have strengths, or bond dissociation energies, of 115, 83.7, 72.1, and 57.6 kcal/mol for X = fluoride, chloride, bromide, and iodide, respectively. Of the halides, iodide usually is the best leaving group. Because of the weakness of the C–I bond, samples of organoiodine compounds are often yellow due to an impurity of I2.
+
+A noteworthy aspect of organoiodine compounds is their high density, which arises from the high atomic weight of iodine. For example, one millilitre of methylene iodide weighs 3.325 g.
+
+Industrial applications
+Few organoiodine compounds are important industrially, at least in terms of large scale production. Iodide-containing intermediates are common in organic synthesis, because of the easy formation and cleavage of the C–I bond.  Industrially significant organoiodine compounds, often used as disinfectants or pesticides, are iodoform (CHI3), methylene iodide (CH2I2), and methyl iodide (CH3I). Although methyl iodide is not an industrially important product, it is an important intermediate, being a transiently generated intermediate in the industrial production of acetic acid and acetic anhydride.  The potential for methyl iodide to replace the ubiquitous dependence on methyl bromide as a soil fumigant has been considered, however limited information is available on environmental behavior of the former. Ioxynil (3,5-diiodo-4-hydroxybenzonitrile), which inhibits photosynthesis at photosystem II, is among the very few organoiodine herbicides. A member of the hydroxybenzonitrile herbicide class, ioxynil is an iodinated analog of the brominated herbicide, bromoxynil (3,5-dibromo-4-hydroxybenzonitrile).
+
+Iodinated and brominated organic compounds are of concern as environmental contaminants owing to very limited information available on environment fate behavior. However, recent reports have shown promise in biological detoxification of these classes of contaminants. For example, Iodotyrosine deiodinase is a mammalian enzyme with the unusual function of aerobic reductive dehalogenation of iodine- or bromine-substituted organic substrates. Bromoxynil and ioxynil herbicides have been shown to undergo a variety of environmental transformations, including reductive dehalogenation by anaerobic bacteria.
+
+Polyiodoorganic compounds are sometimes employed as X-ray contrast agents, in fluoroscopy, a type of medical imaging. This application exploits the X-ray absorbing ability of the heavy iodine nucleus.  A variety of agents are available commercially, many are derivatives of 1,3,5-triiodobenzene and contain about 50% by weight iodine. For most applications, the agent must be highly soluble in water and, of course, non-toxic and readily excreted. A representative reagent is Ioversol (Figure to right), which has water-solubilizing diol substituents. Typical applications include urography and angiography.
+
+Organoiodine lubricants can be used with titanium, stainless steels, and other metals which tend to seize up with conventional lubricants: organoiodine lubricants can be used in turbines and spacecraft, and as a cutting oil in machining.
+
+Biological role
+
+In terms of human health, the most important organoiodine compounds are the two thyroid hormones thyroxine ("T4") and triiodothyronine ("T3").  Marine natural products are rich sources of organoiodine compounds, like the recently discovered plakohypaphorines from the sponge Plakortis simplex.
+
+The sum of iodomethane produced by the marine environment, microbial activity in rice paddies, and the burning of biological material is estimated to be 214 kilotonnes per year. The volatile iodomethane is broken up by oxidation reactions in the atmosphere and a global iodine cycle is established.
+More than 3000 organoiodine compounds have been identified.
+
+Methods for preparation of the C–I bond
+
+From I2
+Organoiodine compounds are prepared by numerous routes, depending on the degree and regiochemistry of iodination sought as well as the nature of the precursors. The direct iodination with  is employed with unsaturated substrates:
+
+This reaction is used to determine the iodine number, an indicator of the unsaturation of fats and related samples.
+
+From I− sources
+The iodide anion is a good nucleophile and will displace chloride, tosylate, bromide and other leaving groups, as in the Finkelstein reaction.
+
+Alcohols can be converted to the corresponding iodides using phosphorus triiodide. Illustrative is the conversion of methanol to iodomethane:
+PI3 + 3 → 3 + ""
+
+For bulky alcohol substrates, the methiodide of triphenylphosphite has been used.
+ [CH3(C6H5O)3P]+I− + ROH → RI + CH3(C6H5O)2PO + C6H5OH
+
+Aromatic iodides may be prepared via a diazonium salt by treatment with potassium iodide:
+C6H5N2+ + KI -> C6H5I + K+ + N2
+
+From I+ sources
+Benzene can be iodinated with a combination of iodide and nitric acid. Iodine monochloride is a reagent that is sometimes used to deliver the equivalent of "".
+
+See also
+Organofluorine compounds
+Organochlorine compounds
+Organobromine compounds
+Iodanes
+Periodinanes
+
+References

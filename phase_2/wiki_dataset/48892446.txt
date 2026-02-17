@@ -1,0 +1,123 @@
+TITLE: Automatic bug fixing
+
+Automatic bug-fixing is the automatic repair of software bugs without the intervention of a human programmer. It is also commonly referred to as automatic patch generation, automatic bug repair, or automatic program repair. The typical goal of such techniques is to automatically generate correct patches to eliminate bugs in software programs without causing software regression.
+
+Specification 
+
+Automatic bug fixing is made according to a specification of the expected behavior which can be for instance a formal specification or a test suite.
+
+A test-suite – the input/output pairs specify the functionality of the program, possibly captured in assertions can be used as a test oracle to drive the search. This oracle can in fact be divided between the bug oracle that exposes the faulty behavior, and the regression oracle, which encapsulates the functionality any program repair method must preserve. Note that a test suite is typically incomplete and does not cover all possible cases. Therefore, it is often possible for a validated patch to produce expected outputs for all inputs in the test suite but incorrect outputs for other inputs. The existence of such validated but incorrect patches is a major challenge for generate-and-validate techniques. Recent successful automatic bug-fixing techniques often rely on additional information other than the test suite, such as information learned from previous human patches, to further identify correct patches among validated patches.
+
+Another way to specify the expected behavior is to use formal specifications Verification against full specifications that specify the whole program behavior including functionalities is less common because such specifications are typically not available in practice and the computation cost of such verification is prohibitive. For specific classes of errors, however, implicit partial specifications are often available. For example, there are targeted bug-fixing techniques validating that the patched program can no longer trigger overflow errors in the same execution path.
+
+Techniques
+
+Generate-and-validate 
+
+Generate-and-validate approaches compile and test each candidate patch to collect all validated patches that produce expected outputs for all inputs in the test suite. Such a technique typically starts with a test suite of the program, i.e., a set of test cases, at least one of which exposes the bug. An early generate-and-validate bug-fixing systems is GenProg. The effectiveness of generate-and-validate techniques remains controversial, because they typically do not provide patch correctness guarantees. Nevertheless, the reported results of recent state-of-the-art techniques are generally promising. For example, on systematically collected 69 real world bugs in eight large C software programs, the state-of-the-art bug-fixing system Prophet generates correct patches for 18 out of the 69 bugs.
+
+One way to generate candidate patches is to apply mutation operators on the original program. Mutation operators manipulate the original program, potentially via its abstract syntax tree representation, or a more coarse-grained representation such as operating at the statement-level or block-level. Earlier genetic improvement approaches operate at the statement level and carry out simple delete/replace operations such as deleting an existing statement or replacing an existing statement with another statement in the same source file. Recent  approaches use more fine-grained operators at the abstract syntax tree level to generate more diverse set of candidate patches.
+
+Another way to generate candidate patches consists of using fix templates. Fix templates are typically predefined changes for fixing specific classes of bugs. Examples of fix templates include inserting a conditional statement to check whether the value of a variable is null to fix null pointer exception, or changing an integer constant by one to fix off-by-one errors. It is also possible to automatically mine fix templates for generate-and-validate approaches.
+
+Many generate-and-validate techniques rely on the redundancy insight: the code of the patch can be found elsewhere in the application. This idea was introduced in the Genprog system, where two operators, addition and replacement of AST nodes, were based on code taken from elsewhere (i.e. adding an existing AST node). This idea has been validated empirically, with two independent studies that have shown that a significant proportion of commits (3%-17%) are composed of existing code. Beyond the fact that the code to reuse exists somewhere else, it has also been shown that the context of the potential repair ingredients is useful: often, the donor context is similar to the recipient context.
+
+Synthesis-based 
+
+Repair techniques exist that are based on symbolic execution. For example, Semfix uses symbolic execution to extract a repair constraint. Angelix introduced the concept of angelic forest in order to deal with multiline patches.
+
+Under certain assumptions, it is possible to state the repair problem as a synthesis problem.
+SemFix and Nopol uses component-based synthesis.
+Dynamoth  uses dynamic synthesis.
+S3 is based on syntax-guided synthesis.
+SearchRepair converts potential patches into an SMT formula and queries candidate patches that allow the patched program to pass all supplied test cases.
+
+Data-driven 
+
+Machine learning techniques can improve the effectiveness of automatic bug-fixing systems. One example of such techniques learns from past successful patches from human developers collected from open source repositories in GitHub and SourceForge. It then use the learned information to recognize and prioritize potentially correct patches among all generated candidate patches. Alternatively, patches can be directly mined from existing sources. Example approaches include mining patches from donor applications or from QA web sites. Learning can done online, aka continual learning, with the known precedent of online learning of patches from the stream of open source build results from continuous integration.
+
+SequenceR uses sequence-to-sequence learning on source code in order to generate one-line patches. It defines a neural network architecture that works well with source code, with the copy mechanism that allows to produce patches with tokens that are not in the learned vocabulary. Those tokens are taken from the code of the Java class under repair.
+
+Getafix is a language-agnostic approach developed and used in production at Facebook. Given a sample of code commits where engineers fixed a certain kind of bug, it learns human-like fix patterns that apply to future bugs of the same kind. Besides using Facebook's own code repositories as training data, Getafix learnt some fixes from open source Java repositories. When new bugs get detected, Getafix applies its previously learnt patterns to produce candidate fixes and ranks them within seconds. It presents only the top-ranked fix for final validation by tools or an engineer, in order to save resources and ideally be so fast that no human time was spent on fixing the same bug, yet.
+
+Other 
+Targeted automatic bug-fixing techniques generate repairs for specific classes of errors such as null pointer exception integer overflow , buffer overflow , memory leak ,  etc.. Such techniques often use empirical fix templates to fix bugs in the targeted scope. For example, insert a conditional statement to check whether the value of a variable is null or insert missing memory deallocation statements. Comparing to generate-and-validate techniques, targeted techniques tend to have better bug-fixing accuracy but a much narrowed scope.
+
+Use 
+
+There are multiple uses of automatic bug fixing:
+ In a development environment: When encountering a bug the developer activates a feature to search for a patch (for instance by clicking on a button). This search can also happen in the background, when the IDE proactively searches for solutions to potential problems, without waiting for explicit action from the developer. 
+ In a continuous integration server: When a build fails during continuous integration, a patch search can be attempted as soon as the build has failed. If the search is successful, the patch is provided to the developer. When a synthesized patch is suggested to the developers as pull-request, an explanation has to be provided in addition to the code changes (e.g. a pull request title and description). An experiment has shown that generated patches can be accepted by open-source developers and merged in the code repository.
+ At runtime: When a failure happens at runtime, a binary patch can be searched for and applied online. An example of such a repair system is ClearView, which does repair on x86 code, with x86 binary patches. The Itzal system is different from Clearview: while the repair search happens at runtime, in production, the produced patches are at the source code level. The BikiniProxy system does online repair of JavaScript errors happening in the browser.
+
+Search space 
+
+In essence, automatic bug fixing is a search activity, whether deductive-based or heuristic-based. The search space of automatic bug fixing is composed of all edits that can be possibly made to a program. There have been studies to understand the structure of this search space. Qi et al. showed that the original fitness function of Genprog is not better than random search to drive the search. Martinez et al. explored the imbalance between possible repair actions, showing its significant impact on the search. Long et al.'s study indicated that correct patches can be considered as sparse in the search space and that incorrect overfitting patches are vastly more abundant (see also discussion about overfitting below).
+
+If one explicitly enumerates all possible variants in a repair algorithm, this defines a design space for program repair. Each variant selects an algorithm involved at some point in the repair process (e.g. the fault localization algorithm), or selects a specific heuristic which yields different patches. For instance, in the design space of generate-and-validate program repair, there is one variation point about the granularity of the program elements to be modified: an expression, a statement, a block, etc.
+
+It is also possible to analyze whether known search spaces encompass existing commits. Such a search space analysis means mining a software repository, this results in an approximation of the applicability and usefulness of a given repair algorithm.
+
+Overfitting 
+
+Sometimes, in test-suite based program repair, tools generate patches that pass the test suite, yet are actually incorrect, this is known as the "overfitting" problem. "Overfitting" in this context refers to the fact that the patch overfits to the test inputs. There are different kinds of overfitting: incomplete fixing means that only some buggy inputs are fixed, regression introduction means some previously working features are broken after the patch (because they were poorly tested). Early prototypes for automatic repair suffered a lot from overfitting: on the Manybugs C benchmark, Qi et al. reported that 104/110 of plausible GenProg patches were overfitting; on the Defects4J Java benchmark, Martinez et al. reported that 73/84 plausible patches as overfitting. In the context of synthesis-based repair, Le et al. obtained more than 80% of overfitting patches.
+
+One way to avoid overfitting is to filter out the generated patches. This can be done based on dynamic analysis, or static code analysis of the generated patches. When a reference patch is available, a state of the art technique is to generate tests based on the patched version, such that the generated tests capture the expected behavior. While the sampling of the input domain by test generation is incomplete by construction, it has been shown to be effective at detecting overfitting patches, and even at finding human errors done during manual classification of patches.
+
+Limitations of automatic bug-fixing 
+
+Automatic bug-fixing techniques that rely on a test suite do not provide patch correctness guarantees, because the test suite is incomplete and does not cover all cases. A weak test suite may cause generate-and-validate techniques to produce validated but incorrect patches that have negative effects such as eliminating desirable functionalities, causing memory leaks, and introducing security vulnerabilities. One possible approach is to amplify the failing test suite by automatically generating further test cases that are then labelled as passing or failing. To minimize the human labelling effort, an automatic test oracle can be trained that gradually learns to automatically classify test cases as passing or failing and only engages the bug-reporting user for uncertain cases.
+
+A limitation of generate-and-validate repair systems is the search space explosion. For a program, there are a large number of statements to change and for each statement there are a large number of possible modifications. State-of-the-art systems address this problem by assuming that a small modification is enough for fixing a bug, resulting in a search space reduction.
+
+The limitation of approaches based on symbolic analysis is that real world programs are often converted to intractably large formulas especially for modifying statements with side effects.
+
+Benchmarks 
+
+Benchmarks of bugs typically focus on one specific programming language.
+In C, the Manybugs benchmark collected by GenProg authors contains 69 real world defects and it is widely used to evaluate many other bug-fixing tools for C.
+
+In Java, the main benchmark is Defects4J, initially explored by Martinez et al., and now extensively used in most research papers on program repair for Java. Alternative benchmarks exist, such as the Quixbugs benchmark, which contains original bugs for program repair. Other benchmarks of Java bugs include Bugs.jar, based on past commits, and BEARS which is a benchmark of continuous integration build failures.
+
+Example tools 
+
+Automatic bug-fixing is an active research topic in computer science. There are many implementations of various bug-fixing techniques especially for C and Java programs. Note that most of these implementations are research prototypes for demonstrating their techniques, i.e., it is unclear whether their current implementations are ready for industrial usage or not.
+
+C 
+
+ ClearView: A generate-and-validate tool of generating binary patches for deployed systems. It is evaluated on 10 security vulnerability cases. A later study shows that it generates correct patches for at least 4 of the 10 cases.
+ GenProg: A seminal generate-and-validate bug-fixing tool. It has been extensively studied in the context of the ManyBugs benchmark.
+ SemFix: The first solver-based bug-fixing tool for C.
+ CodePhage: The first bug-fixing tool that directly transfer code across programs to generate patch for C program. Note that although it generates C patches, it can extract code from binary programs without source code.
+ LeakFix: A tool that automatically fixes memory leaks in C programs.
+ Prophet: The first generate-and-validate tool that uses machine learning techniques to learn useful knowledge from past human patches to recognize correct patches. It is evaluated on the same benchmark as GenProg and generate correct patches (i.e., equivalent to human patches) for 18 out of 69 cases.
+ SearchRepair: A tool for replacing buggy code using snippets of code from elsewhere. It is evaluated on the IntroClass benchmark and generates much higher quality patches on that benchmark than GenProg, RSRepair, and AE.
+ Angelix: An improved solver-based bug-fixing tool. It is evaluated on the GenProg benchmark. For 10 out of the 69 cases, it generate patches that is equivalent to human patches.
+ Learn2Fix: The first human-in-the-loop semi-automatic repair tool. Extends GenProg to learn the condition under which a semantic bug is observed by systematic queries to the user who is reporting the bug. Only works for programs that take and produce integers.
+
+Java 
+
+ PAR: A generate-and-validate tool that uses a set of manually defined fix templates. A later study raised concerns about the generalizability of the fix templates in PAR.
+ NOPOL: A solver-based tool focusing on modifying condition statements.
+ QACrashFix: A tool that fixes Java crash bugs by mining fixes from Q&A web site.
+ Astor: An automatic repair library for Java, containing jGenProg, a Java implementation of GenProg.
+ ARJA: A repair tool for Java based on multi-objective genetic programming.
+ NpeFix: An automatic repair tool for NullPointerException in Java, available on Github.
+
+Other languages 
+
+ AutoFixE: A bug-fixing tool for Eiffel language. It relies the contracts (i.e., a form of formal specification) in Eiffel programs to validate generated patches.
+Getafix: Operates purely on AST transformations and thus requires only a parser and formatter. At Facebook it has been applied to Hack, Java and Objective-C.
+
+Proprietary 
+
+ DeepCode integrates public and private GitHub, GitLab and Bitbucket repositories to identify code-fixes and improve software.
+
+References
+
+External links 
+
+  datasets, tools, etc., related to automated program repair research.
+
+Debugging
+Software development

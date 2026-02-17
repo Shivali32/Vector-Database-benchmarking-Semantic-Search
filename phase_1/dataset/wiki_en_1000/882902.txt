@@ -1,0 +1,193 @@
+TITLE: Poisson manifold
+
+In differential geometry, a Poisson structure on a smooth manifold  is a Lie bracket  (called a Poisson bracket in this special case) on the algebra  of smooth functions on , subject to the Leibniz rule
+
+.
+
+Equivalently,  defines a Lie algebra structure on the vector space  of smooth functions on  such that  is a vector field for each smooth function  (making  into a Poisson algebra).
+
+Poisson structures have been introduced by André Lichnerowicz in 1977. They were further studied in the classical paper of Alan Weinstein, where many basic structure theorems were first proved, and which exerted a huge influence on the development of Poisson geometry — which today is deeply entangled with non-commutative geometry, integrable systems, topological field theories and representation theory, to name a few.
+
+Poisson structures are named after the French mathematician Siméon Denis Poisson.
+
+Definition
+There are two main points of view to define Poisson structures: it is customary and convenient to switch between them, and we shall do so below.
+
+As bracket 
+Let  be a smooth manifold and let  denote the real algebra of smooth real-valued functions on , where the multiplication is defined pointwise. A Poisson bracket (or Poisson structure) on  is an -bilinear map
+
+defining a structure of Poisson algebra on , i.e. satisfying the following three conditions:
+ Skew symmetry: .
+ Jacobi identity: .
+ Leibniz's Rule: .
+
+The first two conditions ensure that  defines a Lie-algebra structure on , while the third guarantees that, for each , the linear map  is a derivation of the algebra , i.e., it defines a vector field  called the Hamiltonian vector field associated to .  
+
+Choosing some local coordinates , any Poisson bracket is given byfor  the Poisson bracket of the coordinate functions.
+
+As bivector 
+A Poisson bivector on a smooth manifold  is a bivector field  satisfying the non-linear partial differential equation , where 
+
+denotes the Schouten–Nijenhuis bracket on multivector fields. Choosing some local coordinates , any Poisson bivector is given byfor  skew-symmetric smooth functions on .
+
+Equivalence of the definitions 
+Let  be a bilinear skew-symmetric bracket satisfying Leibniz's rule; then the function  can be described as 
+
+,
+
+for a unique smooth bivector field . Conversely, given any smooth bivector field  on , the same formula  defines a bilinear skew-symmetric bracket  that automatically obeys Leibniz's rule.
+
+Last, the following conditions are equivalent
+
+  satisfies the Jacobi identity (hence it is a Poisson bracket)
+  satisfies  (hence it a Poisson bivector)
+ the map  is a Lie algebra homomorphism, i.e. the Hamiltonian vector fields satisfy 
+ the graph  defines a Dirac structure, i.e. a Lagrangian subbundle  which is closed under the standard Courant bracket.
+
+Symplectic leaves
+
+A Poisson manifold is naturally partitioned into regularly immersed symplectic manifolds of possibly different dimensions, called its symplectic leaves. These arise as the maximal integral submanifolds of the completely integrable singular foliation spanned by the Hamiltonian vector fields.
+
+Rank of a Poisson structure 
+Recall that any bivector field can be regarded as a skew homomorphism . The image  consists therefore of the values  of all Hamiltonian vector fields evaluated at every . 
+
+The rank of  at a point  is the rank of the induced linear mapping . A point  is called regular for a Poisson structure  on  if and only if the rank of  is constant on an open neighborhood of ; otherwise, it is called a singular point. Regular points form an open dense subspace ; when , i.e. the map  is of constant rank, the Poisson structure  is called regular. Examples of regular Poisson structures include trivial and nondegenerate structures (see below).
+
+The regular case 
+For a regular Poisson manifold, the image  is a regular distribution; it is easy to check that it is involutive, therefore, by Frobenius theorem,  admits a partition into leaves. Moreover, the Poisson bivector restricts nicely to each leaf, which become therefore symplectic manifolds.
+
+The non-regular case 
+For a non-regular Poisson manifold the situation is more complicated, since the distribution  is singular, i.e. the vector subspaces  have different dimensions.
+
+An integral submanifold for  is a path-connected submanifold  satisfying  for all . Integral submanifolds of  are automatically regularly immersed manifolds, and maximal integral submanifolds of  are called the leaves of .
+
+Moreover, each leaf  carries a natural symplectic form  determined by the condition  for all  and . Correspondingly, one speaks of the symplectic leaves of . Moreover, both the space  of regular points and its complement are saturated by symplectic leaves, so symplectic leaves may be either regular or singular.
+
+Weinstein splitting theorem 
+To show the existence of symplectic leaves also in the non-regular case, one can use Weinstein splitting theorem (or Darboux-Weinstein theorem). It states that any Poisson manifold  splits locally around a point  as the product of a symplectic manifold  and a transverse Poisson submanifold  vanishing at . More precisely, if , there are local coordinates  such that the Poisson bivector  splits as the sumwhere . Note that, when the rank of  is maximal (e.g. the Poisson structure is nondegenerate), one recovers the classical Darboux theorem for symplectic structures.
+
+Examples
+
+Trivial Poisson structures 
+Every manifold  carries the trivial Poisson structure , equivalently described by the bivector . Every point of  is therefore a zero-dimensional symplectic leaf.
+
+Nondegenerate Poisson structures 
+A bivector field  is called nondegenerate if  is a vector bundle isomorphism. Nondegenerate Poisson bivector fields are actually the same thing as symplectic manifolds .
+
+Indeed, there is a bijective correspondence between nondegenerate bivector fields  and nondegenerate 2-forms , given bywhere  is encoded by . Furthermore,  is Poisson precisely if and only if  is closed; in such case, the bracket becomes the canonical Poisson bracket from Hamiltonian mechanics:Non-degenerate Poisson structures have only one symplectic leaf, namely  itself, and their Poisson algebra  become a Poisson ring.
+
+Linear Poisson structures 
+A Poisson structure  on a vector space  is called linear when the bracket of two linear functions is still linear. The class of vector spaces with linear Poisson structures coincides actually with that of (dual of) Lie algebras.
+
+Indeed, the dual  of any finite-dimensional Lie algebra  carries a linear Poisson bracket, known in the literature under the names of Lie-Poisson, Kirillov-Poisson or KKS (Kostant-Kirillov-Souriau) structure:
+
+,
+
+where  and the derivatives  are interpreted as elements of the bidual . Equivalently, the Poisson bivector can be locally expressed aswhere  are coordinates on  and  are the associated structure constants of , 
+
+Conversely, any linear Poisson structure  on  must be of this form, i.e. there exists a natural Lie algebra structure induced on  whose Lie-Poisson bracket recovers .
+
+The symplectic leaves of the Lie-Poisson structure on  are the orbits of the coadjoint action of  on .
+
+Other examples and constructions 
+
+ Any constant bivector field on a vector space is automatically a Poisson structure; indeed, all three terms in the Jacobiator are zero, being the bracket with a constant function.
+Any bivector field on a 2-dimensional manifold is automatically a Poisson structure; indeed,  is a 3-vector field, which is always zero in dimension 2.
+The Cartesian product  of two Poisson manifolds  and  is again a Poisson manifold.
+Let  be a (regular) foliation of dimension  on  and  a closed foliation two-form for which the power  is nowhere-vanishing. This uniquely determines a regular Poisson structure on  by requiring that the symplectic leaves of  be the leaves  of  equipped with the induced symplectic form .
+Let  be a Lie group acting on a Poisson manifold  by Poisson diffeomorphisms. If the action is free and proper, the quotient manifold  inherits a Poisson structure  from  (namely, it is the only one such that the submersion  is a Poisson map).
+
+Poisson cohomology 
+The Poisson cohomology groups  of a Poisson manifold are the cohomology groups of the cochain complex
+
+where  is the Schouten-Nijenhuis bracket with . Note that such a sequence can be defined for every bivector on ; the condition  is equivalent to , i.e.  being Poisson.
+
+Using the morphism , one obtains a morphism from the de Rham complex  to the Poisson complex , inducing a group homomorphism . In the nondegenerate case, this becomes an isomorphism, so that the Poisson cohomology of a symplectic manifold fully recovers its de Rham cohomology. 
+
+Poisson cohomology is difficult to compute in general, but the low degree groups contain important geometric information on the Poisson structure:  
+
+  is the space of the Casimir functions, i.e. smooth functions Poisson-commuting with all others (or, equivalently, smooth functions constant on the symplectic leaves)
+ is the space of Poisson vector fields modulo hamiltonian vector fields
+  is the space of the infinitesimal deformations of the Poisson structure modulo trivial deformations
+  is the space of the obstructions to extend infinitesimal deformations to actual deformations.
+
+Poisson maps
+A smooth mapping  between Poisson manifolds is called a  if it respects the Poisson structures, i.e. one of the following equivalent conditions holds (see the various definitions of Poisson structures above):
+
+ the Poisson brackets  and  satisfy  for every  and smooth functions  
+ the bivector fields  and  are -related, i.e. 
+
+ the Hamiltonian vector fields associated to every smooth function  are -related, i.e. 
+ the differential  is a Dirac morphism.
+
+An anti-Poisson map satisfies analogous conditions with a minus sign on one side. 
+
+Poisson manifolds are the objects of a category , with Poisson maps as morphisms. If a Poisson map  is also a diffeomorphism, then we call  a Poisson-diffeomorphism.
+
+Examples 
+ Given the product Poisson manifold , the canonical projections , for , are Poisson maps.
+ The inclusion mapping of a symplectic leaf, or of an open subspace, is a Poisson map.
+Given two Lie algebras  and , the dual of any Lie algebra homomorphism  induces a Poisson map  between the linear Poisson structures.
+
+One should note that the notion of a Poisson map is fundamentally different from that of a symplectic map. For instance, with their standard symplectic structures, there exist no Poisson maps , whereas symplectic maps abound.
+
+Symplectic realisations 
+A symplectic realisation on a Poisson manifold M consists of a symplectic manifold  together with a Poisson map  which is a surjective submersion. Roughly speaking, the role of a symplectic realisation is to "desingularise" a complicated (degenerate) Poisson manifold by passing to a bigger, but easier (non-degenerate), one. 
+
+Note that some authors define symplectic realisations without this last condition (so that, for instance, the inclusion of a symplectic leaf in a symplectic manifold is an example) and call full a symplectic realisation where  is a surjective submersion. Examples of (full) symplectic realisations include the following:
+
+ For the trivial Poisson structure , one takes the cotangent bundle , with its canonical symplectic structure, and the projection .
+ For a non-degenerate Poisson structure  one takes  itself and the identity .
+
+ For the Lie-Poisson structure on , one takes the cotangent bundle  of a Lie group  integrating  and the dual map  of the differential at the identity of the (left or right) translation .
+A symplectic realisation  is called complete if, for any complete Hamiltonian vector field , the vector field  is complete as well. While symplectic realisations always exist for every Poisson manifold (several different proofs are available), complete ones play a fundamental role in the integrability problem for Poisson manifolds (see below).
+
+Integration of Poisson manifolds 
+Any Poisson manifold  induces a structure of Lie algebroid on its cotangent bundle . The anchor map is given by  while the Lie bracket on  is defined asSeveral notions defined for Poisson manifolds can be interpreted via its Lie algebroid :
+
+ the symplectic foliation is the usual (singular) foliation induced by the anchor of the Lie algebroid
+the symplectic leaves are the orbits of the Lie algebroid
+ a Poisson structure on  is regular precisely when the associated Lie algebroid  is
+ the Poisson cohomology groups coincide with the Lie algebroid cohomology groups of  with coefficients in the trivial representation.
+
+It is of crucial importance to notice that the Lie algebroid  is not always integrable to a Lie groupoid.
+
+Symplectic groupoids 
+A  is a Lie groupoid  together with a symplectic form  which is also multiplicative (i.e. compatible with the groupoid structure). Equivalently, the graph of  is asked to be a Lagrangian submanifold of .
+
+A fundamental theorem states that the base space of any symplectic groupoid admits a unique Poisson structure  such that the source map  and the target map  are, respectively, a Poisson map and an anti-Poisson map. Moreover, the Lie algebroid  is isomorphic to the cotangent algebroid  associated to the Poisson manifold . Conversely, if the cotangent bundle  of a Poisson manifold is integrable to some Lie groupoid , then  is automatically a symplectic groupoid.
+
+Accordingly, the integrability problem for a Poisson manifold consists in finding a symplectic groupoid which integrates its cotangent algebroid; when this happens, we say that the Poisson structure is integrable.
+
+While any Poisson manifold admits a local integration (i.e. a symplectic groupoid where the multiplication is defined only locally), there are general topological obstructions to its integrability, coming from the integrability theory for Lie algebroids. Using such obstructions, one can show that a Poisson manifold is integrable if and only if it admits a complete symplectic realisation.
+
+Submanifolds 
+A Poisson submanifold of  is an immersed submanifold  such that the immersion map  is a Poisson map. Equivalently, one asks that every Hamiltonian vector field , for , is tangent to .
+
+This definition is very natural and satisfies several good properties, e.g. the transverse intersection of two Poisson submanifolds is again a Poisson submanifold. However, it has also a few problems:
+
+ Poisson submanifolds are rare: for instance, the only Poisson submanifolds of a symplectic manifold are the open sets;
+ the definition does not behave functorially: if  is a Poisson map transverse to a Poisson submanifold  of , the submanifold  of  is not necessarily Poisson.
+
+In order to overcome these problems, one often uses the notion of a Poisson transversal (originally called cosymplectic submanifold). This can be defined as a submanifold  which is transverse to every symplectic leaf  and such that the intersection  is a symplectic submanifold of . It follows that any Poisson transversal  inherits a canonical Poisson structure  from . In the case of a nondegenerate Poisson manifold  (whose only symplectic leaf is  itself), Poisson transversals are the same thing as symplectic submanifolds.
+
+More general classes of submanifolds play an important role in Poisson geometry, including Lie-Dirac submanifolds, Poisson-Dirac submanifolds, coisotropic submanifolds and pre-Poisson submanifolds.
+
+See also
+ Nambu-Poisson manifold
+ Poisson–Lie group
+ Poisson supermanifold
+Kontsevich quantization formula
+
+References
+
+Books and surveys
+
+ Previous version available on .
+
+ See also the review by Ping Xu in the Bulletin of the AMS.
+
+Differential geometry
+Symplectic geometry
+Smooth manifolds
+Structures on manifolds

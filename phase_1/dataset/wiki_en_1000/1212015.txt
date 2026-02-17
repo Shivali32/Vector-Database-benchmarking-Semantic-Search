@@ -1,0 +1,84 @@
+TITLE: Final Doom
+
+Final Doom is a first-person shooter video game developed by TeamTNT, and Dario and Milo Casali, and was released by id Software and distributed by GT Interactive Software in 1996. It was released for MS-DOS and Macintosh computers, as well as for the PlayStation, although the latter featured a selection of levels from Final Doom and from Master Levels for Doom II.
+
+Final Doom consists of two 32-level episodes (or megawads), TNT: Evilution and The Plutonia Experiment. Unlike TNT: Evilution, which was officially licensed, The Plutonia Experiment was made by request of the team at id Software. The story in both episodes take place after the events of Doom II. TNT: Evilution features a new soundtrack not found in Doom and Doom II.
+
+Gameplay
+
+Final Doom plays identically to Doom II: Hell on Earth, and even features the same weapons, items, and monsters. The original game is widely considered to be significantly more difficult than its predecessors Doom and Doom II.
+
+The gameplay in the PlayStation version of Final Doom is nearly identical to that found in the PlayStation version of Doom, and, in addition, it was compatible with the PlayStation Mouse. Compared to the MS-DOS original, the PlayStation version's overall difficulty was significantly reduced. Many of the harder levels were removed and those that remained often had enemies taken out (most noticeably the Cyberdemon being removed from the level 'Baron's Lair'). As in the original PlayStation version of Doom, many of the larger levels from the original MS-DOS versions of Final Doom and Master Levels for Doom II were removed, and both the Arch-vile and Spider Mastermind monsters were removed, due to technical constraints. This limited the PlayStation version to 30 levels in total. The more traditional rock tracks featured in Final Doom were replaced by a creepier ambient soundtrack by Aubrey Hodges, who later composed the music for Doom 64 in 1997.
+
+There are several noticeable alterations to the presentation of Final Doom in the PlayStation version compared to the computer versions. The simplistic title screens featured in the computer versions have been replaced by a more elaborate title screen that features the animated flame-filled sky texture from the original PlayStation version of Doom. Many of the levels' sky textures have been replaced by different ones; some levels' skies are replaced by sky textures seen in previous Doom games, whereas others now feature a new starry sky texture. Finally, most of the level layouts are simplified, similar to previous Doom console ports, and the frame rate of the game is often lower than it was in the first PlayStation Doom game.
+
+Plot
+
+TNT: Evilution
+In TNT: Evilution, the UAC are once again intent on developing and experimenting with dimensional gateway technology. They set up a base on one of the moons of Jupiter, with a solid detachment of space marines for protection. The marines do their job well; when the first experimental gateway is opened, they annihilate the forces of Hell. Research continues with more confidence and all security measures turned at the gateway.
+
+A few months later, the yearly supply ship comes ahead of schedule, and looks strange and unusually big on the radar. The lax radar operators decide that there is nothing to worry about. The personnel of the base go out to behold the terrible truth: it is a spaceship from Hell, built out of steel, stone, flesh, bone and corruption. The ship's enormous gates open to unleash a rain of demons on the base. Quickly, the entire facility is overrun, and everyone is slain or zombified.
+
+The main character, the nameless space marine (who was revealed to be the marine commander on the moon) has been away on a walk at that time and thus escapes death or zombification. After being attacked by an imp, he rushes back to the base where he sees the demonic spaceship still hovering above it and realizes what has happened. He then swears that he will avenge his slain troops and sets out to kill as many demons as possible.
+
+In the end, the marine defeats the Icon of Sin and the game describes "something rumbles in the distance. A blue light glows within the ruined skull of the demon-spitter."
+
+The Plutonia Experiment
+In The Plutonia Experiment, after Hell's catastrophic invasion of Earth, the global governments decide to take measures against any possible future invasion, knowing that the powers of Hell still remained strong. The UAC is refounded under completely new management (the old trustees and stockholders were all dead anyway) and aims at developing tools that would prevent demonic invasions.
+
+The scientists start working on a device known as the Quantum Accelerator that is intended to close invasion Gates and stop possible invasions. The experiments are carried out in a secret research complex, with a stationed detachment of marines. The work seems to be going well but the creatures from Outside have their attention drawn towards the new research. A Gate opens in the heart of the complex and unnatural horrors pour out. The Quantum Accelerator performs superbly: the Gate is quickly closed and the invasion is stopped. Research continues more boldly.
+
+On the next day, a ring of 7 Gates opens and an even greater invasion begins. For one hour the Quantum Accelerators manage to close 6 of the Gates, but the Hellish army has become too numerous and too strong. The complex is overrun. Everyone is slain, or zombified. The last Gate of Hell remains open, guarded by a Gatekeeper: a powerful, enormous and ancient demon that has the power to open Dimensional Gates and control or protect them.
+
+The government, frantic that the Quantum Accelerator will be destroyed or used against humanity, orders all marines to the site at once. The player, the nameless space marine, was on leave at the beach. He was also closest to the site and gets there first. There he discovers that there is much demonic activity (howling, chanting, machine sounds) within the complex; the Gatekeeper is obviously working on something, and his work would soon reach some awful climax. He also realizes that when the marines arrive, they would not be able to penetrate the heavily infested complex, despite the firepower and support they will have. The marine decides to enter the complex and stop the Gatekeeper alone.
+
+Development
+Work on TNT: Evilution was started by TeamTNT, a group of WAD-making hobbyists who were active on the advanced Doom editing mailing list. Just days before it was to be released as a free download online, the project was acquired by id Software, and finished in November 1995.
+
+Brothers Dario and Milo Casali, who had contributed four levels to TNT: Evilution, were assigned the task of creating what became The Plutonia Experiment after having sent an eight-level WAD they had created to American McGee and managing to impress him along with the rest of the id Software crew. They created 16 levels each for The Plutonia Experiment in four months time, and submitted them in January 1996. Unlike their contributions to TNT: Evilution, which were edited after submission (four were also rejected due to being too large to run on the computers of the day), these were the final revisions of the levels, and Dario Casali later commented about the fact that no changes were requested: "Thank God because I was ready to throw my computer out the window at the time."
+
+Dario Casali acknowledged the difficulty level of The Plutonia Experiment in an interview on Doomworld, stating "Plutonia was always meant for people who had finished Doom 2 on hard and were looking for a new challenge. I always played through the level I had made on hard, and if I could beat it too easily, I made it harder, so it was a challenge for me."
+
+Reception
+
+Reviewing the PC version in GameSpot, Jim Varner argued that Final Doom is a waste of money, since it is essentially just a new set of level maps for Doom, and there were already thousands of such maps available to download for free on the internet.
+
+While Major Mike of GamePro criticized that Final Doom has no new enemies or weapons, and that the PlayStation version includes only 30 levels as compared to the PC version's 64, he was pleased with the "huge, perplexing, and sometimes sadistic levels" and the new scenery, and considered Doom still a compelling enough game that simply more of the same was enough to satisfy. PlayStation Magazine gave it a score of 9/10, calling it "essential". A reviewer for Next Generation was less impressed, remarking that a side-by-side comparison with the PlayStation version of the original Doom reveals that Final Doom has a much lower frame rate, less precise control, and more visible seams in the textures. Three of the four reviewers of Electronic Gaming Monthly said they were tired of seeing ports of Doom, and that Final Doom was simply another such port with new level maps. They also said that the game engine had become severely outdated in the years since Doom was first released. Crispin Boyer was the one dissenting voice, expressing enthusiasm for the new level designs.
+
+Notes
+
+References
+
+ Interview with Dario Casali (1998) by Doomworld
+
+External links
+ Final Doom page at PlanetDOOM
+ Final Doom at TeamTNT's official website
+ Dario Casali's The Plutonia Experiment page
+ id Software's official Final Doom page
+ Comparison of PC and Playstation Final Doom at ClassicDOOM
+
+1996 video games
+Cooperative video games
+Doom (franchise)
+Video games about demons
+Doom engine games
+DOS games
+Games commercially released with DOSBox
+GT Interactive Software games
+Id Software games
+Classic Mac OS games
+PlayStation (console) games
+PlayStation 3 games
+PlayStation Network games
+Video games developed in the United States
+Video games scored by Aubrey Hodges
+Video games with 2.5D graphics
+Video games with digitized sprites
+Video games set in hell
+Williams video games
+Windows games
+Video game spin-offs
+Sprite-based first-person shooters
+Horror video games
+de:Doom#Final Doom

@@ -1,0 +1,23 @@
+TITLE: Arachniotus ruber
+
+Arachniotus ruber is a species of fungus belonging to the genus Arachniotus in the family Gymnoascaceae. This fungus is a mesophile that reproduces both sexually and asexually. So far, there have been no reports of the fungus being pathogenic.
+
+History and taxonomy
+Arachniotus ruber was first described by Philippe Édouard Léon Van Tieghem in 1877 and it was thought to belong to the genus, Gymnoascus, due to similarities he observed in the gametangial initials. It was not until 1893 that Schroeter transferred the species to his recently established genus, Arachniotus, due to it possessing many of the corresponding traits. At the time, Schroeter did not designate a type species for the genus, which resulted in some debate until a lectotype, A. candidus, was eventually identified by Clements and Shear in 1931. With this change, A. ruber was excluded from the Arachniotus genus because it did not display type characteristics within its ascospores (3). Consequently, Orr, Ghosh, and Roy moved the species to the genus, Pseudoarachniotus, in 1977.
+
+Morphology
+Arachniotus ruber have discrete ascomata present, usually confluent and mostly spherical, measuring 20-200 μm and are red, orange, and brown in colour. Asci of A. ruber are ovoid, hyaline, and measure 10-13 x 7-10 μm. The ascospores of A. ruber are smooth, spherical, and vary in colour between red, orange, and yellow. They have an equatorial groove along the longitudinal axis, giving them a shape similar to that of a pulley wheel, and they measure 2.8-4.4 x 4-6.6 μm. Asexual spore states of A. ruber are represented by hyaline arthroaleuriospores measuring 8-30 x 2.2–3.3 μm.
+
+Habitat and ecology
+Arachniotus ruber has been found in the excrement of various animals, with the majority of samples being obtained in the United Kingdom and Germany. Van Tiegham first observed the species within dog and rat dung in France. Schroeter obtained samples of the species from dog and goat dung in Germany. There is also an occurrence of the species being found in hawk pellets by Dr. Arvids E. Apinis at the University of Nottingham in 1958. Another instance of A. ruber was found in a cave in Spain.
+
+Preparation and cultivation
+In order to sporulate under laboratory conditions, Arachniotus ruber is most commonly grown on freezing agar, which is a medium prepared using potatoes, agar, glucose, yeast extract, and activated carbon. As A. ruber grows on this medium, it will initially form white hyphae that will turn orange red and the colonies are pasty with occasional concentric rings of mycelium. The species has been observed to grow at 30 °C and show no further signs of growth at 37 °C.
+
+Usage and applications
+There have been very few studies that delve into the potential applications of Arachniotus ruber. One study done in 2016 displayed the potential of A. ruber being used to increase the nutritional value of wheat straw. Another, more recent study from 2019 investigated the species’ usefulness in combatting malnutrition in developing countries. The study goes into detail about how malnutrition stems from protein deficiency, and performed an experiment using A. ruber. The experiment used dry banana peels as a basis for the substrate and prepared A. ruber in media, autoclaving the two together under various conditions. After some processing, the resulting feed was consumed by broiler chicks. The results of a proximate analysis showed that A. ruber was able to increase the nutritional value of the resulting biomass protein, showing potential in this area of research.
+
+References
+ 
+
+Onygenales

@@ -1,0 +1,115 @@
+TITLE: Subcountability
+
+In constructive mathematics, a collection  is subcountable if there exists a partial surjection from the natural numbers onto it. 
+This may be expressed as
+
+where  is the set of natural numbers ( with disregard for arithmetic) and where  denotes that  is a surjective function from  onto .
+In other words, all elements of a subcountable collection  are functionally in the image of an indexing set of counting numbers  and thus the set  can be understood as being dominated by the countable set .
+
+Discussion
+
+Example 
+An important case is where  denotes some subclass of a bigger class of functions as studied in computability theory. 
+
+Consider the total computable functions and note that being total is not a decidable property, i.e. there cannot be a constructive bijection between the total functions and the natural numbers. However, via enumeration of the codes of all possible partial computable functions (which also allows non-terminating programs), subsets of those, such as the total functions, are seen to be subcountable sets. Note that by Rice's theorem on index sets, most domains  are not recursive. Indeed, no effective map between all counting numbers  and the infinite (non-finite) indexing set  is asserted here, merely the subset relation . Being dominated by a constructively non-countable set of numbers , the name subcountable thus conveys that the uncountable set  is no bigger than .
+
+The demonstration that  is subcountable also implies that it is classically (non-constructively) formally countable, but this does not reflect any effective countability. In other words, the fact that an algorithm listing all total functions in sequence cannot be coded up is not captured by classical axioms regarding set and function existence. We see that, depending on the axioms of a theory, subcountability may be more likely to be provable than countability.
+
+Relation to Excluded Middle 
+In constructive logics and set theories, which tie the existence of a function between infinite (non-finite) sets to questions of effectivity and decidability, the subcountability property splits from countability and is thus not a redundant notion. 
+The indexing set  of natural numbers may be posited to exist, e.g. as a subset via set theoretical axioms like the separation axiom schema, so that 
+. 
+But this set may then still fail to be detachable, in the sense that
+
+cannot be proven without assuming it as an axiom.
+One may fail to effectively count  if one fails to map the counting numbers  into the indexing set , for this reason.
+
+In classical mathematics 
+Asserting all laws of classical logic, the disjunctive property of  discussed above indeed does hold for all sets. Then, for nonempty , the properties numerable ( injects into ), countable ( has  as its range), subcountable (a subset of  surjects into ) and also not -productive (a countability property essentially defined in terms of subsets of , formalized below) are all equivalent and express that a set is finite or countably infinite.
+
+Non-classical assertions 
+Not asserting the law of excluded middle 
+ for all proposition , 
+it can then also be consistent to assert the subcountability of sets that classically (i.e. non-constructively) exceed the cardinality of the natural numbers.
+Note that in a constructive setting, a countability claim about the function space  out of the full set , as in , may be disproven. But subcountability  of an uncountable set  by a set  that is not effectively detachable from  may be permitted.
+
+As  is uncountable and classically in turn provably not subcountable, the classical framework with its large function space is incompatible with the constructive Church's thesis, an axiom of Russian constructivism.
+
+Set theories
+
+Cantorian arguments on subsets of the naturals 
+As reference theory we look at the constructive set theory , which has Replacement, Bounded Separation, strong Infinity, is agnostic towards the existence of power sets, but includes the axiom that asserts that any function space  is set, given  are also sets. 
+In this theory, it is moreover consistent to assert that every set is subcountable. 
+
+The compatibility of various axioms is discussed in this section by means of possible surjections on an infinite set of counting numbers .
+
+The situations discussed below—onto function spaces versus onto power classes—are different insofar as for functions , by definition there exists a unique return value for every value  in the domain, . As opposed to general predicates and their truth values (not necessarily just true and false), a function (which in programming terms is terminating) makes accessible information about data for all its subdomains (subsets of the ). Viewed as characteristic functions, they decide membership. As such, in , the (total) functions  are not automatically in bijection with all the subsets of  Constructively, subsets are a more involved concept than characteristic functions. 
+
+In fact, in the context of some non-classical axioms, even the power class of a singleton, e.g. the class  of all subsets of , is shown to be a proper class.
+
+Onto function spaces
+Asserting the permitted subcountability of all sets turns, in particular,  into a subcountable set. 
+
+So here we consider a surjective function  and the set comprehended/separated as
+
+with the diagonalizing predicate defined as
+
+which we can also phrase without the negations as
+.
+This set is classically a function in  and can classically be used to prove that the existence of the  is actually contradictory.
+However, constructively, unless the proposition  in its definition is decidable so that the set actually defined a functional assignment, we just cannot draw this conclusion.
+
+In this fashion, subcountability of  is permitted. Nevertheless, also in the case of , the existence of a full surjection , with domain , is indeed contradictory, since membership of  is decidable.
+
+Beyond these observations, also note that for any non-zero number , the functions  in  involving the surjection  cannot be extended to all of  by a similar contradiction argument. In other words, there are then partial functions that cannot be extended to full functions .
+Note that when given a , one cannot necessarily decide whether , and so one cannot even decide whether the value of a potential function extension on  is even already determined for a surjection .
+
+The subcountibility axiom, asserting all sets are subcountable, is incompatible with any new axiom making  countable, including .
+
+Onto power classes
+Next we study possible postulates of the existence of a surjection . (This, by Replacement in  would imply  is a set.) The violating subset of  is
+
+which, as , in this case simplifies to just
+ 
+where 
+
+adapted from Cantors theorem about power sets. That subset exists via Separation. The existence of the surjection immediately implies the existence of a number  with 
+, 
+rendering membership necessarily undecidable and incompatible with any realization. 
+Propositions of this form, , must be rejected according to the consequences of the negation introduction law. So such a surjection does not exist and  cannot be subcountable.
+
+We conclude that the subcountability axiom, asserting all sets are subcountable, is incompatible with  being a set, as implied e.g. by the power set axiom.
+
+The notion of size 
+As seen in the example of the function space considered in computability theory, not every infinite subset of  necessarily is in constructive bijection with , thus making room for a more refined distinction between uncountable sets in constructive contexts. 
+The function space  (and also ) in a moderately rich set theory is always found to be neither finite nor in bijection with , by Cantor's diagonal argument. This is what it means to be uncountable. But the argument that the cardinality of that set would thus in some sense exceed that of the natural numbers relies on a restriction to just the classical size conception and its induced ordering of sets by cardinality.
+Motivated by the above sections, the infinite set  may be considered "smaller" than the class . Subcountability as judgement of small size shall not be conflated with the standard mathematical definition of cardinality relations as defined by Cantor, with smaller cardinality being defined in terms of injections out of  and equality of cardinalities being defined in terms of bijections. 
+Moreover, note that constructively, an ordering "" like that of cardinalities can be undecidable.
+
+Models 
+The above analysis affects formal properties of codings of . Models for this non-classical extension of  theory have been constructed. 
+Such non-constructive axioms can be seen as choice principles which, however, do not tend to increase the  proof-theoretical strengths of the theories much. 
+
+More examples:
+ There are models of  in which all sets with apartness relations are subcountable.
+ In the constructive set theory , as discussed, it is indeed consistent to assert the Subcountability Axiom that all sets are (internally) subcountable. The resulting theory is in contradiction to the Axiom of power set and with the law of excluded middle.
+ More stronger yet, some models of Kripke–Platek set theory validate that all sets are even countable.
+
+Subcountable implies not -productive 
+Any countable set is subcountable and any subcountable set is not -productive:
+A set  is said to be -productive if, whenever any of its subsets is the range of some partial function  on , there always remains at least one element that lies outside that range. This may be expressed as
+
+A set being -productive speaks for how hard it is to generate its elements: They cannot be generated using a single function. As such, -productive sets escape subcountability.
+Diagonal arguments often involve this notion, be it explicitly or implicitly.
+
+See also
+ Cantor's diagonal argument
+ Computable function
+ Constructive set theory
+ Schröder–Bernstein theorem
+ Subquotient
+ Total order
+
+References 
+
+Constructivism (mathematics)

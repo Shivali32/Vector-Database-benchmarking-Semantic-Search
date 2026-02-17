@@ -1,0 +1,24 @@
+TITLE: Fast Reroute
+
+Fast Reroute is a MPLS (Multiprotocol Label Switching) and IP resiliency technology to provide fast traffic recovery upon link or router failures for mission critical services.
+Upon any single link or node failures, it could be able to recover impacted traffic flows in the level of 50 ms.  Industrial implementations can be seen in vendors such as Cisco, Juniper, Brocade, Alcatel-Lucent etc.
+
+In the IP domain Loop-Free Alternates (LFAs) and not-via technology have been used to immediately recover data packet upon the failure of a default next-hop.
+
+Methods of backup
+
+Backup path can be configured for:
+
+1. Link protection
+
+2. Node protection
+
+There are two methods to back up an LSP:
+
+1. One to One - this method creates detour LSPs for each protected LSP at each potential point of local repair
+
+2. Facility - this method creates a bypass tunnel to protect a potential failure point
+
+References
+
+MPLS networking

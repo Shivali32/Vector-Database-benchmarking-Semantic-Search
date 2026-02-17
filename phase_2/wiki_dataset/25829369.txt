@@ -1,0 +1,27 @@
+TITLE: List of neuroscience databases
+
+A number of online neuroscience databases are available which provide information regarding gene expression, neurons, macroscopic brain structure, and neurological or psychiatric disorders. Some databases contain descriptive and numerical data, some to brain function, others offer access to 'raw' imaging data, such as postmortem brain sections or 3D MRI and fMRI images. Some focus on the human brain, others on non-human.
+
+As the number of databases that seek to disseminate information about the structure, development and function of the brain has grown, so has the need to collate these resources themselves. As a result, there now exist databases of neuroscience databases, some of which reach over 3000 entries.
+
+
+
+Neuroscience databases
+
+Databases of neuroscience databases
+
+Neuroscience article aggregators 
+
+Neuroscience feed at RightRelevance.
+
+See also 
+Neuroinformatics
+Budapest Reference Connectome
+
+References 
+
+neuroscience databases
+
+neuroscience databases
+neuroscience databases
+neuroscience databases

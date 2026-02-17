@@ -1,0 +1,40 @@
+TITLE: Polysorbate 20
+
+Polysorbate 20 (common commercial brand names include Scattics, Alkest TW 20 and Tween 20) is a polysorbate-type nonionic surfactant formed by the ethoxylation of sorbitan before the addition of lauric acid. Its stability and relative nontoxicity allows it to be used as a detergent and emulsifier in a number of domestic, scientific, and pharmacological applications. As the name implies the ethoxylation process leaves the molecule with 20 repeat units of polyethylene glycol; in practice these are distributed across 4 different chains, leading to a commercial product containing a range of chemical species.
+
+Food applications
+Polysorbate 20 is used as a wetting agent in flavored mouth drops such as Ice Drops, helping to provide a spreading feeling to other ingredients like SD alcohol and mint flavor.
+
+The World Health Organization has suggested acceptable daily intake limits of 0–25 mg of polyoxyethylene sorbitan esters per kg body weight.
+
+Biotechnical applications
+In biological techniques and sciences, polysorbate 20 has a broad range of applications. For example, it is used:
+ as a washing agent in immunoassays, such as Western blots and ELISAs. It helps to prevent non-specific antibody binding. In this major application, it is dissolved in Tris-buffered saline or phosphate buffered saline at dilutions of 0.05% to 0.5% v/v. These buffers are used for washes between each immunoreaction, to remove unbound immunologicals, and eventually for incubating solutions of immunoreagents (labeled antibodies) to reduce nonspecific background. 
+ to saturate binding sites on surfaces (i.e., to coat polystyrene microplates, generally combined with proteins such as BSA).
+ to stabilize proteins purified protein derivative (PPD) solution used in skin testing for tuberculosis exposure
+ as a solubilizing agent of membrane proteins
+ for lysing mammalian cells, at a concentration of 0.05% to 0.5% v/v, generally combined with other detergents, salts and additives.
+
+Pharmaceutical applications
+Polysorbate 20 is used as an excipient in pharmaceutical applications to stabilize emulsions and suspensions.
+
+Industrial and domestic applications
+
+Polysorbate 20 is used by philatelists to remove stamps from envelopes and to remove residues from stamps, without harming the stamp itself.
+
+Polysorbate 20 is also used as wetting agent in rubber balers in the elastomer industry.
+
+Polysorbate 20 has been used as a shape directing agent to synthesize spheroidal magnetite nanoassemblies.
+
+See also
+ Polysorbate 80
+
+References
+
+External links
+ Tween 20 on biologists' wiki OpenWetWare
+
+Non-ionic surfactants
+Excipients
+Laurate esters
+E-number additives

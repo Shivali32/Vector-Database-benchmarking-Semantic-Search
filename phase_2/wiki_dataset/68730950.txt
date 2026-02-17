@@ -1,0 +1,9 @@
+TITLE: Emission Database for Global Atmospheric Research
+
+The Emission Database for Global Atmospheric Research (EDGAR) is a joint project of the European Commission Joint Research Centre and the Netherlands Environmental Assessment Agency which estimates emissions of all greenhouse gases, air pollutants and aerosols.
+
+References
+
+Air pollution
+European research networks
+Greenhouse gas inventories

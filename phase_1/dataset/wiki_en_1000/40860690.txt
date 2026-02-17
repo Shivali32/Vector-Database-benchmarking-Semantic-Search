@@ -1,0 +1,41 @@
+TITLE: Nokia Lumia 2520
+
+The Nokia Lumia 2520 is a Windows RT tablet computer originally developed by Nokia. It is Nokia's first and only Windows-based tablet, and the company's first tablet since its Nokia Internet Tablet line. Sharing its design and marketed with the Nokia Lumia series of Windows Phone products, the device incorporates a quad-core Snapdragon 800 chip with 4G LTE support, along with a 10.1-inch (26 cm) 1080p display and an optional "Power Keyboard" dock adding additional battery capacity, USB ports, and a physical hardware keyboard. Following a period of speculation and leaks, the Lumia 2520 was officially unveiled on 22 October 2013, and released in North America on 21 November 2013.
+
+The 2520 was met with mostly positive reviews, praising its design, display, and for being the first Windows RT tablet to offer cellular data (although Microsoft's own Surface 2 was soon available with such an option). However, the device also received criticism for the lack of available software for its operating system (due to the inability of Windows RT to run full Windows desktop programs), along with the design of its keyboard dock.
+
+From April 2014 it was maintained and sold by Microsoft Mobile. The Nokia Lumia 2520 was discontinued by Microsoft on February 2, 2015, being the last Windows RT device, coming a month after the production halt of the Surface 2.
+
+After Nokia's phone business was sold to Microsoft, Nokia started making the Nokia N1. The Nokia N1 ultimately succeeded Nokia's former Lumia 2520.
+
+In September 2017, HMD global gained rights for design patent of Lumia 2520.
+
+Development and release 
+In mid-August 2013, details began leaking surrounding a Windows RT tablet being produced by Nokia codenamed "Sirius", which featured a 10.1-inch (26 cm) screen, LTE support and a design similar to Nokia's Lumia series of Windows Phone devices. A press render leaked in October 2013, along with its branding as the "Lumia 2520". The Lumia 2520 was officially unveiled during a Nokia press event on 22 October 2013 at a Nokia World event in Abu Dhabi, where it also unveiled Lumia 1320 and 1520 running Windows Phone 8. The device marks Nokia's first Microsoft Windows-based tablet device, and its first tablet product since its Internet Tablet range.
+
+The Lumia 2520 was first released in the United States by Verizon Wireless on November 21, 2013. In the U.S., carrier-branded versions were released by Verizon and AT&T. The Verizon Wireless model differs only in its use of different LTE bands, and a lack of support for GSM networks, unlike the international and AT&T version. No Wi-Fi-only version of the Lumia 2520 was released.
+
+In April 2014, Nokia recalled the AC-300 travel charger for the Lumia 2520 after it was discovered that the cover on its plug could separate and expose internal parts, posing an electric shock hazard when in use. While sold as an accessory in the United States, it was bundled with European models; as a result, Nokia also suspended sales of the Lumia 2520 in Austria, Denmark, Finland, Germany, Russia, and Switzerland, and the United Kingdom.
+
+Hardware 
+The Lumia 2520 uses a quad-core, 2.2 GHz Qualcomm Snapdragon 800 system-on-chip with 2 GB of RAM and support for LTE networks, and has either 32 or 64 GB of internal storage which can be expanded up to 64 GB with a MicroSD card. Its display is a 10.1-inch (26 cm), 1080p IPS panel with Nokia's "ClearBlack" technology, coated with Corning Gorilla Glass 2. The Lumia 2520 also includes an 8000 mAh battery rated for 10 hours of use, a 6.7-megapixel rear-facing camera identical to that of the Lumia 720, micro HDMI and USB 3.0 ports, and a proprietary dock connector. The Lumia 2520's hardware design uses a similar polycarbonate-based style to Nokia's line of Lumia smartphones, available in either red, cyan, black, or white finishes. An optional keyboard dock accessory known as the "Power Keyboard" adds a keyboard, kickstand, two full-sized USB ports and a supplemental battery, rated for 5 hours of additional use.
+
+Software 
+As the Lumia 2520 uses the ARM architecture rather than x86, it runs the Windows RT 8.1 operating system. It can only run Windows Store apps and, like all Windows RT products, is pre-loaded with Microsoft Office RT. In common with all Lumia products, it comes with a suite of exclusive Nokia-provided apps, such as a customized Nokia Camera app, Here Maps, MixRadio, Storyteller, and Video Director. A unique augmented reality game, DreamWorks Dragons Adventure, is also included.
+
+Reception 
+The Lumia 2520 was released to positive reviews; early reviews praised the tablet for its display and design, and praised its performance for showing a notable improvement over early Windows RT devices such as the first-generation Surface.
+
+Engadget gave the Lumia 2520 a 79 out of 100, considering it to be a "strong" entry into the Windows tablet market, but criticizing the limitations of Windows RT and the poor Windows Store app selection, the fact that there was no Wi-Fi-only model, the keyboard dock's key layout being too "cramped", and the dock's kickstand was criticized for echoing the design of the original Microsoft Surface, which was poor for "in-lap" use because it only had one angle. However, the Lumia 2520 was praised for having a light build, and a relatively better camera than other tablets (but criticizing the quality of its video recording, describing it as an afterthought). The battery life of the device was noted for being even longer than Nokia claimed, reaching 13 and a half hours of video playback with Wi-Fi enabled and the display on 50% brightness. The Verge believed that the Lumia 2520 had better performance than the Microsoft Surface 2, and was more "portable" due to its LTE support, but criticized the keyboard dock for being too heavy, and shared concerns surrounding the application selection for Windows Store.
+
+References
+
+External links
+ 
+
+Lumia 2520
+Windows Phone devices
+Microsoft Lumia
+Tablet computers introduced in 2013
+Tablet computers
+Touchscreen portable media players

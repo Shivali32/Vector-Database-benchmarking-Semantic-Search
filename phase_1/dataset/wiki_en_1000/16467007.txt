@@ -1,0 +1,48 @@
+TITLE: 4045 Lowengrub
+
+4045 Lowengrub, provisional designation , is a dark Alauda asteroid from the outer region of the asteroid belt, approximately 32 kilometers in diameter. It was discovered on 9 September 1953, by astronomers during the Indiana Asteroid Program at Goethe Link Observatory in Brooklyn, Indiana, United States. The asteroid was named after American mathematician Morton Lowengrub, dean at Indiana University and one of the fathers of the WIYN Observatory.
+
+Orbit and classification 
+
+Lowengrub is a member of the Alauda family (), a large family of carbonaceous asteroids and named after its parent body, 702 Alauda.
+
+It orbits the Sun in the outermost main-belt at a distance of 2.9–3.6 AU once every 5 years and 10 months (2,121 days; semi-major axis of 3.23 AU). Its orbit has an eccentricity of 0.10 and an inclination of 21° with respect to the ecliptic.
+
+The body's observation arc begins with its first identification as  at Uccle Observatory in November 1948, almost five years prior to its official discovery observation at Goethe.
+
+Physical characteristics 
+
+Lowengrub is an assumed C-type asteroid.
+
+Rotation period 
+
+A rotational lightcurve of Lowengrub was reported in 1996 and obtained from 
+photometric observations by group of French astronomers in the early 1990s. Lightcurve analysis gave a well-defined rotation period of 9.764 hours with a brightness amplitude of 0.40 magnitude ().
+
+Diameter and albedo 
+
+According to the surveys carried out by the Japanese Akari satellite and the NEOWISE mission of NASA's Wide-field Infrared Survey Explorer, Lowengrub measures between 29.61 and 37.07 kilometers in diameter and its surface has an albedo between 0.051 and 0.062.
+
+The Collaborative Asteroid Lightcurve Link assumes a standard albedo for carbonaceous asteroids of 0.057 and derives a diameter of 32.78 kilometers based on an absolute magnitude of 11.17.
+
+Naming 
+
+This minor planet was named after American mathematician Morton Lowengrub, dean, professor and administrator at Indiana University. The naming took place on the occasion of the completion of the WIYN Observatory with its 3.5-meter telescope at Kitt Peak National Observatory in Arizona. Lowengrub was instrumental for the planning and construction of the WIYN and was a charter member of the WIYN Board of Governors 
+
+Lowengrub has authored several books on mathematics including "Crack problems in the classical theory of elasticity" (1969) together with Scottish mathematician Ian Sneddon. The official naming citation was published by the Minor Planet Center on 14 May 1995 ().
+
+References
+
+External links 
+ Asteroid Lightcurve Database (LCDB), query form (info )
+ Dictionary of Minor Planet Names, Google books
+ Asteroids and comets rotation curves, CdR – Observatoire de Genève, Raoul Behrend
+ Discovery Circumstances: Numbered Minor Planets (1)-(5000) – Minor Planet Center
+ 
+ 
+
+004045
+004045
+Minor planets named for people
+Named minor planets
+19530909

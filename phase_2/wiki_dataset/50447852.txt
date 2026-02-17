@@ -1,0 +1,7 @@
+TITLE: Hyperview (computing)
+
+A hyperview in computing is a hypertextual view of the content of a database or set of data on a group of activities. As with a hyperdiagram multiple views are linked to form a hyperview.
+
+References
+
+Database theory

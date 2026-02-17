@@ -1,0 +1,47 @@
+TITLE: 2797 Teucer
+
+2797 Teucer  is a large Jupiter trojan from the Greek camp, approximately  in diameter. It was discovered on 4 June 1981, by American astronomer Edward Bowell at the Anderson Mesa Station near Flagstaff, Arizona, in the United States. The dark D-type asteroid belongs to the 20 largest Jupiter trojans and has a rotation period of 10.15 hours. It was named after the Greek hero and great archer, Teucer.
+
+Orbit and classification 
+
+Teucer is a dark Jovian asteroid orbiting in the leading Greek camp at Jupiter's  Lagrangian point, 60° ahead of its orbit in a 1:1 resonance . It is also a non-family asteroid in the Jovian background population.
+
+It orbits the Sun at a distance of 4.7–5.6 AU once every 11 years and 6 months (4,213 days; semi-major axis of 5.1 AU). Its orbit has an eccentricity of 0.09 and an inclination of 22° with respect to the ecliptic.
+
+The body's observation arc begins with its first observation as  at Turku Observatory in December 1940, more than 40 years prior to its official discovery observation at Anderson Mesa.
+
+Naming 
+
+This minor planet was named after the Greek hero Teucer, from Greek mythology. The son of King Telamon was a great archer and half-brother of Ajax, with whom he fought alongside in the Trojan War. The official naming citation was published by the Minor Planet Center on 17 February 1984 ().
+
+Physical characteristics 
+
+Teucer has been characterized as a dark D-type asteroid by Pan-STARRS' survey as well as in the SDSS-based taxonomy. It is also an assumed C-type asteroid.
+
+Rotation period 
+
+Several rotational lightcurves of Teucer have been obtained from photometric observations since 1992. Analysis of the best-rated lightcurve from September 2010, by Daniel Coley at the Center for Solar System Studies  gave a well-defined rotation period of  hours with a brightness amplitude of 0.20 magnitude ().
+
+Diameter and albedo 
+
+According to the surveys carried out by the Infrared Astronomical Satellite IRAS, the Japanese Akari satellite and the NEOWISE mission of NASA's Wide-field Infrared Survey Explorer, Teucer measures between 89.43 and 113.99 kilometers in diameter and its surface has an albedo between 0.059 and 0.073.
+
+The Collaborative Asteroid Lightcurve Link derives an albedo of 0.0435 and a diameter of 110.72 kilometers based on an absolute magnitude of 8.8. In June 2014, an observed asteroid occultation gave a cross-section of  (poor fit).
+
+Notes
+
+References
+
+External links 
+ Asteroid Lightcurve Database (LCDB), query form (info )
+ Dictionary of Minor Planet Names, Google books
+ Asteroids and comets rotation curves, CdR – Observatoire de Genève, Raoul Behrend
+ Discovery Circumstances: Numbered Minor Planets (1)-(5000) – Minor Planet Center
+ 
+ 
+
+002797
+Discoveries by Edward L. G. Bowell
+Minor planets named from Greek mythology
+Named minor planets
+19810604

@@ -1,0 +1,32 @@
+TITLE: Ada Developers Academy
+
+Ada Developers Academy (Ada) is a year-long intensive school in software development for women and gender diverse people with no previous professional experience in computer programming. The program is tuition-free, and students can apply for a low-interest microloan to meet living expenses during the year.
+
+Overview
+The program is divided into six months of classroom instruction and a five-month paid internship with a Seattle tech company. The first six months in the classroom focuses on Python, Flask, JavaScript, React, HTML and CSS, and computer science fundamentals. The last five months is an internship placement. Interns are placed at sponsor companies including Amazon, Concur, Microsoft, Nordstrom, Redfin, Tableau/Salesforce, Zillow, etc.
+
+Cohorts
+
+In its first cohort, 2013–2014, Ada Developers Academy took on 16 students. All of the first cohort obtained full-time job offers in software development before the course ended, and two of them received job offers from Amazon.com. Salaries for the job offers the students received averaged $75,000.
+
+Funding 
+Ada began as a project of Seattle's Technology Alliance and is funded through company sponsorship, individual donors, and public sources. Ada now operates as a non-profit through its financial sponsor, Third Sector New England. Ada's company sponsors include Amazon.com, Expedia, Zillow, and Chef. Sponsors provide input into the course's curriculum, and mentoring and internships for the students. Sponsoring companies such as Expedia stated that they participate in the program in order to recruit great talent, and also in order to improve their diversity.
+
+See also
+ Ada Lovelace
+
+References
+
+External links
+ 
+
+2013 establishments in Washington (state)
+Educational institutions established in 2013
+Coding schools
+Non-profit organizations based in Seattle
+Educational organizations based in the United States
+Women's education in the United States
+Women in computing
+Women in Washington (state)
+Education in Seattle
+Computer science education in the United States

@@ -1,0 +1,16 @@
+TITLE: HD 30080
+
+HD 30080 (HR 1509) is a high proper motion star located in the southern constellation Caelum. With an apparent magnitude of 5.66, its faintly visible to the naked eye under ideal conditions. This star is currently  from Earth based on parallax, and is currently drifting closer to it, with a radial velocity of .
+
+Physical properties 
+HD 30080 has a classification of "K3 III", which states it's a giant star that has exhausted hydrogen at its core and left the main sequence. It has a similar mass to the Sun, but has expanded to 31.43 times the Sun's girth. It radiates at 299 times the Sun's luminosity, and has an effective temperature of 4,280 K, which gives it a yellow-orange hue. Like many other giants, it rotates rather slowly.
+
+References 
+
+Caelum
+K-type giants
+30080
+1509
+Durchmusterung objects
+021958
+TIC objects

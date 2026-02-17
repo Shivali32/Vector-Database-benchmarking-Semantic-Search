@@ -1,0 +1,53 @@
+TITLE: Swatantra 2014
+
+Swatantra 2014 (from the Indic word Swatantra meaning 'independent', or 'free' as in 'free will') was the fifth international free software conference organized by the International Centre for Free and Open Source Software (ICFOSS), an autonomous organization set up by the Government of Kerala, India for the propagation of FOSS. It was held in Thiruvananthapuram, Kerala, India during 18–20 December 2014. Among supporting organizations of the conference were the Free Software Foundation of India, Centre for Internet and Society (India), Software Freedom Law Center (India) and Swathantra Malayalam Computing.
+
+Objective
+
+According to Satish Babu, Director, ICFOSS, free software is capable of offering a freedom-enhancing, robust and reliable alternative, with additional economic advantages, compared to proprietary software, and therefore that free software could find application in the public and private sector organizations in the field of, inter alia, education, arts, and culture.
+
+Event 
+
+The theme of the event was "Free Software for a Free World".  Over 200 delegates attended the conference. The inaugural speech was delivered by Richard Stallman, founder of the free software movement who was of the view that this software should enable access without compromising the security of one's identity. He also told that cameras installed on streets was a threat to the privacy of the public.
+
+Other than Stallman, notable personalities like Smári McCarthy and Nina Paley attended the event.
+
+Prof. Rahul De of IIM Bangalore, a speaker at the event, reported during his presentation that over  could be saved in India, if free software was used for ICT in Education in the 320,000 schools across the country.
+
+Sessions 
+The following parallel sessions were held:
+ Indian Language Computing
+ Wikipedia/Wikimedia activities
+ Computational Biology & Sciences
+ Free Culture
+ Freedom on the Cloud
+ Free Mobile Platforms
+ Education & Spoken Tutorials
+ Surveillance, security and privacy & Internet Governance
+ Mapping & OpenStreetMaps
+ Computing for the Differently-abled
+ Free Software in e-Governance
+ Open Hardware & IoT
+
+Supporting organizations 
+The following are the organizations that supported the event:
+
+ Centre for Internet and Society
+ SFLC.IN, Delhi
+ Swathanthra Malayalam Computing
+ FOSSEE, IIT-Bombay
+ SPACE, Thiruvananthapuram
+ Department of Computational Biology and Bioinformatics, Kerala University, Thiruvananthapuram
+ Spoken Tutorials, IIT-Bombay
+ IEEE Kerala Section
+
+References
+
+External links 
+
+ 
+
+2014 in India
+Free software culture and documents
+Software industry in India
+Science and technology in Thiruvananthapuram

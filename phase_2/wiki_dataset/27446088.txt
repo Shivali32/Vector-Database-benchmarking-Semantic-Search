@@ -1,0 +1,30 @@
+TITLE: Palm–Khintchine theorem
+
+In probability theory, the Palm–Khintchine theorem, the work of Conny Palm and Aleksandr Khinchin, expresses that a large number of renewal processes, not necessarily Poissonian, when combined ("superimposed") will have Poissonian properties.
+
+It is used to generalise the behaviour of users or clients in queuing theory. It is also used in dependability and reliability modelling of computing and telecommunications.
+
+Theorem
+
+According to Heyman and Sobel (2003), the theorem states that the superposition of a large number of independent equilibrium renewal processes, each with a finite intensity, behaves asymptotically like a Poisson process:
+
+Let  be independent renewal processes and  be the superposition of these processes. Denote by  the time between the first and the second renewal epochs in process . Define  the th counting process,  and  . 
+
+If the following assumptions hold
+
+1) For all sufficiently large : 
+
+2) Given , for every  and sufficiently large :  for all 
+
+then the superposition  of the counting processes approaches a Poisson process as .
+
+See also
+
+ Law of large numbers
+
+References 
+
+Queueing theory
+Network performance
+Point processes
+Probability theorems

@@ -1,0 +1,160 @@
+TITLE: Vehicle blind spot
+
+A blind spot in a vehicle is an area around the vehicle that cannot be directly seen by the driver while at the controls, under existing circumstances. In transport, driver visibility is the maximum distance at which the driver of a vehicle can see and identify prominent objects around the vehicle. Visibility is primarily determined by weather conditions (see visibility) and by a vehicle's design. The parts of a vehicle that influence visibility include the windshield, the dashboard and the pillars. Good driver visibility is essential to safe road traffic.
+
+Conditions for blind spots
+Blind spots exist in a wide range of vehicles: aircraft, cars, buses, trucks, agricultural equipments, heavy equipments, motorboats, sailboats, trams, and trains. Blind spots may occur in the front of the driver when the A-pillar (also called the windshield pillar), side-view mirror, or interior rear-view mirror block a driver's view of the road. Behind the driver, cargo, headrests, and additional pillars may reduce visibility. Proper adjustment of mirrors and the use of other technical solutions can eliminate or alleviate vehicle blind spots.
+
+A no zone is one of several areas around a large truck, where the truck driver cannot see. Collisions frequently occur in no zones.
+
+Adjusting mirrors to end side blind spots
+If the side view mirrors of a car are adjusted in a particular way, there is no blind spot on the sides. The method is frequently overlooked in driver's education classes and takes some getting used to. Calculated elimination of blind spots by properly trained drivers is inexpensive and obviates the need for costly technological solutions to that problem, provided drivers take the time to set up and use their mirrors effectively. The arrangementpointing the side-view mirrors substantially outboard in a fixed mechanical formulais relatively simple to achieve, but it takes some knowledgeable effort and getting used to. It is reputed to be a lifesaver.
+
+However, one source considers that method a driving mistake and claims it is even more dangerous than not using it, because it creates other blind spots directly behind the vehiclenine reasons are listed, e.g., when backing upwhich are impossible to eliminate by a "shoulder check".
+
+Rearward invisibility is an entirely different matter. The area directly behind vehicles is the source of back-up collisions, particularly involving pedestrians, children, and objects directly aft of a vehicle. That area has been called a "killing zone". These problems are the object of a number of technological solutions, including (in rough order of technological complexity, simplest first): rear-view mirror, side-view mirror, fresnel lens, sonar, parking sensors, and backup camera. A similar problem attaches to positions left and right of a vehicles' rear bumper as the driver attempts to back out of a parking space. Specially designed cross traffic alert warning systems have been developed to address these.
+
+Motor vehicles 
+
+As one is driving an automobile, blind spots are the areas of the road that cannot be seen while looking forward or through either the rear-view or side mirrors (expecting that the side mirrors are properly adjusted on a passenger auto  see above). The most common are the rear quarter blind spots, areas towards the rear of the vehicle on both sides. Vehicles in the adjacent lanes of the road that fall into these blind spots may not be visible using only the car's mirrors. Rear quarter blind spots can be:
+ checked by turning one's head briefly (risking rear-end collisions),
+ reduced by installing mirrors with larger fields-of-view, or
+ eliminated by reducing overlap between side and rear-view mirrors by adjusting side mirrors so the side of the car is barely visible when your head is between the front seats (for the right side mirror) and almost touching the drivers window (for the left side mirror), then checking to be sure you can see cars approaching from behind on either side when on the highway.
+
+Other areas that are sometimes called blind spots are those that are too low to see behind, in front, or to the sides of a vehicle, especially those with a high seating point.
+
+Forward visibility
+
+This diagram shows the blocked view in a horizontal-plane in front of the driver. The front-end blind spots caused by this can create problems in traffic situations, such as in roundabouts, intersections, and road crossings. Front-end blind spots are influenced by the following design criteria:
+
+Distance between the driver and the pillar
+Thickness of the pillar
+The angle of the pillar in a vertical plane side view
+The angle of the pillar in a vertical plane front view
+the form of the pillar straight or arc-form
+Angle of the windshield
+Height of the driver in relation to the dashboard
+Speed of the opposite car
+
+Types of A-pillar design
+Most passenger cars have a diagonal pillar in the side view. The angle between the horizon and A-pillar is approximately 40 degrees with a straight pillar that is not too thick. This gives the car a strong, aerodynamic body with an adequately sized front door.
+
+Panoramic vertical A-pillars
+The sides of a panoramic windshield are curved, which makes it possible to design vertical A-pillars that give the driver maximum forward visibility. However, it is impossible to design an aerodynamic small car with a vertical A-pillar because the more vertical the A-pillar is, the less space the door opening has, and the greater frontal area and coefficient of drag the vehicle will have.
+
+Examples of cars with an almost vertical A-pillar:
+Honda Step Bus Concept
+Saab 900
+School bus
+Almost all Cadillacs from 1954 to 1959
+
+Flat A-pillar design
+
+Some modern car designs have an extremely flat A-pillar angle with the horizon. For example, the Pontiac Firebird and Chevrolet Camaro from 1993 to 2002 had a windshield angle of 68° with the vertical, which equals just 22° with the horizon.
+
+A flatter A-pillar's advantages include reducing the overall drag coefficient and making the car body stronger in a frontal collision, at the expense of reducing driver visibility in a 180° field of view from left to right. A flatter A-pillar (and therefore windscreen) is also a factor when calculating the effects of a collision with a pedestrian. In general, a flatter angle will result in a more gentle impact, directing the pedestrian "up and over" rather than directly into the windscreen. This is particularly true for cars like the Mercedes-Benz A-Class which also have a low angled engine cover.
+
+Other disadvantages of a flat windshield angle
+
+Other traffic can not see the driver through the reflection if the driver can see them.
+The heater needs more time to heat the bigger window surface.
+The flat windshield angle does not let snow slide off easily.
+The driver cannot reach the whole flat window to clean it easily.
+
+Height of the driver
+Driver height can also affect visibility.
+
+An A-pillar that is split up and has a small triangle window (Front Quarter glass) can give a short driver visibility problems.
+Some cars the windshield is fillet with the roof-line with a big radius.
+A fillet round A-pillar can give a tall driver visibility problems. Also sometimes the A-pillar can block the driver from seeing motorcyclists.
+
+Also the B-pillar can block the vision of a tall driver in small 4 door cars.
+
+A driver may reduce the size of a blind spot or eliminate it completely by turning their head in the direction of the obstruction. This allows the driver to see better around the obstruction and allows the driver better depth perception.
+
+Visibility in a convertible
+Because there is no roof connection between the A- and B-pillars, the A-pillars of a convertible automobile have to be stronger and even thicker.
+
+However, with the top down there are no B or C pillars, improving visibility behind the driver.
+
+Windshield reflections
+
+Dashboard reflection
+It is best if the dashboard has a non-reflecting dark-colored surface.
+
+A small dashboard gives some reflection on the lower part of the windshield.
+
+A big dashboard can give reflection on eye height.
+
+A-pillar reflection
+It is best if the inside of the A-pillar has a non-reflecting dark colored surface.
+
+If the side of the window is curved there is less A-pillar reflection.
+
+Light through roof reflection
+Some new model cars have a very big sunroof. Sometimes the sunlight through the roof lights up the dashboard and gives a reflection in the windshield.
+
+Other automobile design factors
+Other design factors may prevent a manufacturer from maximizing visibility. These include safety, as narrower pillars cannot be made strong as easily as thicker pillars, and size restraints pertaining to aerodynamics, as taller, more vertical windshields create additional drag and reduce fuel efficiency. They also include fashion and cost, whereby design and appearance considerations can be deemed preeminent.
+
+Side radar systems offer better performance and also warn of fast-approaching vehicles entering the blind spot.
+
+Trams and trains
+
+Blind spots also exist around trams (streetcars/trolleys) and trains (locomotives with freight cars (goods wagons) and/or passenger cars (carriages/coaches) and multiple units).
+
+Agricultural equipments
+Blind spots also exist around agricultural equipments (utility tractors, combine harvesters, etc.).
+
+Heavy equipments
+Blind spots also exist around heavy equipments (excavators, bulldozers, wheel loaders, cranes, etc.).
+
+Boats 
+
+Blind spots also exist in front of boats. When the boat accelerates, the bow rises, increasing the size of the blind spot. Large vessels can have up to several hundreds of meters of blind spot. This is generally known as the dead visual range of a ship. To address this, cameras are sometimes placed in the front of the vessel to cover the missing field of view.
+
+Blind spots exist where areas behind the sail are obscured from the view of a helmsman on a sailboat or windsurfer. This is especially true when they are heeled over; consequently, transparent windows are sometimes sewn into the sails.
+
+Aircraft
+Blind spots also exist around aircraft (helicopters, airships, passenger aircraft, cargo aircraft, etc.).
+
+See also 
+
+ Advanced driver-assistance systems
+ Automatic parking
+ Backup collision
+ Backup camera
+ Blind spot monitor
+ Car safety
+ Concave mirror
+ Convex mirror
+ Dooring
+ Dry steering
+ Experimental Safety Vehicle (ESV)
+ Fresnel lens
+ Intelligent Parking Assist System
+ Intelligent car
+ Lane departure warning system
+ Laser rangefinder
+ Objects in mirror are closer than they appear
+ Omniview technology
+ Parking
+ Parking sensors
+ Pininfarina vertical A-pillar Ferrari P4/5
+ Positive train control
+ Precrash system
+ Rear-view mirror
+ Side-view mirror
+ Sonar
+ Train protection system
+ Volvo SCC
+ Wing mirror
+ Work-related road safety in the United States for trucks and buses
+
+References
+
+External links 
+
+ Know the Blind Spots Poster NIOSH
+
+Automotive safety

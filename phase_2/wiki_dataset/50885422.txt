@@ -1,0 +1,107 @@
+TITLE: Regular complex polygon
+
+In geometry, a regular complex polygon is a generalization of a regular polygon in real space to an analogous structure in a complex Hilbert space, where each real dimension is accompanied by an imaginary one. A regular polygon exists in 2 real dimensions, , while a complex polygon exists in two complex dimensions, , which can be given real representations in 4 dimensions, , which then must be projected down to 2 or 3 real dimensions to be visualized. A complex polygon is generalized as a complex polytope in .
+
+A complex polygon may be understood as a collection of complex points, lines, planes, and so on, where every point is the junction of multiple lines, every line of multiple planes, and so on.
+
+The regular complex polygons have been completely characterized, and can be described using a symbolic notation developed by Coxeter.
+
+Regular complex polygons
+While 1-polytopes can have unlimited p, finite regular complex polygons, excluding the double prism polygons p{4}2, are limited to 5-edge (pentagonal edges) elements, and infinite regular aperiogons also include 6-edge (hexagonal edges) elements.
+
+Notations
+
+Shephard's modified Schläfli notation
+
+Shephard originally devised a modified form of Schläfli's notation for regular polytopes. For a polygon bounded by p1-edges, with a p2-set as vertex figure and overall symmetry group of order g, we denote the polygon as p1(g)p2.
+
+The number of vertices V is then g/p2 and the number of edges E is g/p1.
+
+The complex polygon illustrated above has eight square edges (p1=4) and sixteen vertices (p2=2). From this we can work out that g = 32, giving the modified Schläfli symbol 4(32)2.
+
+Coxeter's revised modified Schläfli notation
+
+A more modern notation p1{q}p2 is due to Coxeter, and is based on group theory. As a symmetry group, its symbol is p1[q]p2.
+
+The symmetry group p1[q]p2 is represented by 2 generators R1, R2, where: R1p1 = R2p2 = I. If q is even, (R2R1)q/2 = (R1R2)q/2. If q is odd, (R2R1)(q−1)/2R2 = (R1R2)(q−1)/2R1. When q is odd, p1=p2.
+
+For 4[4]2 has R14 = R22 = I, (R2R1)2 = (R1R2)2.
+
+For 3[5]3 has R13 = R23 = I, (R2R1)2R2 = (R1R2)2R1.
+
+Coxeter–Dynkin diagrams
+
+Coxeter also generalised the use of Coxeter–Dynkin diagrams to complex polytopes, for example the complex polygon p{q}r is represented by  and the equivalent symmetry group, p[q]r, is a ringless diagram . The nodes p and r represent mirrors producing p and r images in the plane. Unlabeled nodes in a diagram have implicit 2 labels. For example, a real regular polygon is 2{q}2 or {q} or .
+
+One limitation, nodes connected by odd branch orders must have identical node orders. If they do not, the group will create "starry" polygons, with overlapping element. So  and  are ordinary, while  is starry.
+
+12 Irreducible Shephard groups
+
+Coxeter enumerated this list of regular complex polygons in . A regular complex polygon, p{q}r or , has p-edges, and r-gonal vertex figures. p{q}r is a finite polytope if (p + r)q > pr(q − 2).
+
+Its symmetry is written as p[q]r, called a Shephard group, analogous to a Coxeter group, while also allowing unitary reflections.
+
+For nonstarry groups, the order of the group p[q]r can be computed as .
+
+The Coxeter number for p[q]r is  , so the group order can also be computed as . A regular complex polygon can be drawn in orthogonal projection with h-gonal symmetry.
+
+The rank 2 solutions that generate complex polygons are: 
+
+Excluded solutions with odd q and unequal p and r are: 6[3]2, 6[3]3, 9[3]3, 12[3]3, ..., 5[5]2, 6[5]2, 8[5]2, 9[5]2, 4[7]2, 9[5]2, 3[9]2, and 3[11]2.
+
+Other whole q with unequal p and r, create starry groups with overlapping fundamental domains: , , , , , and .
+
+The dual polygon of p{q}r is r{q}p. A polygon of the form p{q}p is self-dual. Groups of the form p[2q]2 have a half symmetry p[q]p, so a regular polygon  is the same as quasiregular . As well, regular polygon with the same node orders, , have an alternated construction , allowing adjacent edges to be two different colors.
+
+The group order, g, is used to compute the total number of vertices and edges. It will have g/r vertices, and g/p edges. When p=r, the number of vertices and edges are equal. This condition is required when q is odd.
+
+Matrix generators 
+The group p[q]r, , can be represented by two matrices:
+
+With
+ 
+
+Examples
+
+Enumeration of regular complex polygons 
+Coxeter enumerated the complex polygons in Table III of Regular Complex Polytopes.
+
+Visualizations of regular complex polygons
+
+2D graphs
+Polygons of the form p{2r}q can be visualized by q color sets of p-edge. Each p-edge is seen as a regular polygon, while there are no faces.
+
+Complex polygons 2{r}q
+
+Polygons of the form 2{4}q are called generalized orthoplexes. They share vertices with the 4D q-q duopyramids, vertices connected by 2-edges. 
+
+Complex polygons p{4}2
+
+Polygons of the form p{4}2 are called generalized hypercubes (squares for polygons). They share vertices with the 4D p-p duoprisms, vertices connected by p-edges. Vertices are drawn in green, and p-edges are drawn in alternate colors, red and blue. The perspective is distorted slightly for odd dimensions to move overlapping vertices from the center.
+
+Complex polygons p{r}2
+
+Complex polygons, p{r}p
+
+Polygons of the form p{r}p have equal number of vertices and edges. They are also self-dual.
+
+3D perspective 
+
+3D perspective projections of complex polygons p{4}2 can show the point-edge structure of a complex polygon, while scale is not preserved. 
+
+The duals 2{4}p: are seen by adding vertices inside the edges, and adding edges in place of vertices.
+
+Quasiregular polygons 
+A quasiregular polygon is a truncation of a regular polygon. A quasiregular polygon  contains alternate edges of the regular polygons  and . The quasiregular polygon has p vertices on the p-edges of the regular form.
+
+Notes
+
+References 
+ Coxeter, H. S. M. and Moser, W. O. J.; Generators and Relations for Discrete Groups (1965), esp pp 67–80.
+ 
+ Coxeter, H. S. M. and Shephard, G.C.; Portraits of a family of complex polytopes, Leonardo Vol 25, No 3/4, (1992), pp 239–244,
+ Shephard, G.C.; Regular complex polytopes, Proc. London math. Soc. Series 3, Vol 2, (1952), pp 82–97.
+ G. C. Shephard, J. A. Todd, Finite unitary reflection groups, Canadian Journal of Mathematics. 6(1954), 274–304 
+ Gustav I. Lehrer and Donald E. Taylor, Unitary Reflection Groups, Cambridge University Press 2009
+
+Polytopes

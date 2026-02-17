@@ -1,0 +1,20 @@
+TITLE: EXOC4
+
+Exocyst complex component 4 is a protein that in humans is encoded by the EXOC4 gene.
+
+Function 
+
+The protein encoded by this gene is a component of the exocyst complex, a multiple protein complex essential for targeting exocytic vesicles to specific docking sites on the plasma membrane. Though best characterized in yeast, the component proteins and functions of exocyst complex have been demonstrated to be highly conserved in higher eukaryotes. At least eight components of the exocyst complex, including this protein, are found to interact with the actin cytoskeletal remodeling and vesicle transport machinery. The complex is also essential for the biogenesis of epithelial cell surface polarity. Alternate transcriptional splice variants, encoding different isoforms, have been characterized.
+
+Interactions 
+
+EXOC4 has been shown to interact with:
+ DLG3,
+ DLG4, 
+ EXOC3, 
+ EXOC7,  and
+ GRIN2B.
+
+References
+
+Further reading

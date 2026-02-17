@@ -1,0 +1,365 @@
+TITLE: Isotopes of nobelium
+
+Nobelium (102No) is a synthetic element, and thus a standard atomic weight cannot be given. Like all synthetic elements, it has no stable isotopes. The first isotope to be synthesized (and correctly identified) was 254No in 1966. There are 13 known radioisotopes, which are 249No to 260No and 262No, and 4 isomers, 250mNo, 251mNo, 253mNo, and 254mNo. The longest-lived isotope is 259No with a half-life of 58 minutes. The longest-lived isomer is 251mNo with a half-life of 1.7 seconds.
+
+List of isotopes 
+
+|-
+| rowspan=2|249No
+| rowspan=2 style="text-align:right" | 102
+| rowspan=2 style="text-align:right" | 147
+| rowspan=2|249.0878(3)#
+| rowspan=2|43.8(3.7) ms
+| α 
+| 245Fm
+| rowspan=2|5/2+#
+|-
+| SF?
+| (various)
+|-
+| rowspan=3|250No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 148
+| rowspan=3|250.08756(22)#
+| rowspan=3|5.7(8) μs
+| SF (99.95%)
+| (various)
+| rowspan=3|0+
+|-
+| α(.05%)
+| 246Fm
+|-
+| β+ (2.5×10−4%)
+| 250Md
+|-
+| style="text-indent:1em" | 250mNo
+| colspan="3" style="text-indent:2em" | 
+| 36(3) μs
+| SF
+| (various)
+| 
+|-
+| rowspan=3|251No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 149
+| rowspan=3|251.08894(12)#
+| rowspan=3|0.78(2) s
+| α (89%)
+| 247Fm
+| rowspan=3|7/2+#
+|-
+| SF (10%)
+| (various)
+|-
+| β+ (1%)
+| 251Md
+|-
+| style="text-indent:1em" | 251mNo
+| colspan="3" style="text-indent:2em" | 110(180)# keV
+| 1.7(10) s
+|
+|
+| 9/2−#
+|-
+| rowspan=3|252No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 150
+| rowspan=3|252.088967(10)
+| rowspan=3|2.27(14) s
+| α (73.09%)
+| 248Fm
+| rowspan=3|0+
+|-
+| SF (26.9%)
+| (various)
+|-
+| β+ (1%)
+| 252Md
+
+|-
+| rowspan=3|253No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 151
+| rowspan=3|253.090564(7)
+| rowspan=3|1.62(15) min
+| α (80%)
+| 249Fm
+| rowspan=3|(9/2−)#
+|-
+| β+ (20%)
+| 253Md
+|-
+| SF (10−3%)
+| (various)
+|-
+| style="text-indent:1em" | 253mNo
+| colspan="3" style="text-indent:2em" | 129(19) keV
+| 31 μs
+|
+|
+| 5/2+#
+|-
+| rowspan=3|254No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 152
+| rowspan=3|254.090956(11)
+| rowspan=3|51(10) s
+| α (89.3%)
+| 250Fm
+| rowspan=3|0+
+|-
+| β+ (10%)
+| 254Md
+|-
+| SF (.31%)
+| (various)
+|-
+| rowspan=2 style="text-indent:1em" | 254mNo
+| rowspan=2 colspan="3" style="text-indent:2em" | 500(100)# keV
+| rowspan=2|0.28(4) s
+| IT (80%)
+| 254No
+| rowspan=2|0+
+|-
+| α (20%)
+| 250Fm
+|-
+| rowspan=2|255No
+| rowspan=2 style="text-align:right" | 102
+| rowspan=2 style="text-align:right" | 153
+| rowspan=2|255.093191(16)
+| rowspan=2|3.1(2) min
+| α (61.4%)
+| 251Fm
+| rowspan=2|(1/2+)
+|-
+| β+ (38.6%)
+| 255Md
+|-
+| rowspan=3|256No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 154
+| rowspan=3|256.094283(8)
+| rowspan=3|2.91(5) s
+| α (99.44%)
+| 252Fm
+| rowspan=3|0+
+|-
+| SF (.55%)
+| (various)
+|-
+| EC (.01%)
+| 256Md
+|-
+| rowspan=2|257No
+| rowspan=2 style="text-align:right" | 102
+| rowspan=2 style="text-align:right" | 155
+| rowspan=2|257.096888(7)
+| rowspan=2|25(2) s
+| α (99%)
+| 253Fm
+| rowspan=2|(7/2+)
+|-
+| β+ (1%)
+| 257Md
+|-
+| rowspan=3|258No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 156
+| rowspan=3|258.09821(11)#
+| rowspan=3|1.2(2) ms
+| SF (99.99%)
+| (various)
+| rowspan=3|0+
+|-
+| α (.01%)
+| 254Fm
+|-
+| β+β+ (rare)
+| 258Fm
+|-
+| rowspan=3|259No
+| rowspan=3 style="text-align:right" | 102
+| rowspan=3 style="text-align:right" | 157
+| rowspan=3|259.10103(11)#
+| rowspan=3|58(5) min
+| α (75%)
+| 255Fm
+| rowspan=3|(9/2+)#
+|-
+| EC (25%)
+| 259Md
+|-
+| SF (<10%)
+| (various)
+|-
+| 260No
+| style="text-align:right" | 102
+| style="text-align:right" | 158
+| 260.10264(22)#
+| 106(8) ms
+| SF
+| (various)
+| 0+
+
+|-
+| 262No
+| style="text-align:right" | 102
+| style="text-align:right" | 160
+| 262.10746(39)#
+| ~5 ms
+| SF
+| (various)
+| 0+
+
+Nucleosynthesis
+
+By cold fusion
+208Pb(48Ca,xn)256−xNo (x=1,2,3,4)
+This cold fusion reaction was first studied in 1979 at the Flerov Laboratory of Nuclear Reactions (FLNR). Further work in 1988 at the GSI measured EC and SF branchings in 254No. In 1989, the FLNR used the reaction to measure SF decay characteristics for the two isomers of 254No. The measurement of the 2n excitation function was reported in 2001 by Yuri Oganessian at the FLNR.
+
+Patin et al. at the LBNL reported in 2002 the synthesis of 255–251No in the 1-4n exit channels and measured further decay data for these isotopes.
+
+The reaction has recently been used at the Jyvaskylan Yliopisto Fysiikan Laitos (JYFL) using the RITU set-up to study K-isomerism in 254No. The scientists were able to measure two K-isomers with half-lives of 275 ms and 198 s, respectively. They were assigned to 8− and 16+ K-isomeric levels.
+
+The reaction was used in 2004–5 at the FLNR to study the spectroscopy of 255–253No. The team were able to confirm an isomeric level in 253No with a half-life of 43.5 s.
+
+208Pb(44Ca,xn)252−xNo (x=2)
+This reaction was studied in 2003 at the FLNR in a study of the spectroscopy of 250No.
+
+207Pb(48Ca,xn)255−xNo (x=2)
+The measurement of the 2n excitation function for this reaction was reported in 2001 by Yuri Oganessian and co-workers at the FLNR. The reaction was used in 2004–5 to study the spectroscopy of 253No.
+
+206Pb(48Ca,xn)254−xNo (x=1,2,3,4)
+The measurement of the 1-4n excitation functions for this reaction were reported in 2001 by Yuri Oganessian and co-workers at the FLNR.
+The 2n channel was further studied by the GSI to provide a spectroscopic determination of K-isomerism in 252No. A K-isomer with spin and parity 8− was detected with a half-life of 110 ms.
+
+204Pb(48Ca,xn)252−xNo (x=2,3)
+The measurement of the 2n excitation function for this reaction was reported in 2001 by Yuri Oganessian at the FLNR. They reported a new isotope 250No with a half-life of 36 μs. The reaction was used in 2003 to study the spectroscopy of 250No.They were able to observe two spontaneous fission activities with half-lives of 5.6 μs and 54 μs and assigned to 250No and 249No, respectively.
+The latter activity was later assigned to a K-isomer in 250No. The reaction was reported in 2006 by Peterson et al. at the Argonne National Laboratory (ANL) in a study of SF in 250No. They detected two activities with half-lives of 3.7  μs and 43  μs and both assigned to 250No, the latter associated with a K-isomer. In 2020, a team at FLNR repeated this reaction and found a new 9.1-MeV alpha particle activity correlated to 245Fm and 241Cf, which they assigned to the new isotope 249No.
+
+By hot fusion
+232Th(26Mg,xn)258−xNo (x=4,5,6)
+The cross sections for the 4-6n exit channels have been measured for this reaction at the FLNR.
+
+238U(22Ne,xn)260−xNo (x=4,5,6)
+This reaction was first studied in 1964 at the FLNR. The team were able to detect decays from 252Fm and 250Fm. The 252Fm activity was associated with an ~8 s half-life and assigned to 256102 from the 4n channel, with a yield of 45 nb.  
+They were also able to detect a 10 s spontaneous fission activity also tentatively assigned to 256102.
+Further work in 1966 on the reaction examined the detection of 250Fm decay using chemical separation and a parent activity with a half-life of ~50 s was reported and correctly assigned to 254102. They also detected a 10 s spontaneous fission activity tentatively assigned to 256102.
+The reaction was used in 1969 to study some initial chemistry of nobelium at the FLNR. They determined eka-ytterbium properties, consistent with nobelium as the heavier homologue. In 1970, they were able to study the SF properties of 256No.
+In 2002, Patin et al. reported the synthesis of 256No from the 4n channel but were unable to detect 257No.
+
+The cross section values for the 4-6n channels have also been studied at the FLNR.
+
+238U(20Ne,xn)258−xNo
+This reaction was studied in 1964 at the FLNR. No spontaneous fission activities were observed.
+
+236U(22Ne,xn)258−xNo (x=4,5,6)
+The cross sections for the 4-6n exit channels have been measured for this reaction at the FLNR.
+
+235U(22Ne,xn)257−xNo (x=5)
+This reaction was studied in 1970 at the FLNR. It was used to study the SF decay properties of 252No.
+
+233U(22Ne,xn)255−xNo
+The synthesis of neutron deficient nobelium isotopes was studied in 1975 at the FLNR. In their experiments they observed a 250 s SF activity, which they tentatively assigned to 250No in the 5n exit channel. Later results have not been able to confirm this activity and it is currently unidentified.
+
+242Pu(18O,xn)260−xNo (x=4?)
+This reaction was studied in 1966 at the FLNR. The team identified an 8.2 s SF activity tentatively assigned to 256102.
+
+241Pu(16O,xn)257−xNo
+This reaction was first studied in 1958 at the FLNR. The team measured ~8.8 MeV alpha particles with a half-life of 30 s and assigned to 253,252,251102. A repeat in 1960 produced 8.9 MeV alpha particles with a half-life of 2–40 s and assigned to 253102 from the 4n channel. Confidence in these results was later diminished.
+
+239Pu(18O,xn)257−xNo (x=5)
+This reaction was studied in 1970 at the FLNR in an effort to study the SF decay properties of 252No.
+
+239Pu(16O,xn)255−xNo
+This reaction was first studied in 1958 at the FLNR. The team were able to measure ~8.8 MeV alpha particles with a half-life of 30 s and assigned to253,252,251102. A repeat in 1960 was unsuccessful and it was concluded the first results were probably associated with background effects.
+
+243Am(15N,xn)258−xNo (x=4)
+This reaction was studied in 1966 at the FLNR. The team were able to detect 250Fm using chemical techniques and determined an associated half-life significantly higher than the reported 3 s by Berkeley for the supposed parent 254No. Further work later the same year measured 8.1 MeV alpha particles with a half-life of 30–40 s.
+
+243Am(14N,xn)257−xNo
+This reaction was studied in 1966 at the FLNR. They were unable to detect the 8.1 MeV alpha particles detected when using a N-15 beam.
+
+241Am(15N,xn)256−xNo (x=4)
+The decay properties of 252No were examined in 1977 at Oak Ridge. The team calculated a half-life of 2.3 s and measured a 27% SF branching.
+
+248Cm(18O,αxn)262−xNo (x=3)
+The synthesis of the new isotope 259No was reported in 1973 from the LBNL using this reaction.
+
+248Cm(13C,xn)261−xNo (x=3?,4,5)
+This reaction was first studied in 1967 at the LBNL. The new isotopes 258No,257No and 256No were detected in the 3-5n channels. The reaction was repeated in 1970 to provide further decay data for 257No.
+
+248Cm(12C,xn)260−xNo (4,5?)
+This reaction was studied in 1967 at the LBNL in their seminal study of nobelium isotopes. The reaction was used in 1990 at the LBNL to study the SF of256No.
+
+246Cm(13C,xn)259−xNo (4?,5?)
+This reaction was studied in 1967 at the LBNL in their seminal study of nobelium isotopes.
+
+246Cm(12C,xn)258−xNo (4,5)
+This reaction was studied in 1958 by scientists at the LBNL using a 5% 246Cm curium target. They were able to measure 7.43 MeV decays from250Fm, associated with a 3 s 254No parent activity, resulting from the 4n channel. The 3 s activity was later reassigned to 252No, resulting from reaction with the predominant 244Cm component in the target. It could however not be proved that it was not due to the contaminant250mFm, unknown at the time.
+Later work in 1959 produced 8.3 MeV alpha particles with a half-life of 3 s and a 30% SF branch. This was initially assigned to 254No and later reassigned to 252No, resulting from reaction with the 244Cm component in the target.
+The reaction was restudied in 1967 and activities assigned to 254No and 253No were detected.
+
+244Cm(13C,xn)257−xNo (x=4)
+This reaction was first studied in 1957 at the Nobel Institute in Stockholm. The scientists detected 8.5 MeV alpha particles with a half-life of 10 minutes. The activity was assigned to 251No or 253No. The results were later dismissed as background.
+The reaction was repeated by scientists at the LBNL in 1958 but they were unable to confirm the 8.5 MeV alpha particles. 
+The reaction was further studied in 1967 at the LBNL and an activity assigned to 253No was measured.
+
+244Cm(12C,xn)256−xNo (x=4,5)
+This reaction was studied in 1958 by scientists at the LBNL using a 95% 244Cm curium target. They were able to measure 7.43 MeV decays from250Fm, associated with a 3 s 254No parent activity, resulting from the reaction (246Cm,4n). The 3 s activity was later reassigned to252No, resulting from reaction (244Cm,4n). It could however not be proved that it was not due to the contaminant 250mFm, unknown at the time.
+Later work in 1959 produced 8.3 MeV alpha particles with a half-life of 3 s and a 30% SF branch. This was initially assigned to 254No and later reassigned to 252No, resulting from reaction with the 244Cm component in the target.
+The reaction was restudied in 1967 at the LBNL and a new activity assigned to 251No was measured.
+
+252Cf(12C,αxn)260−xNo (x=3?)
+This reaction was studied at the LBNL in 1961 as part of their search for element 104. They detected 8.2 MeV alpha particles with a half-life of 15 s. This activity was assigned to a Z=102 isotope. Later work suggests an assignment to 257No, resulting most likely from the α3n channel with the 252Cf component of the californium target.
+
+252Cf(11B,pxn)262−xNo (x=5?)
+This reaction was studied at the LBNL in 1961 as part of their search for element 103. They detected 8.2 MeV alpha particles with a half-life of 15 s. This activity was assigned to a Z=102 isotope. Later work suggests an assignment to 257No, resulting most likely from the p5n channel with the 252Cf component of the californium target.
+
+249Cf(12C,αxn)257−xNo (x=2)
+This reaction was first studied in 1970 at the LBNL in a study of 255No. It was studied in 1971 at the Oak Ridge Laboratory. They were able to measure coincident Z=100 K X-rays from 255No, confirming the discovery of the element.
+
+As decay products
+Isotopes of nobelium have also been identified in the decay of heavier elements. Observations to date are summarised in the table below:
+
+Isotopes
+Twelve radioisotopes of nobelium have been characterized, with the most stable being 259No with a half-life of 58 minutes. Longer half-lives are expected for the as-yet-unknown 261No and 263No. An isomeric level has been found in 253No and K-isomers have been found in 250No, 252No and 254No to date.
+
+Chronology of isotope discovery
+
+Nuclear isomerism
+254No
+The study of K-isomerism was recently studied by physicists at the University of Jyväskylä physics laboratory (JYFL). They were able to confirm a previously reported K-isomer and detected a second K-isomer. They assigned spins and parities of 8− and 16+ to the two K-isomers.
+
+253No
+In 1971, Bemis et al. was able to determine an isomeric level decaying with a half-life of 31 s from the decay of 257Rf. This was confirmed in 2003 at the GSI by also studying the decay of 257Rf. Further support in the same year from the FLNR appeared with a slightly higher half-life of 43.5 s, decaying by M2 gamma emission to the ground state.
+
+252No
+In a recent study by the GSI into K-isomerism in even-even isotopes, a K-isomer with a half-life of 110 ms was detected for 252No. A spin and parity of 8− was assigned to the isomer.
+
+250No
+In 2003, scientists at the FLNR reported that they had been able to synthesise 249No, which decayed by SF with a half-life of 54 μs. Further work in 2006 by scientists at the ANL showed that the activity was actually due to a K-isomer in 250No. The ground state isomer was also detected with a very short half-life of 3.7 μs.
+
+Chemical yields of isotopes
+
+Cold fusion
+The table below provides cross-sections and excitation energies for cold fusion reactions producing nobelium isotopes directly. Data in bold represents maxima derived from excitation function measurements. + represents an observed exit channel.
+
+Hot fusion
+The table below provides cross-sections and excitation energies for hot fusion reactions producing nobelium isotopes directly. Data in bold represents maxima derived from excitation function measurements. + represents an observed exit channel.
+
+Retracted isotopes
+In 2003, scientists at the FLNR claimed to have discovered 249No, which would have been the lightest known isotope of nobelium. However, subsequent work showed that the 54 s activity was actually due to 250No and the isotope 249No was retracted. The discovery of this isotope was later reported in 2020; its decay properties differed from the 2003 claims.
+
+References 
+
+ Isotope masses from:
+
+ Isotopic compositions and standard atomic masses from:
+
+ Half-life, spin, and isomer data selected from the following sources.
+
+ 
+Nobelium
+Nobelium

@@ -1,0 +1,17 @@
+TITLE: PRB4
+
+Basic salivary proline-rich protein 4 is a protein that in humans is encoded by the PRB4 gene.
+
+The protein encoded by this gene is a proline-rich salivary protein. This gene and five other genes that also encode salivary proline-rich proteins (PRPs), as well as a gene encoding a lacrimal gland PRP, form a PRP gene cluster in the chromosomal 12p13 region.
+
+PRB4 is post-translationally cleaved into three different mature peptides:
+Protein N1
+Glycosylated protein A
+Peptide P-D (also known as proline-rich peptide IB-5)
+
+References
+
+Further reading
+
+Precursor proteins
+Salivary proline-rich proteins

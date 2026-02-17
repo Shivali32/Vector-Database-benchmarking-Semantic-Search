@@ -1,0 +1,172 @@
+TITLE: Nintendo 64 accessories
+
+Nintendo 64 accessories include first-party Nintendo hardwareand third-party hardware, licensed and unlicensed. Nintendo's first-party accessories are mainly transformative system expansions: the 64DD Internet multimedia platform, with a floppy drive, video capture and editor, game building setup, web browser, and online service; the controller plus its own expansions for storage and rumble feedback; and the RAM-boosting Expansion Pak for big improvements in graphics and gameplay. Third-party accessories include the essential game developer tools built by SGI and SN Systems on Nintendo's behalf, an unlicensed SharkWire online service, and unlicensed cheaper counterparts to first-party items. The Nintendo 64 video game console had a market lifespan from 1996 to 2002.
+
+First-party
+First-party Nintendo 64 accessories have a product code prefixed with NUS, short for "Nintendo Ultra Sixty-four".
+
+Controller
+
+The Nintendo 64 controller (NUS-005) is an "m"-shaped controller with 10 buttons (A, B, C-Up, C-Down, C-Left, C-Right, L, R, Z, and Start), one analog stick in the center, a digital directional pad on the left side, and an extension port on the back for many of the system's accessories. Initially available in the seven colors of gray, yellow, green, red, blue, purple, and black, and it was later released in translucent versions of those colors except gray.
+
+Controller Pak
+
+The  (NUS-004) is the console's memory card, comparable to those seen in the PlayStation and other CD-ROM-based video game consoles. Certain games allow saving of game files to the Controller Pak, which plugs into the back of the Nintendo 64 controller (as do the Rumble and Transfer Paks). The Controller Pak was marketed as a way to exchange data with other Nintendo 64 owners, since information saved on the game cartridge can not be transferred between cartridges.
+
+It is plugged into the controller and allows the player to save game progress and configuration. The original models from Nintendo offered 256 kilobits (32KB) battery backed SRAM, split into 123 pages with a limitation of 16 save files, but third-party models have much more, often in the form of 4 selectable memory banks of 256kbits. The number of pages that a game occupies varies, sometimes using the entire card. It is powered by a common CR2032 battery.
+
+Upon launch, the Controller Pak was initially useful, and even necessary for earlier Nintendo 64 games. Over time, the Controller Pak lost popularity to the convenience of a battery backed SRAM or EEPROM found in some cartridges. Because the Nintendo 64 uses a Game Pak cartridge format that allows saving data on the cartridge itself, few first-party and second-party games use the Controller Pak. The vast majority are from third-party developers. This is most likely due to the increased production and retail costs which would have been caused by including self-contained data on the cartridge. Some games use it to save optional data that is too large for the cartridge, such as Mario Kart 64, which uses 121 of the total 123 pages for storing ghost data, or International Superstar Soccer 64, which uses up the entire cartridge's space for its save data. Tony Hawk's Pro Skater uses 11 pages. Quest 64 and Mystical Ninja Starring Goemon use the Controller Pak exclusively for saved data. The Japan-only game Animal Forest uses the Controller Pak to travel to other towns.
+
+Following the 1996 Christmas Shopping Season, Next Generation reported "impressive sales of the memory pack cartridges despite the lack of available games to take advantage of the $19.99 units".
+
+Jumper Pak 
+
+The Jumper Pak (NUS-008) is a filler that plugs into the console's memory expansion port. It serves no functional purpose other than to terminate the Rambus bus in the absence of the Expansion Pak. This is functionally equivalent to a continuity RIMM in a Rambus motherboard filling the unused RIMM sockets until the user upgrades. Nintendo 64 consoles were shipped with the Jumper Pak included and already installed. Jumper Paks were not sold individually in stores and could only be ordered through Nintendo's online store. The system requires the Jumper Pak when the Expansion Pak is not present or else there will be no picture on the TV screen.
+
+Expansion Pak
+
+The  (NUS-007) consists of 4 MB (megabytes) of random access memory (RAM)—which is RDRAM, the same type of memory used inside the console itself—increasing the Nintendo 64 console's RAM from 4 MB to 8 MB of contiguous main memory. It is installed in a port on top of the console and replaces the pre-installed Jumper Pak, which is simply a Rambus terminator. Originally designed to accompany the 64DD disk drive expansion peripheral for its larger multimedia workstation applications, the Expansion Pak was launched separately in Q4 1998 and then bundled with the 64DD's delayed December 1999 Japan launch package. The Expansion Pak was bundled with Donkey Kong 64, and in Japan, the Expansion Pak additionally came bundled with The Legend of Zelda: Majora's Mask and Perfect Dark, though the games have been also available separately in other regions.
+
+It was bundled with an "ejector tool" (NUS-012) meant for removing the original Jumper Pak.
+
+Game developers found ways to take advantage of the increased memory, including greater visual appeal. The Expansion Pak is required in order to run both Donkey Kong 64 and The Legend of Zelda: Majora's Mask. A third game, Perfect Dark, blocks access to content, including the single-player campaign, when no Expansion Pak is present, with the back cover of the game's packaging stating that "approximately 35%" of the game is available in that case. It is also required for all 64DD software. In StarCraft 64, it is needed to unlock levels from the Brood War add-on from the PC version of the game. The Nintendo 64 all-remade version of Quake II features higher color depth and better performance, but not a higher resolution when using the Expansion Pak. Finally, in the vast majority of games with support, such as Castlevania: Legacy of Darkness and Indiana Jones and the Infernal Machine, the expansion pak is merely used as additional frame buffer memory to enable various high-resolution (usually interlaced) mode options, at the downside of poorer performance, in some cases dramatically so. This use of the Expansion Pak can be attributed to ease of implementation and games that mainly targeted the stock N64 configuration; additional RDRAM cannot be easily used to circumvent other bottlenecks of the console, such as the small texture cache. Also, the  of Space Station Silicon Valley may crash in certain places if the Expansion Pak is present.
+
+IGN celebrated the Nintendo 64 industry's methods in launching and supporting the Expansion Pak for making a high-impact accessory with "immediate and noticeable", though mostly optional, effects.
+
+Rumble Pak
+
+The  (NUS-013) provides haptic feedback to the player by way of vibration. It is powered by two AAA batteries and connects to the controller's expansion port. It was released in 1997 for the new game Star Fox 64, with which it was originally bundled.
+
+Transfer Pak
+
+The Transfer Pak (NUS-019) plugs into the controller to transfer data between supported Nintendo 64 games and Game Boy or Game Boy Color games. It has a Game Boy Color slot and a part that fits onto the expansion port of the N64 controller. It was included with the game Pokémon Stadium.
+
+In Japan it is called "64GB" as Shigeru Miyamoto described at Nintendo's Space World 1997 trade show. It was a key feature of the infamous creature raising game prototype that was never released, Cabbage.
+
+Pokémon Stadium and Pokémon Stadium 2 are games that rely heavily on the Transfer Pak, as the games' main feature is importing Pokémon teams from the Game Boy games. Pokémon Stadium also includes a "GB Tower" mode for playing Pokémon Red, Blue, and Yellow directly on the Nintendo 64 via a built-in Game Boy emulator.
+
+The Japanese version of the Game Boy Camera can be connected to the Mario Artist series. Mario Golf and Mario Tennis allow players to transfer their created characters from the Game Boy Color versions to the Nintendo 64 versions via the Transfer Pak. Rare's Perfect Dark was initially going to be compatible with the Transfer Pak in order to use pictures taken with the Game Boy Camera to create characters with real-life faces, but this function was removed from development after the attacks at Columbine High School and a wave of anti-violent video game sentiment; the Transfer Pak is usable only in combination with the Game Boy Color version of Perfect Dark for unlocking bonuses.
+
+Wide-Boy64
+
+Developed by Intelligent Systems, the Wide-Boy64 is a series of adapters similar to the Super Game Boy that was able to play Game Boy games. The device was never sold in retail to general consumers and was only provided to developers and the gaming press. Two major versions of Wide-Boy64 were released: the CGB, which could play Game Boy and Game Boy Color games, and the updated AGB, which could also play Game Boy Advance game paks. It also allowed the gaming press to capture screen shots more easily. Like the Super Game Boy and Game Boy Player, the game screen is surrounded by a template mimicking the appearance of the portable system. This device was used for final matches at the Pokémon League Summer Training Tour '99. Developers and magazines could purchase one directly from Nintendo at a cost of $1400 apiece. The Canadian children's game show Video & Arcade Top 10 used Wide-Boy64 adapters so contestants could play Game Boy titles on some later episodes.
+
+S-Video Cable
+The S-Video cable provides a better quality picture than composite RCA cables via the MultiAV port. The NTSC cable is identical to and compatible with earlier SNES (NTSC/PAL) and later GameCube (NTSC-only) S-Video cables. The first-party NTSC Nintendo 64 S-Video cable sold by Nintendo, however, was not produced in PAL regions. The PAL Nintendo 64 does natively output S-Video (Luma/Chroma), but require a different cable to NTSC Nintendo 64 due to a design difference in most or all PAL motherboard revisions. Nintendo never released an official S-Video cable for the PAL console. Using an NTSC S-Video cable on a PAL console will usually produce over-bright, garish colors; or it may not produce any video image at all.
+
+Third-party S-Video cables for both the NTSC and PAL consoles were produced, though it is important to note that many cheaper S-Video cables do not deliver a true S-Video signal, merely passing the composite video signal (the yellow plug of the standard red/white/yellow AV cables) through the S-Video plug.
+
+64DD
+
+The 64DD (NUS-010) is a  floppy drive with real-time clock, font and audio library in ROM, and a bundle of other accessories and custom games. The peripheral was initially announced in 1995, planned for release in 1997, and repeatedly delayed until its release in December 1999.  It was launched alongside a now defunct online service called Randnet. With nine games released, it was a commercial failure and was consequently never released outside Japan.
+
+Mouse
+
+The mouse (NUS-017) was developed for the 64DD's GUI-based games and applications, such the Mario Artist suite, SimCity 64, and the web browser for Nintendo's defunct online service Randnet. It was manufactured by Mitsumi and bundled with the 64DD's launch game, Mario Artist: Paint Studio. It works with the Game Pak
+
+VRU
+
+The VRU or Voice Recognition Unit (NUS-020, NUS-021, NUS-022, and NUS-025) is compatible with only two games: Hey You, Pikachu! and Densha de Go! 64. Hey You, Pikachu! is packaged with the VRU and requires it, but Densha de Go! 64 does not and is sold separately. The VRU consists of a ballast (NUS-020) connected to controller port 4 of the system, a microphone (NUS-021), a yellow foam cover for the microphone, and a clip for clipping the microphone to the controller (NUS-025, bundled with Hey You, Pikachu!) or a plastic neck holder for hands free usage (NUS-022, bundled with Densha de Go! 64). The VRU is calibrated for best recognition of a high-pitched voice, such as a child's voice. As a result, the voices of adults and teenagers are less likely be recognized properly by the VRU.
+
+VRUs are region dependent, and a USA region VRU cannot be used with Japanese games and vice versa (foreign region VRUs are not detected by the games). No VRU compatible game was launched in the EUR region (PAL, Europe), so there is no EUR-region VRU. A similar device was also released for the Wii called the Wii Speak.
+
+Cleaning Kit
+The cleaning kit (NUS-014, NUS-015, and NUS-016) contains materials to clean the connectors of the Control Deck, controllers, Game Paks, Rumble Paks, and Controller Paks.
+
+RF Switch and RF Modulator
+
+The RF Switch and RF Modulator (NUS-009 and NUS-003) allow the Nintendo 64 and model 2 SNES (redesigned after the launch of the Nintendo 64) to hook up to the television through RF. It was primarily intended for customers with older televisions that lack AV cable support. Since the Nintendo 64 and model 2 SNES lack built-in RF compatibility, the modulator acts as a special adapter that plugs into the Nintendo 64's AV port to give the Nintendo 64 RF compatibility. The RF switch itself is identical in every way to the RF switches released for Nintendo's prior systems (the NES and the SNES) and can be interchanged if needed. This set was later re-released for the GameCube to give it RF capability. The cables intended for the GameCube will also work with the Nintendo 64 and SNES.
+
+Euro Connector Plug
+The Euro Connector Plug is an adaptor packaged with European releases of the console, which converts RCA composite and stereo cable inputs to Composite SCART.
+
+Video capture cassette
+The video capture cassette, or cartridge, (NUS-028) for use on the  64DD game series. The back of the cartridge has audio, video, and microphone input jacks through which it can collect video and audio data. It was bundled with the 64DD game.
+
+Modem
+The modem cartridge (NUS-029) connects at up to , formerly for use with the Randnet service and compatible 64DD games and web browser.
+
+Power supply
+The power supply (NUS-002, UKV-EUR-AUS-JPN-USA) provides electricity to the Control Deck.
+
+Keyboard
+The compact keyboard is for use with the Randnet service and compatible 64DD games.
+
+SmartMedia
+
+SmartMedia memory cards for use with the game  contain images, backgrounds, borders, and other media assets to be used while editing the user photos.
+There are at least six different cards:
+ Illustrations - 
+ Illustrations - 
+ Characters collection - 
+ Characters collection - 
+ Characters collection - 
+ Characters collection - 
+ Characters collection - 
+ Characters collection - 
+ Characters collection - 
+ Characters collection - 
+
+The cards are all 3.3 V 2 MB SmartMedia memory cards manufactured by Hagiwara Sys-Com. The Mario no Photopi game was bundled with an empty memory SmartMedia card for storing the user creations.
+
+Licensed
+
+ASCIIWHEEL 64
+The ASCIIWHEEL 64 is an alternate controller shaped as a steering wheel for driving games. It includes a slot for the Controller Pak and other controller accessories.
+
+Bio Sensor
+
+The Bio Sensor (NUS-A-BIO-JPN) is an ear clip that plugs into the Controller Pak slot of the controller to measure the user's heart rate. It was manufactured by Seta and released only in Japan. It is compatible only with Tetris 64, which slows down or speeds up depending on how fast the player's heart is beating. This device is similar to the unreleased Wii Vitality Sensor.
+
+Tsuricon 64
+The  (ASC-0905) is a fishing controller manufactured by ASCII Corporation and compatible with a few fishing games released in Japan, like , , or
+
+Densha de Go! 64 controller
+A train controller compatible with just one game:  It is similar to other controllers for the same game series on different platforms such as Dreamcast and PlayStation. The game optionally supports the VRU.
+
+System Organizer
+Nintendo licensed A.L.S. Industries to make two types of black wooden system organizers.  Both feature a plastic drawer, bearing a Nintendo 64 sticker, with slots designed to hold Nintendo 64 game cartridges, controllers, and Controller Paks.
+
+Traveling accessories
+The Messenger Bag is a black bag made to carry on the left side of the body. It is branded on the front with the Nintendo 64 logo and name. It comes with zippered compartments on the outside and inside and with mesh pockets, for a few games and a controller.
+
+Nintendo licensed a Traveling Case—a black bag, with the Nintendo 64 name stitched on the front. Two plastic buckles on the front keep the bag closed. It is made to carry the Nintendo 64 system with controllers, games, and accessories. They also made a standard black backpack with the Nintendo 64 logo on the top and a zippered compartment on the front.
+
+Camera
+A basic 35 mm camera, complete with a timer and flash. Official cameras have a Nintendo 64 logo on the front. They come in different colors such as blue and orange.
+
+Development and backup
+
+Nintendo's original development environment for Nintendo 64 software is a card made by SGI containing most of a Nintendo 64 console, plus a software development kit (SDK), for self-hosted installation in an SGI Indy workstation.
+
+The second generation moved to a much cheaper partner model between a normal Nintendo 64 console and a PC, by providing a cartridge form factor holding flash storage with a cable connection to a PC. Nintendo officially licensed SN Systems to make the SN Systems dev kit and SN Maestro 64, the second generation of Nintendo 64 SDK in PC partner form to replace the Indy-hosted hardware solution. Unofficial kits include IS-VIEWER 64 and Partner 64. The Monegi Smart Pack is a collection of third-party hardware and software which can be used to do real-time development while the game is running on the console.
+
+Through the decades, many unlicensed third-party peripheral devices provide many consumer-friendly alternative storage mediums for retail Nintendo 64 consoles, bypassing console security for the purpose of development or for users making backups of game cartridges and save data. The Doctor V64 is a CD-ROM peripheral designed by Bung Enterprises Ltd and released in 1996. It plugs into the Nintendo 64's underside expansion slot, and uses a lockout-bypass adaptor that fits into the cartridge port into which any retail cartridge is inserted for use of its lockout chip by proxy. The Doctor V64 Jr. is a cheaper, condensed version that fits into the cartridge port and provides a parallel port connection to a PC. Bung made the DX 256 Super Game Saver which stores 256 battery EEPROM save states, and the DS1 Super Doctor Save Card. The CD 64 is a CD-ROM drive developed by UFO/Success Company. Mr. Backup Z64 designed by Harrison Electronics, Inc. is a ZIP drive peripheral for creating writable backups and performing playback of any Nintendo 64 cartridge. The modern Everdrive 64, ED64 Plus, N64 Neo Myth, and 64Drive use SD cards for mass storage of ROM image files or USB cables to connect to a PC for transfer.
+
+Unlicensed
+
+ Glove Controller is a wearable controller with buttons like a normal controller, usable in any game.
+ Tilt Pak is a rumble feedback and motion sensor made by Pelican.
+ GameShark is an unlicensed cheat device made by Interact in two versions. The first version has an LED display and a slot on the back of the unit for an expansion card that was never made. The second version (known as the "Pro" series, versions 3.2 and up) has a parallel port on the back for connecting to a computer for game downloads.  GameShark cards (or Action Replay cards in Europe) can be used to access cheat content.
+ SharkWire Online is an InterAct GameShark with modem and PC style serial port for keyboards. It allowed emailing and Game Shark updates through the now discontinued sharkwire.com dial-in service.
+ GB Hunter is a Game Boy player, similar to the first-party Super Game Boy for the SNES.
+ High Rez Pack — Mad Catz's less-expensive version of the Expansion Pak. There were reports of overheating due to inadequate cooling/venting, and the unit suffered from poor build quality.
+ N64 Passport is an adaptor and cheat device allowing players to play games from different regions, with a few exceptions.
+ Memory Card Comfort by Speed-Link is a controller expansion with four separate memory areas, and 123 pages each, selectable via a small switch.
+ Tremor Pak is a third-party rumble expansion.
+ The Nyko Hyper Pak Plus contains internal memory and a rumble feature.
+ Advanced Controller is a Mad Catz gamepad with the same form and controls as the standard Nintendo 64 controller, plus a turbo button.
+ Mad Catz Steering Wheel is a set consisting of an analog steering wheel that turns 270 degrees, two foot pedals, and a stick shift.
+ Power Wheel is a steering wheel with foot pedal module produced by Game Source.
+ V3 Racing Wheel is a steering wheel with foot pedals produced by Interact. It includes an expansion port which does not support the Rumble Pak, due to the risk that it would grate on the player's crotch.
+ Flight Force Pro 64 is a flight stick from InterAct.
+ Arcade Shark is an arcade-style joystick controller from InterAct, with slow motion and auto-fire buttons.
+ Tristar 64 is a third-party adaptor enabling NES and SNES games on Nintendo 64. The device expands the cartridge slot into three total slots for each cartridge type.
+ Interact reportedly had two Nintendo 64 light guns "packed and ready to ship", one of them with built-in force feedback, but never released them due to the complete lack of light gun shooters for the console.
+
+Notes
+
+References
+
+ 
+Nintendo 64

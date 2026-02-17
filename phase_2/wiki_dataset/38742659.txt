@@ -1,0 +1,18 @@
+TITLE: Plexon
+
+Plexon (from "plexus," a term describing a network of nerve cells) is an American company that "invents, develops, and manufactures hardware and software that acquires, amplifies, records, and analyzes signals from individual brain cells."  It is based in Dallas, Texas and is very close to the campus of Southern Methodist University with a satellite office in Brussels, Belgium.  It primarily services academic researchers doing work in neuroscience and electrophysiology. Plexon equipment has been used in "areas of study including autism, prosthetic limb control for paralysis patients, and the effects of drugs on brain processing and memory." In addition, it also develops equipment and software for behavioral video tracking.
+
+History
+Harvey Wiggins of Dallas, Texas founded Spectrum Scientific in 1983.  In the early days of Spectrum Scientific, design and manufacturing was conducted solely by Wiggins with backing and most funding being provided by Don Woodward at the University of Texas Southwestern Medical School and the National Institutes of Health.  In 1988, the original Multichannel Data Acquisition system (abbreviated as MAP or "Harvey box") was developed and uses hardware filtering of data signals.  The replacement for the MAP, the Omniplex system, was released in 2009 and replaces the hardware filtering components with filtering in software. Due to many contributions like these, Plexon and Harvey Wiggins have become iconic in the neuroscience community.  Dr. Regina Carelli, a professor of psychology at the University of North Carolina, describes Harvey as "wonderful--A scientist much more than a salesman."
+
+Spectrum Scientific became known as Plexon in 1996.  Plexon celebrated its 30th anniversary in February 2013.
+
+Since 2001, Plexon has been repeatedly recognized by the technology business community in Dallas, Texas for rapid growth.
+
+Educational training 
+
+Plexon sponsors an annual educational training workshop in Dallas
+
+References
+
+Medical technology companies of the United States

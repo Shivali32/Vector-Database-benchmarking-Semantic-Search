@@ -1,0 +1,93 @@
+TITLE: SIG P210
+
+The SIG P210 (Swiss Army designation Pistole 49, the civilian model was known as SP47/8 prior to 1957) is a locked breech self loading, semi-automatic pistol designed and manufactured in Neuhausen am Rheinfall (Canton of Schaffhausen, Switzerland) by SIG from 1948 to 2006.
+
+It is of all-steel construction chambered in 9×19mm Parabellum and 7.65×21mm Parabellum. It was used from 1949 to 1975 by the Swiss Army and police units. It was also adopted and is still in service with the Military of Denmark (as M/49 Neuhausen or simply Neuhausen), in 1951 by the German Bundespolizei and in shooting sports.
+
+The pistols were decommissioned by the Swiss Army and replaced by the SIG Sauer P220 (Swiss Army designation Pistole 75) developed in 1975. Swiss production of the P210 continued until 2006. A new model, the P210 Legend, was introduced by SIG Sauer GMBH of Germany in 2010, and another, the P210A, was introduced by SIG Sauer Inc. of New Hampshire in the United States in 2017.
+
+History
+The design was derived from Charles Petter's Modèle 1935A pistol. In 1937, Schweizerische Industrie Gesellschaft (SIG) acquired a license for the Petter-Browning system from SACM in order to develop a replacement for the Luger Parabellum 06/29, which had been in service since 1900. Apparently not satisfied with the Petter Browning design or the changes they had made to it, SIG evaluated no fewer than 11 prototypes from 1942 through 1944. Selbstladepistole Neuhausen model 44/16 pistol production began in 1944. Some of the original Petter Browning features had been retained, specifically the self-contained firing and recoil systems.  The Neuhausen 44/16 had a magazine capacity of 16 rounds.
+
+Development was slowed by the Second World War. After testing various experimental models (such as the aforementioned 44/16 with a double-column magazine), the 47/8 model was adopted in Oct 1948 as the Pistole Modell 1949 (P49), and SP47/8 for civilian market. Some previous series were tested by Swedish sport shooters and by the Danish army (Danish Defence designation Pistol M/1949). 
+
+The 47/8 model supported the easy change of the barrels between 7.65 and 9mm Parabellum and a kit to convert to .22 caliber (see table below).
+
+SIG M/1949 is the 47/8 model purchased for the Danish military and issued version for officers, military police, and special forces, chambered in 9mm Luger. 
+Usually called only Neuhausen in Denmark, this model is stamped "P m/49", and also known as "P210-DK".
+First issued beginning in 1950 to the Danish Army Technical Corps (stamped "HTK"), this remained the standard sidearm in the Danish military throughout 60 years of continuous use, since the 2010s being replaced with the SIG Sauer P320 X-5 Carry.
+
+In 1957, the civil designation (SP47/8) was definitively changed to P210 according to the company nomenclature policy. Model P210-1 in retrospect covers all models produced until 1965, the designation P210-2 refers to the standard model as produced from 1966 (beginning with serial nr. P 59071). 
+
+P210-3 was a police version produced from 1951 to 1964 (serial nrs. P 6791 to P 6840 and P 8001 to P 8893), produced in limited numbers for the cantonal police forces of Basel, Lausanne, and Glarus, with a handful sold on the private market.
+P210-4 was the model made for the German border guard (serial nrs. D 1 to D 6500).
+P210-5 and P210-6 were civilian target shooting models made in the 1980s and 1990s.
+P210-7 was a rarely produced .22lr rimfire model, made in the 1950s and 1960s. 
+
+SIG was renamed to SIG Sauer upon acquisition by Sauer & Sohn in the 1970s, and to Swiss Arms in 2000. 
+Swiss Arms continued production of the P210 for private customers until 2006. 
+From 2010, a new model, dubbed P210 Legend was made by SIG Sauer, GMBH of Eckernförde, Germany. This model was exported to the USA until 2017, when 
+SIG Sauer Inc. of New Hampshire  began production of its own model, dubbed P210A, made in Exeter, N.H., offered in two versions, Standard (210A-9-B) and Target (210A-9-TGT).
+
+Serial numbers
+Serial numbers starting  A are the Swiss army ordnance models. 
+Army models run from serial number A 100001 to A 213110. Those that have a P added to the rear of a serial number that starts with an A have been sold by the Swiss army to civilians.  A stamped "P" (="privat") on the front of the trigger guard shows that a weapon was left as a gift to the owner upon leaving the Armed Services.
+
+Serial numbers 6001 to 6028 are prototypes made during 1938–1947. 6033 to 6406 are early model SP47/8 made in 1947.
+
+Serial numbers with a P were made for police and for private use, running from  P 8001 to P 8250 (1951) and 
+P 50004 (1949) to P 79150 (1975).  
+Serial numbers from P 79600 to P 97950  are private models made by SIG Sauer, Switzerland, during 1976–1984, and P 300001 to P 331536 were made by Sig Sauer (Swiss Arms) during 1983–2006; the jump to the 300000s range marks the transition from traditional forged frames to CNC production. 
+
+During 1966–1969, SIG produced a small number of special heavy frame P210-5 models for the National Match team.
+These are extremely rare, with a total of 46 pieces known in literature.
+In the 1970s, these heavy frame models were commercialized and offered on the market, with 
+100 pieces of P210-6 heavy frame pistols (P 76521 to P76620) made in 1979, 
+and 50 pieces of  P210-6 heavy frame pistols, made for Hofmann & Reinhart of Zürich (P 79101 to 79150).
+These pistols represent the pinnacle of SIG pistol manufacture and are extremely sought after by collectors, and consequently almost never offered on the open market.
+  
+Another special edition is numbered JP 1 to JP 500 (1978, "125 Years of SIG" anniversary edition).
+P 555001 to P 555555 are special collectors' edition of 555 sets of five chromed pistols with gilded controls, P210, P220, P225, P226 and P230, made for Vonbank AG in 1987 to 1990), at the time sold for CHF 12,950.
+In 1991, another special edition numbered № 0001 to № 1991 was made to commemorate "700 Years of Swiss Confederation" (700 Jahre Eidgenossenschaft), at the time sold for CHF 4,100 per piece.
+
+Serial numbers starting with a D belong to the Bundesgrenzschutz issues  (D 1 to D 6500).
+The Danish m/49 pistols have their own serial numbers, without a leading letter, engraved on the right side of the slide, running from 7695 (1951) to 35383 (1962).
+The rare P210-7 .22lr calibre versions have numbers in the range 40501 (1957) to 41762 (1968).
+
+Gallery
+
+Users
+
+ : used by the Danish Defense Force as m/49.
+ : Used by the Presidential Security Service since 2007.
+ : used by the Latvian National Guard.
+: used by the Compagnie des Carabiniers du Prince.
+ : used by the Swiss Military and various police forces.
+
+References 
+
+ Armbruster, Erwin, & Werner Kessler (ed.). Begegnungen mit einer Legende—SIG SP 47/8 / P 210. Kessler Waffen AG, 2007.  Sample
+ Doebeli, Hans P. Die SIG-Pistolen. Stuttgart: Motorbuch-Verlag, 1981. . 
+ Vetter, Lorenz. Das große Buch der SIG-Pistolen. Dietikon-Zürich: Stocker-Schmid, 1995. .
+
+External links
+SIG P220
+SIG P226
+SIG P320
+SIG P365
+
+ Description of Pistole 49, official Swiss Army webpage
+ SIG P210 history and design features
+ SIG P210 parts and variations
+ SIG P210 serial numbers
+ SIG P210-2 disassembly/reassembly
+ Commemorative Confederatio Helvetica 1291-1991 for the 700th Swiss Confederation anniversary
+
+.22 LR pistols
+9mm Parabellum semi-automatic pistols
+10mm Auto semi-automatic pistols
+7.65×21mm Parabellum semi-automatic pistols
+Semi-automatic pistols of Switzerland
+Police weapons
+SIG Sauer semi-automatic pistols
+Weapons and ammunition introduced in 1949

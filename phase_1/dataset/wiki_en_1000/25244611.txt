@@ -1,0 +1,28 @@
+TITLE: Colimaite
+
+Colimaite, the naturally occurring analog of synthetic K3VS4, is a sulfide mineral discovered in southwestern Mexico.  The potassium-vanadium sulfide was collected from the crater of the Colima volcano.  The mineral colimaite is named after the locality of this volcano and has been approved in 2007, along with its mineral name, by the Commission on New Minerals, Nomenclature and Classification (CNMNC).  It has been given the International Mineralogical Association number of IMA 2007–045.
+
+Composition
+The chemical formula of colimaite is K3VS4. The enrichment of vanadium in Colima's volcanic gases make it unique. The study of sulfur content in the fumaroles is also important, in order to know how an eruption could affect global climate due to SO2 emissions.
+
+Structure
+Colimaite exhibits the Pnma (P 21/n 21/m 21/a) space group making it orthorhombic. The vanadium and sulfur atoms form tetrahedra.  Potassium ions separate these tetrahedra in two different ways.  In one case, the potassium ion is bound to five sulfur atoms at an average distance of 3.296 Å with an additional two sulfur atoms at a distance of 3.771 Å.  In the other case, the potassium ion is bound to eight sulfur atoms at an average distance of 3.314 Å.  In both cases, the potassium ions are in an irregular coordination polyhedron.
+
+Physical properties
+The formations of colimaite have been described as hedgehog–like particles due to the acicular habit of extremely fine needles forming the aggregates. The size of these aggregates range from 10 to 100 µm. The needles themselves have been measured up to 50 µm in length and 20 µm in width.  Although colimaite belongs to the orthorhombic crystal class, their crystallographic forms were not observed.  The particles were regular parallelepipeds and elongated rectangular prisms.  The color of colimaite is dark golden and opaque. The streak is a yellow green with a resinous to greasy luster.  It is non-fluorescent.  It is brittle with no observed cleavage and a splintery fracture.  Because of grain size, the hardness and density could not be measured but the density has been calculated to 2.235 g/cm3.
+
+Geological occurrence
+Colimaite occurs as a sublimate from the volcanic fumaroles of the Colima volcano in Mexico. Other minerals including cristobalite, arcanite, thenardite, baryte and native gold have been collected from the fumaroles of this volcano. Although minerals were collected at temperatures from 400 to 800 °C, colimaite was assembled in a more narrow temperature interval of 450 - 600 °C. There are similarities between the volcanic gases of the Colima crater and the gases of other volcanoes, but there are some differences that make Colima unique.  Notable differences are the vanadium, zinc and copper enrichment of the Colima gases. These same gases also lack cadmium and molybdenum.
+
+Special characteristics
+Not only is colimaite the first new mineral species discovered in Mexico since 1998, but it is also the first newly recognized mineral species collected from the fumaroles of the Colima volcano crater. It was collected by the use of two silica tubes of one meter in length each, placed in a high temperature vent at the volcano's crater.
+
+References
+
+External links
+Entry on mindat.org
+Entry on webmineral.com
+
+Sulfide minerals
+Orthorhombic minerals
+Minerals in space group 62

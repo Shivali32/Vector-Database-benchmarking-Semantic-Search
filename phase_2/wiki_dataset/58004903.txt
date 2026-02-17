@@ -1,0 +1,27 @@
+TITLE: NDUFAF5
+
+NADH:ubiquinone oxidoreductase complex assembly factor 5, also known as Arginine-hydroxylase NDUFAF5, or Putative methyltransferase NDUFAF5, is a protein that in humans is encoded by the NDUFAF5 gene. The NADH-ubiquinone oxidoreductase complex (complex I) of the mitochondrial respiratory chain catalyzes the transfer of electrons from NADH to ubiquinone, and consists of at least 43 subunits. The complex is located in the inner mitochondrial membrane. This gene encodes a mitochondrial protein that is associated with the matrix face of the mitochondrial inner membrane and is required for complex I assembly. A mutation in this gene results in mitochondrial complex I deficiency. Multiple transcript variants encoding different isoforms have been found for this gene.
+
+Structure 
+NDUFAF5 is located on the p arm of Chromosome 20 in position 12.1 and spans 36,554 base pairs. The NDUFAF5 gene produces a 30 kDa protein composed of 267 amino acids. The presumed structure of the c-terminal of the protein has been found to resemble that of the known secondary structure of RdmB. NDUFAF5 contains the S-adenosylmethionine dependent methyltransferase domain, which contains the GxGxG signature sequence, and the S-adenosylmethionine-binding motif which are common in most SAM-dependent methyltransferases. This arginine-hydroxylase is involved in the assembly of mitochondrial NADH:ubiquinone oxidoreductase complex (complex I, MT-ND1) at early stages. Complex I is composed of 45 evolutionally conserved core subunits, including both mitochondrial DNA and nuclear encoded subunits. One of its arms is embedded in the inner membrane of the mitochondria, and the other is embedded in the organelle. The two arms are arranged in an L-shaped manner. The total molecular weight of the complex is 1MDa.
+
+Function 
+The NDUFAF5 gene encodes a mitochondrial protein that is associated with the matrix face of the mitochondrial inner membrane and is required for complex I assembly. Their role is integral to co-factor insertions and in utilizing sub-assemblies for building complex I. It does so by catalyzing the hydroxylation of Arg-73 in the NDUFS7 subunit of human complex I, which occurs before the peripheral and membrane arm juncture formation in the beginning stages of complex I assembly. The NADH-ubiquinone oxidoreductase complex (complex I) of the mitochondrial respiratory chain catalyzes the transfer of electrons from NADH to ubiquinone, and consists of at least 43 subunits. The complex is located in the inner mitochondrial membrane. Though the exact biochemical function of NDUFAF5 is not yet known, mutations in this gene results in mitochondrial complex I deficiency. NDUFAF5 is also known to be a member of the 7β-strand family of SAM-dependent methyltransferases.
+
+Clinical significance 
+Mutations in NDUFAF5 is known to result in mitochondrial diseases and associated disorders. It is majorly associated with a complex I deficiency, a deficiency in the first complex of the mitochondrial respiratory chain. Suppression of the NDUFAF5 gene has been found to lead to the loss of both peripheral and membrane arms of complex I associated with NDUFS7 and ND1. This then leads to the progressive loss of complex I, causing the deficiency. Such disorders involving the dysfunction of the mitochondrial respiratory chain may cause a wide range of clinical manifestations from lethal neonatal disease to adult-onset neurodegenerative disorders. Phenotypes include macrocephaly with progressive leukodystrophy, non-specific encephalopathy, cardiomyopathy, myopathy, liver disease, Leber hereditary optic neuropathy, and some forms of Parkinson disease. Mutations in NDUFAF5 has also been common patients with Leigh syndrome, an early-onset progressive neurodegenerative disorder characterized by the presence of focal, bilateral lesions.
+
+Interactions 
+In addition to co-subunits for complex I, NDUFAF5 has protein-protein interactions with NDUFAF8 (for stabilization), and NDUFS7.
+
+References
+
+Further reading 
+
+ 
+ 
+ 
+ 
+
+Human proteins
+Genes on human chromosome 20
