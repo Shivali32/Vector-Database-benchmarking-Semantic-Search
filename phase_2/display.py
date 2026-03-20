@@ -4,8 +4,8 @@ def display_summary(metrics):
     # print(f"Average Latency: {round(total_latency/len(results),4)} sec")
     # print(f"Recall@k: {round(avg_recall,4)}")
     
-    print(f"Total queries        : {metrics['Total queries']}")
-    print(f"Total time (s)       : {metrics['Total time (s)']}")
-    print(f"Avg latency (s)      : {metrics['Avg latency (s)']}")
-    print(f"Throughput (q/s)     : {metrics['Throughput (q/s)']}")
-    print(f"Recall@k             : {metrics['Recall@k']}")
+    print(f"Total queries        : {metrics['queries']}")
+    print(f"Total time (s)       : {metrics['total_time']}")
+    print(f"Avg latency (s)      : {metrics['avg_latency']}")
+    print(f"Throughput (q/s)     : {metrics['throughput']}")
+    # print(f"Recall@k             : {metrics['recall_k']}")

@@ -19,10 +19,21 @@ class QdrantDB:
         ]
         self.client.upsert(collection_name=self.collection_name, points=points)
 
+    # def query(self, query_embedding, k=3):
+    #     return self.client.query_points(
+    #         collection_name=self.collection_name,
+    #         query=query_embedding,
+    #         limit=k,            
+    #         # with_payload=True
+    #     )
+
     def query(self, query_embedding, k=3):
-        return self.client.query_points(
+
+        result = self.client.query_points(
             collection_name=self.collection_name,
             query=query_embedding,
-            limit=k,            
-            # with_payload=True
+            limit=k,
+            with_payload=True
         )
+
+        return result.points

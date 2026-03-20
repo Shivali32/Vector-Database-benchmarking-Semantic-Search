@@ -17,24 +17,31 @@ def compute_recall(query, retrieved_docs):
     return relevant
 
 def run_queries(db, embedder, queries, db_type, k=3):
+    total_start = time.time()
+
     query_embeddings = embedder.embed_documents(queries)
     total_recall = 0
-    results = []
+    total_latency = 0
 
     for q, emb in zip(queries, query_embeddings):
         start = time.time()
         response = db.query(emb, k)
         latency = time.time() - start
+        total_latency += latency
 
         docs = extract_texts(response, db_type)
         recall = compute_recall(q, docs)
         total_recall += recall
 
-        results.append({
-            "query": q,
-            "latency": latency,
-            "recall": recall
-        })
+    total_time = time.time() - total_start
+    total_queries = len(queries)
 
-    avg_recall = total_recall / len(queries)
-    return results, avg_recall
+    metrics = {
+        "queries": total_queries,
+        "total_time": round(total_time, 2),
+        "avg_latency": round(total_latency / total_queries, 4),
+        "throughput": round(total_queries / total_time, 2),
+        "recall_k": round(total_recall / total_queries, 4)
+    }
+
+    return metrics

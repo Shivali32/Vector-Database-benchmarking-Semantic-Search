@@ -1,0 +1,7 @@
+cd D:\Independent_Study\Project\phase_2
+venv\Scripts\activate
+python main.py
+
+
+source venv/bin/activate
+python main.py
