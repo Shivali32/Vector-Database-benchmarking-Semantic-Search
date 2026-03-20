@@ -17,7 +17,7 @@ The pipeline includes:
 ## System Flow Diagram
 
 <!-- ![System Architecture](mom/multimodal.png) -->
-<img src="images/architecture.png" width="50%"/>
+<img src="mom/multimodal.png" width="50%"/>
 
 ---
 
