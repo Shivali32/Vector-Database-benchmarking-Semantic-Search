@@ -91,8 +91,8 @@ PROJECT/
 ### 1. Clone Repository
 
 ```bash
-git clone <your-repo-link>
-cd <repo-name>
+git clone Vector-Database-benchmarking-Semantic-Search
+cd Vector-Database-benchmarking-Semantic-Search
 ```
 
 ### 2. Create Virtual Environment
