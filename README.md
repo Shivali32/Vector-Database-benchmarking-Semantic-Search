@@ -124,11 +124,14 @@ python main.py --db milvus
 
 ## Evaluation Metrics
 
-* **Recall**
-  Measures whether relevant documents are retrieved
+- **Latency**  
+  Time taken to process a single query  
 
-* **Latency**
-  Time taken to return results per query
+- **Throughput**  
+  Number of queries processed per second  
+
+- **Total Time**  
+  Total execution time for the full query set  
 
 ---
 
@@ -144,9 +147,8 @@ python main.py --db milvus
 
 ## Sample Results
 
-| Database | Recall | Avg Latency (ms) |
-| -------- | ------ | ---------------- |
-| Chroma   | 0.78   | 45               |
-| Qdrant   | 0.82   | 52               |
-| Milvus   | 0.85   | 60               |
-
+| Database | Index    | Avg Latency (s) | Throughput (q/s) | Total Time (s) |
+|----------|----------|-----------------|------------------|----------------|
+| Chroma   | HNSW     | 0.0036          | 85.78            | 11.66          |
+| Qdrant   | HNSW     | 0.0167          | 40.15            | 24.91          |
+| Milvus   | IVF Flat | 0.0062          | 68.95            | 14.50          |
