@@ -7,22 +7,24 @@ from pymilvus import (
     utility
 )
 
+
 class MilvusDB:
-    def __init__(self, collection_name="wiki", dim=384):
+    def __init__(self, collection_name="wiki", dim=384, index_type="HNSW"):
         self.collection_name = collection_name
         self.dim = dim
-
+        self.index_type = index_type.upper()
+        
         connections.connect(alias="default", host="localhost", port="19530")
-        # connections.connect(alias="default", uri="milvus_lite.db")
 
-        if utility.has_collection(collection_name):
-            self.collection = Collection(collection_name)
+        if utility.has_collection(self.collection_name):
+            self.collection = Collection(self.collection_name)
+            self.collection.load()
         else:
             self.collection = self._create_collection()
 
     def _create_collection(self):
         fields = [
-            FieldSchema(name="id", dtype=DataType.INT64, is_primary=True),
+            FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=False),
             FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=self.dim),
             FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=65535)
         ]
@@ -30,21 +32,47 @@ class MilvusDB:
         schema = CollectionSchema(fields)
         collection = Collection(self.collection_name, schema)
 
-        index_params = {
-            "metric_type": "COSINE",
-            # "index_type": "IVF_FLAT",
-            "index_type": "HNSW",
-            # "index_type": "DiskANN",
-            "params": {
-                "M": 16,
-                "efConstruction": 200
-            }
-        }
+        index_params = self._get_index_params()
 
-        # collection.create_index(field_name="vector", index_params=index_params)
-        # collection.load()
+        collection.create_index(
+            field_name="vector",
+            index_params=index_params
+        )
 
+        collection.load()
         return collection
+
+    def _get_index_params(self):
+        if self.index_type == "HNSW":
+            return {
+                "metric_type": "COSINE",
+                "index_type": "HNSW",
+                "params": {
+                    "M": 16,
+                    "efConstruction": 200
+                }
+            }
+
+        elif self.index_type == "IVF":
+            return {
+                "metric_type": "COSINE",
+                "index_type": "IVF_FLAT",
+                "params": {
+                    "nlist": 128
+                }
+            }
+
+        elif self.index_type == "DISKANN":
+            return {
+                "metric_type": "COSINE",
+                "index_type": "DISKANN",
+                "params": {
+                    "search_list": 100
+                }
+            }
+
+        else:
+            raise ValueError(f"Unsupported index type: {self.index_type}")
 
     def add(self, ids, embeddings, documents):
         ids = [int(i) for i in ids]
@@ -57,24 +85,33 @@ class MilvusDB:
 
         self.collection.flush()
 
-        index_params = {
-            "metric_type": "COSINE",
-            "index_type": "IVF_FLAT",
-            "params": {"nlist": 128}
-        }
+    def _get_search_params(self):
+        if self.index_type == "HNSW":
+            return {
+                "metric_type": "COSINE",
+                "params": {
+                    "ef": 64
+                }
+            }
 
-        self.collection.create_index(
-            field_name="vector",
-            index_params=index_params
-        )
+        elif self.index_type == "IVF":
+            return {
+                "metric_type": "COSINE",
+                "params": {
+                    "nprobe": 10
+                }
+            }
 
-        self.collection.load()
+        elif self.index_type == "DISKANN":
+            return {
+                "metric_type": "COSINE",
+                "params": {
+                    "search_list": 100
+                }
+            }
 
     def query(self, query_embedding, k=3):
-        search_params = {
-            "metric_type": "COSINE",
-            "params": {"ef": 64}
-        }
+        search_params = self._get_search_params()
 
         results = self.collection.search(
             data=[query_embedding],
@@ -85,3 +122,10 @@ class MilvusDB:
         )
 
         return results[0]
+
+    def drop(self):
+        if utility.has_collection(self.collection_name):
+            utility.drop_collection(self.collection_name)
+
+    def count(self):
+        return self.collection.num_entities

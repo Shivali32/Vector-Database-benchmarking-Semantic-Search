@@ -148,8 +148,19 @@ python main.py --db milvus
 
 ## Sample Results
 
+Sentence-Transformer Embedding model
 | Database | Index    | Avg Latency (s) | Throughput (q/s) | Total Time (s) |
 |----------|----------|-----------------|------------------|----------------|
 | Chroma   | HNSW     | 0.0036          | 85.78            | 11.66          |
 | Qdrant   | HNSW     | 0.0167          | 40.15            | 24.91          |
 | Milvus   | IVF Flat | 0.0062          | 68.95            | 14.50          |
+
+Clip Embedding Model
+
+| Database | Index   | Avg Latency (s) | Throughput (q/s) | Total Time (s) |
+|----------|---------|-----------------|------------------|----------------|
+| Milvus   | HNSW    | 0.0048          | 111.51           | 8.97           |
+| Milvus   | DiskANN | 0.0073          | 90.58            | 11.04          |
+| Milvus   | IVF     | 0.0068          | 96.89            | 10.32          |
+| Qdrant   | HNSW    | 0.0046          | 117.09           | 8.54           |
+| Chroma   | HNSW    | 0.0050          | 109.65           | 9.12           |

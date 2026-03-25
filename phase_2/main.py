@@ -9,7 +9,7 @@ from query_loader import load_queries
 from query_engine import run_queries
 from display import display_summary
 
-def main(db_type="chroma"):
+def main(db_type="chroma", index_type="HNSW"):
 
     text_data_path = "wiki_dataset"
     image_metadata_path = "wit_metadata/wit_subset_metadata.json"
@@ -48,7 +48,8 @@ def main(db_type="chroma"):
     elif db_type == "qdrant":
         db = QdrantDB(dim=dim)
     elif db_type == "milvus":
-        db = MilvusDB(dim=dim)
+        # db.drop()
+        db = MilvusDB(dim=dim, index_type=index_type)
 
     db.add(all_ids, all_embeddings, text_chunks)
     # db.add(all_ids, all_embeddings, all_payloads)
@@ -64,8 +65,8 @@ if __name__ == "__main__":
     # for db in ["chroma", "qdrant", "milvus"]:
     # for db in ["chroma", "qdrant"]:
     #     print(f"Running benchmark for: {db}")
-    #     main(db)
+    #     main(db, index_type="HNSW")
 
     db = "milvus"
     print(f"Running benchmark for: {db}")
-    main(db)
+    main(db, index_type="DISKANN")
