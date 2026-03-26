@@ -4,9 +4,15 @@ def extract_texts(response, db_type):
     if db_type == "chroma":
         return response["documents"][0]
     elif db_type == "qdrant":
-        return [hit.payload["text"] for hit in response]
+        return [
+            hit.payload.get("text", str(hit.payload))
+            for hit in response
+        ]
     elif db_type == "milvus":
-        return [hit.entity.get("text") for hit in response]
+        return [
+            hit.entity.get("text") or str(hit.entity)
+            for hit in response
+        ]
 
 def compute_recall(query, retrieved_docs):    
     relevant = 0

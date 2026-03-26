@@ -1,5 +1,5 @@
 cd D:\Independent_Study\Project\phase_2
-venv\Scripts\activate
+D:\Independent_Study\venv\Scripts\activate
 python main.py
 
 
@@ -11,5 +11,7 @@ python main.py
 pip list > requirements.txt
 
 git add .
-git commit -m "Commit"
+git commit -m "README"
 git push origin main
+
+
