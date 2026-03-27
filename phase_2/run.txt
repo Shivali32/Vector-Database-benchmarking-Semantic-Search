@@ -3,6 +3,7 @@ D:\Independent_Study\venv\Scripts\activate
 python main.py
 
 
+cd ~/Desktop/Ind_study/project/phase_2
 source ~/Desktop/Ind_study/venv/bin/activate
 python  ~/Desktop/Ind_study/project/phase_2/main.py
 
@@ -10,7 +11,7 @@ python  ~/Desktop/Ind_study/project/phase_2/main.py
 pip list > requirements.txt
 
 git add .
-git commit -m "README"
+git commit -m "CLIP & Recall"
 git push origin main
 
 

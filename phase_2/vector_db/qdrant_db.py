@@ -36,6 +36,7 @@ class QdrantDB:
             collection_name=self.collection_name,
             query=query_embedding,
             limit=k,
+            with_vectors=True,
             with_payload=True
         )
         return result.points

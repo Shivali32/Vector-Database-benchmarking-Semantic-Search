@@ -1,4 +1,10 @@
 import time
+import numpy as np
+
+
+def cosine_similarity(vec1, vec2):
+    vec1, vec2 = np.array(vec1), np.array(vec2)
+    return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
 
 def extract_texts(response, db_type):
     if db_type == "chroma":
@@ -14,13 +20,23 @@ def extract_texts(response, db_type):
             for hit in response
         ]
 
-def compute_recall(query, retrieved_docs):    
-    relevant = 0
-    for doc in retrieved_docs:
-        if query.lower() in doc.lower():
-            relevant = 1
-            break
-    return relevant
+def extract_vectors(response, db_type):
+    if db_type == "chroma":
+        return response["embeddings"][0]          
+    elif db_type == "qdrant":
+        return [hit.vector for hit in response]   
+    elif db_type == "milvus":
+        return [hit.entity.get("vector") for hit in response]
+    
+
+def compute_recall(query_emb, retrieved_vectors, threshold=0.7):
+    for vec in retrieved_vectors:
+        if vec is None:
+            continue
+        score = cosine_similarity(query_emb, vec)
+        if score >= threshold:
+            return 1
+    return 0
 
 def run_queries(db, embedder, queries, db_type, k=3):
     total_start = time.time()
@@ -31,12 +47,24 @@ def run_queries(db, embedder, queries, db_type, k=3):
 
     for q, emb in zip(queries, query_embeddings):
         start = time.time()
-        response = db.query(emb, k)
+
+
+        # response = db.query(emb, k, with_vectors=True)
+        if db_type == "chroma":
+            response = db.collection.query(
+            query_embeddings=[emb],
+            n_results=k,
+            include=["documents", "embeddings"]
+        )
+        else:
+            response = db.query(emb, k)
+               
+        
         latency = time.time() - start
         total_latency += latency
 
-        docs = extract_texts(response, db_type)
-        recall = compute_recall(q, docs)
+        retrieved_vectors = extract_texts(response, db_type)
+        recall = compute_recall(emb, retrieved_vectors)
         total_recall += recall
 
     total_time = time.time() - total_start

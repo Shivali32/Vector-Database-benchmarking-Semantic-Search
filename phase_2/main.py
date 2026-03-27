@@ -127,8 +127,6 @@ def main(db_type="chroma", index_type="HNSW"):
     image_ids   = [doc["id"] for doc in image_docs]
     image_texts = [doc["content"] for doc in image_docs]
 
-    # dim = len(text_embeddings[0])
-    # dim = text_embeddings.shape[1]
 
     db = build_db(db_type, index_type)
     index_data(db, text_ids, text_embeddings, text_chunks,
