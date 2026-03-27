@@ -1,4 +1,3 @@
-# from data_loader import load_documents, chunk_text
 from data_loader import load_documents, load_wit_images, chunk_text, os
 from embedder import Embedder, np
 from model_loader import load_model
@@ -9,84 +8,139 @@ from query_loader import load_queries
 from query_engine import run_queries
 from display import display_summary
 
-def main(db_type="chroma", index_type="HNSW"):
 
-    text_data_path = "wiki_dataset"
-    image_metadata_path = "wit_metadata/wit_subset_metadata.json"
-    query_path = "queries.json"
+TEXT_DATA_PATH   = "wiki_dataset"
+IMAGE_META_PATH  = "wit_metadata/wit_subset_metadata.json"
+QUERY_PATH       = "queries.json"
+EMBED_DIM        = 512
 
-    text_docs = load_documents(text_data_path)
+# text_data_path = "wiki_sub"
+# image_metadata_path = "wit_metadata/wit_meta_sub.json"
 
+
+def load_text_chunks():
+    text_docs = load_documents(TEXT_DATA_PATH)
     text_chunks = []
     for doc in text_docs:
         text_chunks.extend(chunk_text(doc))
-    # text_chunks = text_chunks[:1000]
+    # text_chunks = text_chunks[:10]
+    return text_chunks
 
-    image_docs = load_wit_images(image_metadata_path)
-    # image_docs = image_docs[:100] 
 
+def load_image_docs():
+    image_docs = load_wit_images(IMAGE_META_PATH)
+    # image_docs = image_docs[:10]
+    return image_docs
+
+
+def build_embedder():
     ##  ---- SENTENCE TRANSFORMER -----
     # embedder = Embedder()
-    # all_embeddings = embedder.embed_documents(text_chunks)
-    # all_ids = [str(i) for i in range(len(text_chunks))]
-    
+    # return embedder
+
     ## ---- CLIP -----
     model, processor, device = load_model()
     embedder = Embedder(model, processor, device)
+    return embedder
 
 
-    # ---- TEXT EMBEDDINGS ----
-    if os.path.exists("text_emb.npy"):
-        print("Loading cached text embeddings...")
-        text_embeddings = np.load("embeddings/text_emb.npy")
-    else:
-        print("Computing text embeddings...")
-        text_embeddings = embedder.embed_documents(text_chunks)
-        np.save("embeddings/text_emb.npy", text_embeddings)
+def get_text_embeddings(embedder, text_chunks):
+    # if os.path.exists("embeddings/text_emb.npy"):
+    #     print("Loading cached text embeddings...")
+    #     text_embeddings = np.load("embeddings/text_emb.npy", allow_pickle=True)
+    #     text_embeddings = np.squeeze(text_embeddings)          # (N,1,512) → (N,512)
+    #     assert text_embeddings.ndim == 2, f"Expected 2D, got {text_embeddings.shape}"
+    #     return text_embeddings.tolist()
 
-    text_ids = [f"text_{i}" for i in range(len(text_chunks))]
+    print("Computing text embeddings...")
+    text_embeddings = embedder.embed_documents(text_chunks)
+
+    # text_embeddings = np.array(text_embeddings)
+    # text_embeddings = np.squeeze(text_embeddings)          # fix shape before saving
+
+    os.makedirs("embeddings", exist_ok=True)
+    np.save("embeddings/text_emb.npy", text_embeddings)   # save already-squeezed
+
+    return text_embeddings.tolist()
 
 
-    # ---- IMAGE EMBEDDINGS ----
-    if os.path.exists("image_emb.npy"):
-        print("Loading cached image embeddings...")
-        image_embeddings = np.load("embeddings/image_emb.npy")
-    else:
-        print("Computing image embeddings...")
-        image_embeddings = embedder.embed_images(image_docs)
-        np.save("embeddings/image_emb.npy", image_embeddings)
+def get_image_embeddings(embedder, image_docs):
+    # if os.path.exists("embeddings/image_emb.npy"):
+    #     print("Loading cached image embeddings...")
+    #     image_embeddings = np.load("embeddings/image_emb.npy", allow_pickle=True)
+    #     image_embeddings = np.squeeze(image_embeddings)
+    #     assert image_embeddings.ndim == 2, f"Expected 2D, got {image_embeddings.shape}"
+    #     return image_embeddings.tolist()
 
-    image_ids = [doc["id"] for doc in image_docs]
+    print("Computing image embeddings...")
+    image_embeddings = embedder.embed_images(image_docs)
 
-    # all_embeddings = text_embeddings + image_embeddings
-    all_embeddings = np.vstack([text_embeddings, image_embeddings])
-    all_ids = text_ids + image_ids
-    all_payloads = text_chunks + image_docs
+    # image_embeddings = np.array(image_embeddings)
+    # image_embeddings = np.squeeze(image_embeddings)        # fix before saving
 
-    dim = len(all_embeddings[0])
+    os.makedirs("embeddings", exist_ok=True)
+    np.save("embeddings/image_emb.npy", image_embeddings)
 
+    return image_embeddings.tolist()
+
+
+def build_db(db_type, index_type):
     if db_type == "chroma":
         db = ChromaDB()
-        db.collection.delete() 
+        # db.collection.delete()
+        return db
     elif db_type == "qdrant":
-        db = QdrantDB(dim=dim)
+        return QdrantDB(dim=EMBED_DIM)
     elif db_type == "milvus":
         # db.drop()
-        db = MilvusDB(dim=dim, index_type=index_type)
+        return MilvusDB(dim=EMBED_DIM, index_type=index_type)
+    else:
+        raise ValueError(f"Unknown db_type: {db_type}")
+
+
+def index_data(db, text_ids, text_embeddings, text_chunks,
+               image_ids, image_embeddings, image_texts):
 
     ## ---- For text only ---
+    # all_embeddings = text_embeddings + image_embeddings
+    # all_embeddings = np.vstack([text_embeddings, image_embeddings])
+    # all_ids = text_ids + image_ids
+    # all_payloads = text_chunks + image_docs
     # db.add(all_ids, all_embeddings, text_chunks)
 
-    ## ---- For text + images ---
-    db.add(all_ids, all_embeddings, all_payloads)
+    db.add(text_ids, text_embeddings, text_chunks)
+    db.add(image_ids, image_embeddings, image_texts)
 
-    queries = load_queries(query_path)
+
+def main(db_type="chroma", index_type="HNSW"):
+
+    text_chunks = load_text_chunks()
+    image_docs  = load_image_docs()
+
+    embedder = build_embedder()
+
+    text_embeddings  = get_text_embeddings(embedder, text_chunks)
+    image_embeddings = get_image_embeddings(embedder, image_docs)
+
+    text_ids    = [f"text_{i}" for i in range(len(text_chunks))]
+    # text_ids = [str(i) for i in range(len(text_chunks))]
+    image_ids   = [doc["id"] for doc in image_docs]
+    image_texts = [doc["content"] for doc in image_docs]
+
+    # dim = len(text_embeddings[0])
+    # dim = text_embeddings.shape[1]
+
+    db = build_db(db_type, index_type)
+    index_data(db, text_ids, text_embeddings, text_chunks,
+               image_ids, image_embeddings, image_texts)
+
+    queries = load_queries(QUERY_PATH)
     results = run_queries(db, embedder, queries, db_type)
 
     display_summary(results)
 
+
 if __name__ == "__main__":
-    
 
     # for db in ["chroma", "qdrant", "milvus"]:
     for db in ["chroma", "qdrant"]:

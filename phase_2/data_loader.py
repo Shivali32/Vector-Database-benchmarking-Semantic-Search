@@ -33,12 +33,19 @@ def load_wit_images(metadata_path):
 
     documents = []
 
+
     for record in metadata:
+        raw_path = record.get("local_path", "")
+        clean_path = raw_path.replace("\\", "/")  
+        filename = os.path.basename(clean_path)   
+        image_path = os.path.join("wit_images", filename)
+        image_path = os.path.normpath(image_path)
+
         documents.append({
             "id": record["image_id"],
             "type": "image",
             "content": record.get("caption", ""),
-            "image_path": record.get("local_path"),
+            "image_path": image_path,
             "metadata": {
                 "page_title": record.get("page_title"),
                 "source": "wit"

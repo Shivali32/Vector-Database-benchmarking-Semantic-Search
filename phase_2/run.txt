@@ -3,9 +3,8 @@ D:\Independent_Study\venv\Scripts\activate
 python main.py
 
 
-source venv/bin/activate
-python main.py
-
+source ~/Desktop/Ind_study/venv/bin/activate
+python  ~/Desktop/Ind_study/project/phase_2/main.py
 
 
 pip list > requirements.txt
@@ -15,3 +14,6 @@ git commit -m "README"
 git push origin main
 
 
+module load apptainer
+cd ~/Desktop/Ind_study/milvus-standalone
+./start_milvus.sh
