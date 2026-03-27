@@ -11,7 +11,8 @@ from display import display_summary
 
 TEXT_DATA_PATH   = "wiki_dataset"
 IMAGE_META_PATH  = "wit_metadata/wit_subset_metadata.json"
-QUERY_PATH       = "queries.json"
+QUERY_PATH       = "QnA_1000.json"
+# QUERY_PATH       = "queries.json"
 EMBED_DIM        = 512
 
 # text_data_path = "wiki_sub"

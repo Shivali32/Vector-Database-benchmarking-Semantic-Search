@@ -6,6 +6,7 @@ def cosine_similarity(vec1, vec2):
     vec1, vec2 = np.array(vec1), np.array(vec2)
     return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
 
+
 def extract_texts(response, db_type):
     if db_type == "chroma":
         return response["documents"][0]
@@ -20,14 +21,17 @@ def extract_texts(response, db_type):
             for hit in response
         ]
 
+
 def extract_vectors(response, db_type):
     if db_type == "chroma":
-        return response["embeddings"][0]          
+        # chroma returns embeddings as list of lists under "embeddings"
+        return response["embeddings"][0]
     elif db_type == "qdrant":
-        return [hit.vector for hit in response]   
+        # qdrant returns hit.vector directly since with_vectors=True
+        return [hit.vector for hit in response]
     elif db_type == "milvus":
         return [hit.entity.get("vector") for hit in response]
-    
+
 
 def compute_recall(query_emb, retrieved_vectors, threshold=0.7):
     for vec in retrieved_vectors:
@@ -38,33 +42,36 @@ def compute_recall(query_emb, retrieved_vectors, threshold=0.7):
             return 1
     return 0
 
+
 def run_queries(db, embedder, queries, db_type, k=3):
     total_start = time.time()
 
-    query_embeddings = embedder.embed_documents(queries)
+    query_texts  = [item["query"]  for item in queries]
+    answer_texts = [item["answer"] for item in queries]
+
+    query_embeddings  = embedder.embed_documents(query_texts)
+    answer_embeddings = embedder.embed_documents(answer_texts)
+
     total_recall = 0
     total_latency = 0
 
-    for q, emb in zip(queries, query_embeddings):
+    for q_emb, gt_emb in zip(query_embeddings, answer_embeddings):
         start = time.time()
 
-
-        # response = db.query(emb, k, with_vectors=True)
         if db_type == "chroma":
             response = db.collection.query(
-            query_embeddings=[emb],
-            n_results=k,
-            include=["documents", "embeddings"]
-        )
+                query_embeddings=[q_emb],
+                n_results=k,
+                include=["documents", "embeddings"]
+            )
         else:
-            response = db.query(emb, k)
-               
-        
+            response = db.query(q_emb, k)
+
         latency = time.time() - start
         total_latency += latency
 
-        retrieved_vectors = extract_texts(response, db_type)
-        recall = compute_recall(emb, retrieved_vectors)
+        retrieved_vectors = extract_vectors(response, db_type)
+        recall = compute_recall(gt_emb, retrieved_vectors)
         total_recall += recall
 
     total_time = time.time() - total_start
@@ -77,5 +84,4 @@ def run_queries(db, embedder, queries, db_type, k=3):
         "throughput": round(total_queries / total_time, 2),
         "recall_k": round(total_recall / total_queries, 4)
     }
-
     return metrics

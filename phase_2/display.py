@@ -8,4 +8,4 @@ def display_summary(metrics):
     print(f"Total time (s)       : {metrics['total_time']}")
     print(f"Avg latency (s)      : {metrics['avg_latency']}")
     print(f"Throughput (q/s)     : {metrics['throughput']}")
-    # print(f"Recall@k             : {metrics['recall_k']}")
+    print(f"Recall@k             : {metrics['recall_k']}")
