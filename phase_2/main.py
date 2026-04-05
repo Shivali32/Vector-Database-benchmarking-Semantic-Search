@@ -142,10 +142,12 @@ def main(db_type="chroma", index_type="HNSW"):
 if __name__ == "__main__":
 
     # for db in ["chroma", "qdrant", "milvus"]:
-    for db in ["chroma", "qdrant"]:
-        print(f"Running benchmark for: {db}")
-        main(db, index_type="HNSW")
+    # for db in ["chroma", "qdrant"]:
+    #     print(f"Running benchmark for: {db}")
+    #     main(db, index_type="HNSW")
 
-    # db = "milvus"
-    # print(f"Running benchmark for: {db}")
+    db = "milvus"
+    print(f"Running benchmark for: {db}")
     # main(db, index_type="DISKANN")
+    # main(db, index_type="HNSW")
+    main(db, index_type="IVF_FLAT")

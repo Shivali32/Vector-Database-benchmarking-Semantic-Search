@@ -30,7 +30,7 @@ def extract_vectors(response, db_type):
         # qdrant returns hit.vector directly since with_vectors=True
         return [hit.vector for hit in response]
     elif db_type == "milvus":
-        return [hit.entity.get("vector") for hit in response]
+         return [hit["vector"] for hit in response]
 
 
 def compute_recall(query_emb, retrieved_vectors, threshold=0.7):

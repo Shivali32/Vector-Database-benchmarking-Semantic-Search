@@ -1,3 +1,4 @@
+import numpy as np
 from pymilvus import (
     connections,
     FieldSchema,
@@ -26,7 +27,9 @@ class MilvusDB:
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=False),
             FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=self.dim),
-            FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=65535)
+            FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=65535),
+            FieldSchema(name="original_id", dtype=DataType.VARCHAR, max_length=100),
+            FieldSchema(name="type", dtype=DataType.VARCHAR, max_length=10)
         ]
 
         schema = CollectionSchema(fields)
@@ -75,12 +78,29 @@ class MilvusDB:
             raise ValueError(f"Unsupported index type: {self.index_type}")
 
     def add(self, ids, embeddings, documents):
-        ids = [int(i) for i in ids]
+        ids = [int(abs(hash(str(i))) % (2**31)) for i in ids]
+        
+        documents = [
+            str(doc) if doc is not None else ""
+            for doc in documents
+        ]
+        
+        types = []
+        for doc in documents:
+            if isinstance(doc, str):
+                types.append("text")
+            else:
+                types.append("image")
+
+        original_ids = [str(i) for i in ids]
+        embeddings = self.normalize(embeddings)
 
         self.collection.insert([
             ids,
             embeddings,
-            documents
+            documents,
+            original_ids,
+            types
         ])
 
         self.collection.flush()
@@ -94,7 +114,7 @@ class MilvusDB:
                 }
             }
 
-        elif self.index_type == "IVF":
+        elif self.index_type == ["IVF", "IVF_FLAT"]:
             return {
                 "metric_type": "COSINE",
                 "params": {
@@ -113,15 +133,27 @@ class MilvusDB:
     def query(self, query_embedding, k=3):
         search_params = self._get_search_params()
 
+        query_embedding = self.normalize([query_embedding])[0]
+
         results = self.collection.search(
             data=[query_embedding],
             anns_field="vector",
             param=search_params,
             limit=k,
-            output_fields=["text"]
+            output_fields=["text", "original_id", "type", "vector"]
         )
 
-        return results[0]
+        hits = []
+        for hit in results[0]:
+            hits.append({
+                "text": hit.entity.get("text"),
+                "original_id": hit.entity.get("original_id"),
+                "type": hit.entity.get("type"),
+                "vector": hit.entity.get("vector"),
+                "score": hit.distance
+            })
+
+        return hits
 
     def drop(self):
         if utility.has_collection(self.collection_name):
@@ -129,3 +161,9 @@ class MilvusDB:
 
     def count(self):
         return self.collection.num_entities
+    
+
+    def normalize(self, vecs):
+        vecs = np.array(vecs)
+        return (vecs / np.linalg.norm(vecs, axis=1, keepdims=True)).tolist()
+    

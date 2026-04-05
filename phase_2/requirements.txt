@@ -114,7 +114,7 @@ httpcore==1.0.9
 httptools==0.7.1
 httpx==0.27.0
 huey==2.5.4
-huggingface-hub==0.20.3
+huggingface-hub
 humanfriendly==10.0
 hyperframe==6.1.0
 hyperlink==21.0.0
@@ -235,7 +235,7 @@ prometheus_client==0.20.0
 prompt_toolkit==3.0.47
 propcache==0.4.1
 Protego==0.4.0
-protobuf==6.33.4
+protobuf
 psutil==6.0.0
 pure_eval==0.2.3
 py2neo==2021.2.4
@@ -288,12 +288,12 @@ rpds-py==0.20.0
 rsa==4.9.1
 s3transfer==0.15.0
 safetensors==0.4.5
-sagemaker==3.0.1
-sagemaker-core==2.0.1
-sagemaker-mlops==1.0
+# sagemaker==3.0.1
+# sagemaker-core==2.0.1
+# sagemaker-mlops==1.0
 sagemaker-schema-inference-artifacts==0.0.5
-sagemaker-serve==1.0
-sagemaker-train==1.0
+# sagemaker-serve==1.0
+# sagemaker-train==1.0
 scanpy==1.11.5
 schema==0.7.8
 scikit-learn==1.7.2
@@ -341,7 +341,7 @@ torchvision==0.20.1
 tornado==6.4.1
 tqdm==4.67.1
 traitlets==5.14.3
-transformers==4.40.2
+transformers
 trio==0.30.0
 trio-websocket==0.12.2
 tritonclient==2.63.0
