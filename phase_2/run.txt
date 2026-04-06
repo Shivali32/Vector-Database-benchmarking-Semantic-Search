@@ -11,10 +11,15 @@ python  ~/Desktop/Ind_study/project/phase_2/main.py
 pip list > requirements.txt
 
 git add .
-git commit -m "CLIP & Recall"
+git commit -m "milvus on linux"
 git push origin main
 
 
 module load apptainer
 cd ~/Desktop/Ind_study/milvus-standalone
 ./start_milvus.sh
+
+
+
+docker compose up -d
+docker compose down

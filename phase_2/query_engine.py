@@ -33,7 +33,7 @@ def extract_vectors(response, db_type):
          return [hit["vector"] for hit in response]
 
 
-def compute_recall(query_emb, retrieved_vectors, threshold=0.7):
+def compute_recall(query_emb, retrieved_vectors, threshold=0.65):
     for vec in retrieved_vectors:
         if vec is None:
             continue

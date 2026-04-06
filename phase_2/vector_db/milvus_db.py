@@ -56,7 +56,7 @@ class MilvusDB:
                 }
             }
 
-        elif self.index_type == "IVF":
+        elif self.index_type in ["IVF", "IVF_FLAT"]:
             return {
                 "metric_type": "COSINE",
                 "index_type": "IVF_FLAT",
@@ -114,7 +114,7 @@ class MilvusDB:
                 }
             }
 
-        elif self.index_type == ["IVF", "IVF_FLAT"]:
+        elif self.index_type in ["IVF", "IVF_FLAT"]:
             return {
                 "metric_type": "COSINE",
                 "params": {

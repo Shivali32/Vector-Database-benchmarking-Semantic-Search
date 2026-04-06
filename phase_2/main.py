@@ -7,12 +7,15 @@ from vector_db.milvus_db import MilvusDB
 from query_loader import load_queries
 from query_engine import run_queries
 from display import display_summary
+from db_logger import init_db, log_result
+
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 
 TEXT_DATA_PATH   = "wiki_dataset"
 IMAGE_META_PATH  = "wit_metadata/wit_subset_metadata.json"
-QUERY_PATH       = "QnA_1000.json"
-# QUERY_PATH       = "queries.json"
+QUERY_PATH       = "queries/queries_marco.json"
 EMBED_DIM        = 512
 
 # text_data_path = "wiki_sub"
@@ -115,6 +118,8 @@ def index_data(db, text_ids, text_embeddings, text_chunks,
 
 def main(db_type="chroma", index_type="HNSW"):
 
+    conn = init_db()
+
     text_chunks = load_text_chunks()
     image_docs  = load_image_docs()
 
@@ -137,6 +142,8 @@ def main(db_type="chroma", index_type="HNSW"):
     results = run_queries(db, embedder, queries, db_type)
 
     display_summary(results)
+    log_result(conn, db_type, index_type, results)
+    print(conn.execute("SELECT * FROM results").fetchdf())
 
 
 if __name__ == "__main__":
