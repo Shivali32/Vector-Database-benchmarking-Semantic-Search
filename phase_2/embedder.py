@@ -1,4 +1,5 @@
 from PIL import Image
+import os
 import torch
 import numpy as np
 
@@ -9,7 +10,12 @@ class Embedder:
         self.processor = processor
         self.device = device
 
-    def embed_documents(self, texts):
+    def embed_documents(self, texts, save_path="embeddings/text_embeddings.npy"):
+        
+        if self._exists(save_path):
+            return self._load_embeddings(save_path)
+        
+        print("Computing text embeddings...")
         inputs = self.processor(
             text=texts,
             return_tensors="pt",
@@ -26,11 +32,19 @@ class Embedder:
 
         text_features = text_features / text_features.norm(dim=-1, keepdim=True)
         result = text_features.cpu().numpy()
+
         assert result.ndim == 2, f"embed_documents: expected 2D, got {result.shape}"
         assert result.shape[1] == 512, f"embed_documents: expected 512-dim, got {result.shape}"
+        
+        self._save_embeddings(result, save_path)
         return result  # (N, 512)
 
-    def embed_images(self, image_docs, batch_size=32):
+    def embed_images(self, image_docs, batch_size=32, save_path="embeddings/image_embeddings.npy"):
+
+        if self._exists(save_path):
+            return self._load_embeddings(save_path)
+        
+        print("Computing image embeddings...")
         all_embeddings = []
 
         for i in range(0, len(image_docs), batch_size):
@@ -54,70 +68,49 @@ class Embedder:
         result = torch.cat(all_embeddings).numpy()
         assert result.ndim == 2, f"embed_images: expected 2D, got {result.shape}"
         assert result.shape[1] == 512, f"embed_images: expected 512-dim, got {result.shape}"
-        return result  # (N, 512)
 
-    def embed_query(self, query_text):
-        return self.embed_documents([query_text])[0]  # (512,)
+        self._save_embeddings(result, save_path)
+        return result
+
+    def embed_queries(self, queries, save_path="embeddings/query_embeddings.npy"):
+
+        if self._exists(save_path):
+            return self._load_embeddings(save_path)
+
+        inputs = self.processor(
+            text=queries,
+            return_tensors="pt",
+            padding=True,
+            truncation=True
+        ).to(self.device)
+
+        with torch.no_grad():
+            text_out = self.model.text_model(
+                input_ids=inputs["input_ids"],
+                attention_mask=inputs["attention_mask"]
+            )
+            text_features = self.model.text_projection(text_out.pooler_output)
+
+        text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+        result = text_features.cpu().numpy()
+
+        self._save_embeddings(result, save_path)
+        return result
+        # return self.embed_documents([query_text])[0]
     
+    def _save_embeddings(self, embeddings, path):
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        np.save(path, embeddings)
+        print(f"Saved embeddings → {path}")
 
+    def _load_embeddings(self, path):
+        embeddings = np.load(path)
+        print(f"Loaded embeddings → {path}")
+        return embeddings
 
-
-
-
-
-# ### CLIP VERSION
-# from PIL import Image
-# import torch
-# import numpy as np
-
-
-# class Embedder:
-
-#     def __init__(self, model, processor, device):
-#         self.model = model
-#         self.processor = processor
-#         self.device = device
-
-#     def embed_documents(self, texts):
-
-#         inputs = self.processor(
-#             text=texts,
-#             return_tensors="pt",
-#             padding=True,
-#             truncation=True
-#         ).to(self.device)
-
-#         with torch.no_grad():
-#             text_features = self.model.get_text_features(**inputs)
-
-#         if not isinstance(text_features, torch.Tensor):
-#             text_features = text_features[0]
-
-#         text_features = text_features / text_features.norm(dim=-1, keepdim=True)
-
-#         return text_features.cpu().numpy()       
-
-
-#     def embed_images(self, image_docs, batch_size=32):
-
-#         all_embeddings = []
-#         for i in range(0, len(image_docs), batch_size):
-#             batch = image_docs[i:i+batch_size]
-#             images = [Image.open(doc["image_path"]).convert("RGB") for doc in batch]
-
-#             inputs = self.processor(images=images, return_tensors="pt").to(self.device)
-
-#             with torch.no_grad():
-#                 image_features = self.model.get_image_features(**inputs)
-
-#             if not isinstance(image_features, torch.Tensor):
-#                 image_features = image_features[0]
-
-#             image_features = image_features / image_features.norm(dim=-1, keepdim=True)
-#             all_embeddings.append(image_features.cpu())
-
-#         return torch.cat(all_embeddings).numpy()
-
+    def _exists(self, path):
+        return os.path.exists(path)
+    
 
 
 # ### SENTENCE TRANSFORMER VERSION

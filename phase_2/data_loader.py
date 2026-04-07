@@ -6,7 +6,10 @@ def load_documents(data_path):
     for file in os.listdir(data_path):
         if file.endswith(".txt"):
             with open(os.path.join(data_path, file), "r", encoding="utf-8") as f:
-                documents.append(f.read())
+                documents.append({
+                    "doc_id": file,
+                    "content": f.read()
+                })
     return documents
 
 def chunk_text(text, chunk_size=500, overlap=50):

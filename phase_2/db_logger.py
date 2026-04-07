@@ -2,6 +2,7 @@ import duckdb
 
 def init_db(db_path="benchmark.duckdb"):
     conn = duckdb.connect(db_path)
+    # conn = duckdb.connect("benchmark.duckdb")
 
     conn.execute("""
     CREATE TABLE IF NOT EXISTS results (

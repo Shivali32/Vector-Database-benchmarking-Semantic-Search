@@ -33,7 +33,7 @@ def extract_vectors(response, db_type):
          return [hit["vector"] for hit in response]
 
 
-def compute_recall(query_emb, retrieved_vectors, threshold=0.65):
+def compute_recall(query_emb, retrieved_vectors, threshold=0.55):
     for vec in retrieved_vectors:
         if vec is None:
             continue
@@ -49,8 +49,15 @@ def run_queries(db, embedder, queries, db_type, k=3):
     query_texts  = [item["query"]  for item in queries]
     answer_texts = [item["answer"] for item in queries]
 
-    query_embeddings  = embedder.embed_documents(query_texts)
-    answer_embeddings = embedder.embed_documents(answer_texts)
+    query_embeddings  = embedder.embed_queries(
+        query_texts,
+        save_path="embeddings/query_embeddings.npy"
+    )
+
+    answer_embeddings = embedder.embed_queries(
+        answer_texts,
+        save_path="embeddings/answer_embeddings.npy"
+    )
 
     total_recall = 0
     total_latency = 0

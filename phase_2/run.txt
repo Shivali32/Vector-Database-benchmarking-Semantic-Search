@@ -11,7 +11,7 @@ python  ~/Desktop/Ind_study/project/phase_2/main.py
 pip list > requirements.txt
 
 git add .
-git commit -m "milvus on linux"
+git commit -m "duckdb init"
 git push origin main
 
 
@@ -23,3 +23,13 @@ cd ~/Desktop/Ind_study/milvus-standalone
 
 docker compose up -d
 docker compose down
+
+
+import duckdb
+con = duckdb.connect("benchmark.duckdb")
+conn = duckdb.connect("chunks.duckdb")
+print(con.execute("SELECT run_id, recall_k FROM results").fetchdf())
+print(con.execute("UPDATE results SET recall_k = recall_k / 10 WHERE recall_k > 1;").fetchdf())
+print(conn.execute("SELECT * FROM chunks Order by doc_id desc Limit 5").fetchdf())
+print(con.execute("Describe results").fetchdf())
+print(conn.execute("Describe chunks").fetchdf())
