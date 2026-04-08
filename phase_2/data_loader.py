@@ -7,7 +7,7 @@ def load_documents(data_path):
         if file.endswith(".txt"):
             with open(os.path.join(data_path, file), "r", encoding="utf-8") as f:
                 documents.append({
-                    "doc_id": file,
+                    "doc_id": os.path.splitext(file)[0],
                     "content": f.read()
                 })
     return documents

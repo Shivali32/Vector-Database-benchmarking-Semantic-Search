@@ -18,14 +18,14 @@ def init_chunk_db():
 def insert_text_chunks(conn, text_chunks):
     data = []
 
-    for i, chunk in enumerate(text_chunks):
+    for doc in text_chunks:
         data.append((
-            f"text_{i}",    
-            f"doc_{i}",     
+            doc["id"],
+            doc["doc_id"],
             "text",
-            chunk,
+            doc["content"],
             None
-        ))
+    ))
 
     conn.executemany("""
         INSERT OR REPLACE INTO chunks VALUES (?, ?, ?, ?, ?)
@@ -54,12 +54,21 @@ def insert_image_chunks(conn, image_docs):
 
 def load_text_chunks_from_db(conn):
     result = conn.execute("""
-        SELECT content FROM chunks WHERE type='text' ORDER BY chunk_id
+        SELECT chunk_id, doc_id, content FROM chunks WHERE type='text'
     """).fetchall()
 
     print(f"Loaded {len(result)} text chunks")
+    
+    text_docs = [
+        {
+            "id": row[0],
+            "doc_id": row[1],
+            "content": row[2]
+        }
+        for row in result
+    ]
 
-    return [row[0] for row in result]
+    return text_docs
 
 
 def load_image_chunks_from_db(conn):

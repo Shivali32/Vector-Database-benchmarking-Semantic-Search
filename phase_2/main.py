@@ -42,12 +42,13 @@ def load_text_chunks():
             })
             chunk_counter += 1
 
+    # text_chunks = text_chunks[:2]
     return text_chunks
 
 
 def load_image_docs():
     image_docs = load_wit_images(IMAGE_META_PATH)
-    image_docs = image_docs[:5]
+    # image_docs = image_docs[:2]
     return image_docs
 
 
@@ -132,11 +133,11 @@ def get_chunks(store_chunks):
     return text_chunks, image_docs
 
 
-def main(db_type="chroma", index_type="HNSW", store_chunks=False):
+def main(db_type="chroma", index_type="HNSW", store_chunks=True):
 
     text_chunks, image_docs = get_chunks(store_chunks)
-    print(f"Loaded text chunks {text_chunks}")
-    print(f"Loaded image chunks {image_docs}")
+    # print(f"Loaded text chunks {text_chunks}")
+    # print(f"Loaded image chunks {image_docs}")
 
     embedder = build_embedder()
 
@@ -148,7 +149,6 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=False):
 
     text_ids = [doc["id"] for doc in text_chunks]
     text_chunks = [doc["content"] for doc in text_chunks]
-    text_doc_ids = [doc["doc_id"] for doc in text_chunks]
 
     image_ids   = [doc["id"] for doc in image_docs]
     image_texts = [doc["content"] for doc in image_docs]
@@ -168,14 +168,14 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=False):
 if __name__ == "__main__":
 
     # for db in ["chroma", "qdrant", "milvus"]:
-    for db in ["chroma"]:
+    for db in ["chroma", "qdrant"]:
         print(f"Running benchmark for: {db}")
         main(db, index_type="HNSW", store_chunks=True)
 
-    # db = "milvus"
-    # print(f"Running benchmark for: {db}")
-    # main(db, index_type="DISKANN")
-    # main(db, index_type="HNSW")
-    # main(db, index_type="IVF_FLAT")
+    db = "milvus"
+    print(f"Running benchmark for: {db}")
+    main(db, index_type="DISKANN")
+    main(db, index_type="HNSW")
+    main(db, index_type="IVF_FLAT")
 
-    # print(conn.execute("SELECT * FROM results ORDER BY run_id DESC limit 10").fetchdf())
+    print(conn.execute("SELECT * FROM results ORDER BY run_id DESC limit 10").fetchdf())
