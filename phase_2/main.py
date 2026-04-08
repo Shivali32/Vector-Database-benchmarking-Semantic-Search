@@ -1,13 +1,13 @@
 from data_loader import load_documents, load_wit_images, chunk_text, os
 from chunk_db import init_chunk_db, insert_text_chunks, insert_image_chunks
-from chunk_db import init_chunk_db, load_text_chunks_from_db, load_image_chunks_from_db
+from chunk_db import init_chunk_db, load_text_chunks_from_db, load_image_chunks_from_db, fetch_chunks_by_ids
 from embedder import Embedder, np
 from model_loader import load_model
 from vector_db.chroma_db import ChromaDB
 from vector_db.qdrant_db import QdrantDB
 from vector_db.milvus_db import MilvusDB
 from query_loader import load_queries
-from query_engine import extract_texts, run_queries
+from query_engine import extract_texts, run_queries, extract_ids
 from display import display_summary
 from db_logger import init_db, log_result
 from rag import RAGPipeline
@@ -84,7 +84,10 @@ def get_image_embeddings(embedder, image_docs):
 def build_db(db_type, index_type):
     if db_type == "chroma":
         db = ChromaDB()
-        # db.collection.delete()
+        existing_ids = db.collection.get()["ids"]
+        if existing_ids:
+            db.collection.delete(existing_ids)
+        return db
         return db
     elif db_type == "qdrant":
         return QdrantDB(dim=EMBED_DIM)
@@ -101,6 +104,10 @@ def index_data(db, text_ids, text_embeddings, text_chunks,
     db.add(text_ids, text_embeddings, text_chunks)
     db.add(image_ids, image_embeddings, image_texts)
 
+def clear_chunks_table(conn):
+    conn.execute("DELETE FROM chunks")
+    conn.commit()
+
 def get_chunks(store_chunks):
     
     text_chunks = None
@@ -110,6 +117,8 @@ def get_chunks(store_chunks):
     if store_chunks:
         text_chunks = load_text_chunks()
         image_docs = load_image_docs()
+
+        clear_chunks_table(conn_chunks)
 
         insert_text_chunks(conn_chunks, text_chunks)
         insert_image_chunks(conn_chunks, image_docs)
@@ -130,24 +139,29 @@ def get_chunks(store_chunks):
 def rag_top_k(sample_queries, db, embedder, db_type, k=3):
     rag = RAGPipeline()
 
+    conn_chunks = init_chunk_db()
     results_data = []
     print("\n------- Sample Queries -------\n")
 
     for item in sample_queries:
         query = item["query"]
-        query_embedding = embedder.embed_queries([query])[0]
+        query_embedding = embedder.embed_queries([query],
+                          save_path="embeddings/query_embeddings.npy",
+                          use_cache=True)[0]
 
         if db_type == "chroma":
             response = db.collection.query(
                 query_embeddings=[query_embedding],
                 n_results=k,
-                include=["documents"]
+                # include=["ids"]
             )
-            print(response["documents"])
+            # print(response)
         else:
             response = db.query(query_embedding, k)
             
-        retrieved_chunks = extract_texts(response, db_type)
+        # retrieved_chunks = extract_texts(response, db_type)
+        top_ids = extract_ids(response, db_type)
+        retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
 
         answer = rag.generate_answer(query, retrieved_chunks)
 
@@ -167,11 +181,12 @@ def rag_top_k(sample_queries, db, embedder, db_type, k=3):
             "chunks": retrieved_chunks,
             "answer": answer
         })
-
+    
+    conn_chunks.close()
     return results_data
 
 
-def main(db_type="chroma", index_type="HNSW", store_chunks=False):
+def main(db_type="chroma", index_type="HNSW", store_chunks=True):
 
     text_chunks, image_docs = get_chunks(store_chunks)
     # print(f"Loaded text chunks {text_chunks}")

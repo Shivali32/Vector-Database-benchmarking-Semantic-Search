@@ -91,3 +91,13 @@ def load_image_chunks_from_db(conn):
     print(f"Loaded {len(result)} image chunks")
 
     return image_docs
+
+def fetch_chunks_by_ids(conn, ids):
+    placeholders = ", ".join(["?" for _ in ids])
+    rows = conn.execute(
+        f"SELECT chunk_id, content FROM chunks WHERE chunk_id IN ({placeholders})",
+        ids
+    ).fetchall()
+    # return in same order as ids
+    content_map = {row[0]: row[1] for row in rows}
+    return [content_map.get(id_, "") for id_ in ids]

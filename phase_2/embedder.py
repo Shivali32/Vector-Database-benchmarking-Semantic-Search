@@ -114,9 +114,9 @@ class Embedder:
         self._save_embeddings(result, save_path)
         return result
 
-    def embed_queries(self, queries, batch_size=32, save_path="embeddings/query_embeddings.npy"):
+    def embed_queries(self, queries, batch_size=32, save_path="embeddings/query_embeddings.npy", use_cache=True):
 
-        if self._exists(save_path):
+        if use_cache and self._exists(save_path):
             return self._load_embeddings(save_path)
 
         if isinstance(queries[0], dict):

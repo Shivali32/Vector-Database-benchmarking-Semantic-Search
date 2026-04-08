@@ -7,6 +7,15 @@ def cosine_similarity(vec1, vec2):
     return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
 
 
+def extract_ids(response, db_type):
+    if db_type == "chroma":
+        return response["ids"][0]
+    elif db_type == "qdrant":
+        return [str(hit.id) for hit in response]
+    elif db_type == "milvus":
+        return [str(hit.id) for hit in response]
+    
+
 def extract_texts(response, db_type):
     if db_type == "chroma":
         return response["documents"][0]
