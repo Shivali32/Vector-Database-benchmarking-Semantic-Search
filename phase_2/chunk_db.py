@@ -73,12 +73,21 @@ def load_text_chunks_from_db(conn):
 
 def load_image_chunks_from_db(conn):
     result = conn.execute("""
-        SELECT chunk_id, content FROM chunks WHERE type='image' ORDER BY chunk_id
+        SELECT chunk_id, content, image_path 
+        FROM chunks 
+        WHERE type='image' 
+        ORDER BY chunk_id
     """).fetchall()
 
-    image_ids = [row[0] for row in result]
-    image_texts = [row[1] for row in result]
+    image_docs = []
+
+    for row in result:
+        image_docs.append({
+            "id": row[0],
+            "content": row[1],
+            "image_path": row[2]
+        })
 
     print(f"Loaded {len(result)} image chunks")
 
-    return image_ids, image_texts
+    return image_docs

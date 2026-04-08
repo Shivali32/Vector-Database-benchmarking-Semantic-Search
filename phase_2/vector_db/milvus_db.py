@@ -78,21 +78,25 @@ class MilvusDB:
             raise ValueError(f"Unsupported index type: {self.index_type}")
 
     def add(self, ids, embeddings, documents):
+        original_ids = [str(i) for i in ids]
         ids = [int(abs(hash(str(i))) % (2**31)) for i in ids]
         
-        documents = [
-            str(doc) if doc is not None else ""
-            for doc in documents
-        ]
+        # documents = [
+        #     str(doc) if doc is not None else ""
+        #     for doc in documents
+        # ]
         
-        types = []
-        for doc in documents:
-            if isinstance(doc, str):
-                types.append("text")
-            else:
-                types.append("image")
+        # types = []
+        # for doc in documents:
+        #     if isinstance(doc, str):
+        #         types.append("text")
+        #     else:
+        #         types.append("image")
 
-        original_ids = [str(i) for i in ids]
+        types = ["image" if isinstance(doc, dict) else "text" for doc in documents]
+        documents = [str(doc) if doc is not None else "" for doc in documents]
+
+
         embeddings = self.normalize(embeddings)
 
         self.collection.insert([

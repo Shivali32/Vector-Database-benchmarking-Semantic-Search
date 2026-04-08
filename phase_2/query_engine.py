@@ -60,7 +60,7 @@ def run_queries(db, embedder, queries, db_type, k=3):
     )
 
     total_recall = 0
-    total_latency = 0
+    latencies = []
 
     for q_emb, gt_emb in zip(query_embeddings, answer_embeddings):
         start = time.time()
@@ -74,8 +74,9 @@ def run_queries(db, embedder, queries, db_type, k=3):
         else:
             response = db.query(q_emb, k)
 
-        latency = time.time() - start
-        total_latency += latency
+        # latency = time.time() - start
+        # total_latency += latency
+        latencies.append(time.time() - start)
 
         retrieved_vectors = extract_vectors(response, db_type)
         recall = compute_recall(gt_emb, retrieved_vectors)
@@ -83,11 +84,15 @@ def run_queries(db, embedder, queries, db_type, k=3):
 
     total_time = time.time() - total_start
     total_queries = len(queries)
+    latencies_array = np.array(latencies)
 
     metrics = {
         "queries": total_queries,
         "total_time": round(total_time, 2),
-        "avg_latency": round(total_latency / total_queries, 4),
+        "avg_latency": round(latencies_array.mean(), 4),
+        "p50_latency": round(np.percentile(latencies_array, 50), 4),
+        "p95_latency": round(np.percentile(latencies_array, 95), 4),
+        "p99_latency": round(np.percentile(latencies_array, 99), 4),
         "throughput": round(total_queries / total_time, 2),
         "recall_k": round(total_recall / total_queries, 4)
     }

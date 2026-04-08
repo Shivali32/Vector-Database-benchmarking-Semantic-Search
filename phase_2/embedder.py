@@ -10,34 +10,75 @@ class Embedder:
         self.processor = processor
         self.device = device
 
-    def embed_documents(self, texts, save_path="embeddings/text_embeddings.npy"):
-        
+    def embed_documents(self, texts, batch_size=32, save_path="embeddings/text_embeddings.npy"):
+
         if self._exists(save_path):
             return self._load_embeddings(save_path)
-        
+
         print("Computing text embeddings...")
-        inputs = self.processor(
-            text=texts,
-            return_tensors="pt",
-            padding=True,
-            truncation=True
-        ).to(self.device)
-
-        with torch.no_grad():
-            text_out = self.model.text_model(
-                input_ids=inputs["input_ids"],
-                attention_mask=inputs["attention_mask"]
-            )
-            text_features = self.model.text_projection(text_out.pooler_output)
-
-        text_features = text_features / text_features.norm(dim=-1, keepdim=True)
-        result = text_features.cpu().numpy()
-
-        assert result.ndim == 2, f"embed_documents: expected 2D, got {result.shape}"
-        assert result.shape[1] == 512, f"embed_documents: expected 512-dim, got {result.shape}"
         
+        if isinstance(texts[0], dict):
+            texts = [t["content"] for t in texts]
+
+        all_embeddings = []
+
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i + batch_size]
+
+            inputs = self.processor(
+                text=batch,
+                return_tensors="pt",
+                padding=True,
+                truncation=True
+            ).to(self.device)
+
+            with torch.no_grad():
+                text_out = self.model.text_model(
+                    input_ids=inputs["input_ids"],
+                    attention_mask=inputs["attention_mask"]
+                )
+                text_features = self.model.text_projection(text_out.pooler_output)
+
+            text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+            all_embeddings.append(text_features.cpu())
+
+        result = torch.cat(all_embeddings).numpy()
+
+        assert result.ndim == 2
+        assert result.shape[1] == 512
+
         self._save_embeddings(result, save_path)
-        return result  # (N, 512)
+        return result
+
+    # def embed_documents(self, texts, save_path="embeddings/text_embeddings.npy"):
+        
+        # if self._exists(save_path):
+        #     return self._load_embeddings(save_path)
+        
+        # print("Computing text embeddings...")
+        # inputs = self.processor(
+        #     text=texts,
+        #     return_tensors="pt",
+        #     padding=True,
+        #     truncation=True
+        # ).to(self.device)
+
+        # with torch.no_grad():
+        #     text_out = self.model.text_model(
+        #         input_ids=inputs["input_ids"],
+        #         attention_mask=inputs["attention_mask"]
+        #     )
+        #     text_features = self.model.text_projection(text_out.pooler_output)
+
+        # text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+        # result = text_features.cpu().numpy()
+
+        # assert result.ndim == 2, f"embed_documents: expected 2D, got {result.shape}"
+        # assert result.shape[1] == 512, f"embed_documents: expected 512-dim, got {result.shape}"
+        
+        # self._save_embeddings(result, save_path)
+        # return result
+        
 
     def embed_images(self, image_docs, batch_size=32, save_path="embeddings/image_embeddings.npy"):
 
@@ -45,6 +86,7 @@ class Embedder:
             return self._load_embeddings(save_path)
         
         print("Computing image embeddings...")
+        
         all_embeddings = []
 
         for i in range(0, len(image_docs), batch_size):
@@ -72,31 +114,67 @@ class Embedder:
         self._save_embeddings(result, save_path)
         return result
 
-    def embed_queries(self, queries, save_path="embeddings/query_embeddings.npy"):
+    def embed_queries(self, queries, batch_size=32, save_path="embeddings/query_embeddings.npy"):
 
         if self._exists(save_path):
             return self._load_embeddings(save_path)
 
-        inputs = self.processor(
-            text=queries,
-            return_tensors="pt",
-            padding=True,
-            truncation=True
-        ).to(self.device)
+        if isinstance(queries[0], dict):
+            queries = [q["content"] for q in queries]
 
-        with torch.no_grad():
-            text_out = self.model.text_model(
-                input_ids=inputs["input_ids"],
-                attention_mask=inputs["attention_mask"]
-            )
-            text_features = self.model.text_projection(text_out.pooler_output)
+        all_embeddings = []
 
-        text_features = text_features / text_features.norm(dim=-1, keepdim=True)
-        result = text_features.cpu().numpy()
+        for i in range(0, len(queries), batch_size):
+            batch = queries[i:i + batch_size]
+
+            inputs = self.processor(
+                text=batch,
+                return_tensors="pt",
+                padding=True,
+                truncation=True
+            ).to(self.device)
+
+            with torch.no_grad():
+                text_out = self.model.text_model(
+                    input_ids=inputs["input_ids"],
+                    attention_mask=inputs["attention_mask"]
+                )
+                text_features = self.model.text_projection(text_out.pooler_output)
+
+            text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+            all_embeddings.append(text_features.cpu())
+
+        result = torch.cat(all_embeddings).numpy()
 
         self._save_embeddings(result, save_path)
         return result
-        # return self.embed_documents([query_text])[0]
+
+
+    # def embed_queries(self, queries, save_path="embeddings/query_embeddings.npy"):
+
+    #     if self._exists(save_path):
+    #         return self._load_embeddings(save_path)
+
+    #     inputs = self.processor(
+    #         text=queries,
+    #         return_tensors="pt",
+    #         padding=True,
+    #         truncation=True
+    #     ).to(self.device)
+
+    #     with torch.no_grad():
+    #         text_out = self.model.text_model(
+    #             input_ids=inputs["input_ids"],
+    #             attention_mask=inputs["attention_mask"]
+    #         )
+    #         text_features = self.model.text_projection(text_out.pooler_output)
+
+    #     text_features = text_features / text_features.norm(dim=-1, keepdim=True)
+    #     result = text_features.cpu().numpy()
+
+    #     self._save_embeddings(result, save_path)
+    #     return result
+    #     # return self.embed_documents([query_text])[0]
     
     def _save_embeddings(self, embeddings, path):
         os.makedirs(os.path.dirname(path), exist_ok=True)

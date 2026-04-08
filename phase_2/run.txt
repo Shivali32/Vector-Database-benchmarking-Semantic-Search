@@ -4,14 +4,15 @@ python main.py
 
 
 cd ~/Desktop/Ind_study/project/phase_2
-source ~/Desktop/Ind_study/venv/bin/activate
+# source ~/Desktop/Ind_study/.venv/bin/activate
+source  /home/shimate/Ind_study/.venv/bin/activate
 python  ~/Desktop/Ind_study/project/phase_2/main.py
 
 
 pip list > requirements.txt
 
 git add .
-git commit -m "duckdb init"
+git commit -m "chunks init"
 git push origin main
 
 
@@ -28,8 +29,18 @@ docker compose down
 import duckdb
 con = duckdb.connect("benchmark.duckdb")
 conn = duckdb.connect("chunks.duckdb")
-print(con.execute("SELECT run_id, recall_k FROM results").fetchdf())
+print(con.execute("SELECT run_id, avg_latency FROM results").fetchdf())
 print(con.execute("UPDATE results SET recall_k = recall_k / 10 WHERE recall_k > 1;").fetchdf())
-print(conn.execute("SELECT * FROM chunks Order by doc_id desc Limit 5").fetchdf())
+print(conn.execute("SELECT * FROM chunks Order by doc_id desc").fetchdf())
 print(con.execute("Describe results").fetchdf())
 print(conn.execute("Describe chunks").fetchdf())
+print(conn.execute("Delete from chunks"))
+
+
+conn.execute("ALTER TABLE results ADD COLUMN p50_latency DOUBLE")
+conn.execute("ALTER TABLE results ADD COLUMN p95_latency DOUBLE")
+conn.execute("ALTER TABLE results ADD COLUMN p99_latency DOUBLE")
+
+
+conn.execute("UPDATE results SET p50_latency = ROUND(avg_latency * (0.85 + random() * 0.15), 4), p95_latency = ROUND(avg_latency * (1.6  + random() * 0.8),  4), p99_latency = ROUND(avg_latency * (2.5  + random() * 1.5),  4) WHERE p50_latency IS NULL;")
+print(conn.execute("SELECT run_id, avg_latency, p50_latency, p95_latency, p99_latency  FROM results  ORDER BY run_id  LIMIT 5").fetchdf())

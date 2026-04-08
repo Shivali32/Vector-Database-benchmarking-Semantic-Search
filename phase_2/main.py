@@ -7,10 +7,12 @@ from vector_db.chroma_db import ChromaDB
 from vector_db.qdrant_db import QdrantDB
 from vector_db.milvus_db import MilvusDB
 from query_loader import load_queries
-from query_engine import run_queries
+from query_engine import extract_texts, run_queries
 from display import display_summary
 from db_logger import init_db, log_result
+from rag import RAGPipeline
 
+import random
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -96,13 +98,6 @@ def build_db(db_type, index_type):
 def index_data(db, text_ids, text_embeddings, text_chunks,
                image_ids, image_embeddings, image_texts):
 
-    ## ---- For text only ---
-    # all_embeddings = text_embeddings + image_embeddings
-    # all_embeddings = np.vstack([text_embeddings, image_embeddings])
-    # all_ids = text_ids + image_ids
-    # all_payloads = text_chunks + image_docs
-    # db.add(all_ids, all_embeddings, text_chunks)
-
     db.add(text_ids, text_embeddings, text_chunks)
     db.add(image_ids, image_embeddings, image_texts)
 
@@ -121,19 +116,62 @@ def get_chunks(store_chunks):
 
     else:
         text_chunks = load_text_chunks_from_db(conn_chunks)
-        image_ids, image_texts = load_image_chunks_from_db(conn_chunks)
+        image_docs = load_image_chunks_from_db(conn_chunks)
 
-        image_docs = [
-            {"id": id_, "content": text}
-            for id_, text in zip(image_ids, image_texts)
-        ]
+        # image_docs = [
+        #     {"id": id_, "content": text}
+        #     for id_, text in zip(image_ids, image_texts)
+        # ]
 
     conn_chunks.close()    
 
-    return text_chunks, image_docs
+    return text_chunks,image_docs
+
+def rag_top_k(sample_queries, db, embedder, db_type, k=3):
+    rag = RAGPipeline()
+
+    results_data = []
+    print("\n------- Sample Queries -------\n")
+
+    for item in sample_queries:
+        query = item["query"]
+        query_embedding = embedder.embed_queries([query])[0]
+
+        if db_type == "chroma":
+            response = db.collection.query(
+                query_embeddings=[query_embedding],
+                n_results=k,
+                include=["documents"]
+            )
+            print(response["documents"])
+        else:
+            response = db.query(query_embedding, k)
+            
+        retrieved_chunks = extract_texts(response, db_type)
+
+        answer = rag.generate_answer(query, retrieved_chunks)
+
+        print("\nQuery:", query)        
+        
+        print("\nRetrieved Chunks:")
+        for chunk in retrieved_chunks:
+            print("-", chunk[:200])
+
+        print("\nGenerated Answer:")
+        print(answer)
+        # print("\n" + "="*50)
 
 
-def main(db_type="chroma", index_type="HNSW", store_chunks=True):
+        results_data.append({
+            "query": query,
+            "chunks": retrieved_chunks,
+            "answer": answer
+        })
+
+    return results_data
+
+
+def main(db_type="chroma", index_type="HNSW", store_chunks=False):
 
     text_chunks, image_docs = get_chunks(store_chunks)
     # print(f"Loaded text chunks {text_chunks}")
@@ -159,7 +197,10 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=True):
                 image_ids, image_embeddings, image_texts)
 
     queries = load_queries(QUERY_PATH)
-    results = run_queries(db, embedder, queries, db_type, k=5)
+    results = run_queries(db, embedder, queries, db_type, k=10)
+    
+    sample_queries = random.sample(queries, 3)
+    rag_top_k(sample_queries, db, embedder, db_type, k=10)
 
     display_summary(results)
     log_result(conn, db_type, index_type, results)
@@ -168,14 +209,17 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=True):
 if __name__ == "__main__":
 
     # for db in ["chroma", "qdrant", "milvus"]:
-    for db in ["chroma", "qdrant"]:
+    for db in [
+        "chroma", 
+        # "qdrant"
+    ]:
         print(f"Running benchmark for: {db}")
-        main(db, index_type="HNSW", store_chunks=True)
+        main(db, index_type="HNSW")
 
-    db = "milvus"
-    print(f"Running benchmark for: {db}")
-    main(db, index_type="DISKANN")
-    main(db, index_type="HNSW")
-    main(db, index_type="IVF_FLAT")
+    # db = "milvus"
+    # print(f"Running benchmark for: {db}")
+    # main(db, index_type="DISKANN")
+    # main(db, index_type="HNSW")
+    # main(db, index_type="IVF_FLAT")
 
-    print(conn.execute("SELECT * FROM results ORDER BY run_id DESC limit 10").fetchdf())
+    # print(conn.execute("SELECT * FROM results ORDER BY run_id DESC limit 10").fetchdf())
