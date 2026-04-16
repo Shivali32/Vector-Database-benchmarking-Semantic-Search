@@ -1,14 +1,18 @@
 from transformers import pipeline
 
 class RAGPipeline:
-    def __init__(self, model_name="google/flan-t5-base"):
+    def __init__(self, model_name="google/flan-t5-large"):
         self.generator = pipeline("text2text-generation", model=model_name)
 
     def build_prompt(self, query, chunks):
         context = "\n".join(chunks)
 
         prompt = f"""
-        Use the context below to answer the question clearly.
+        You are a question answering system.
+
+        Answer the question using ONLY the context below and rephrase it to make a meaningful sentence.
+        
+
 
         Context:
         {context}
@@ -16,7 +20,7 @@ class RAGPipeline:
         Question:
         {query}
 
-        Answer in 2-3 sentences:
+        Answer:
         """
         return prompt
 

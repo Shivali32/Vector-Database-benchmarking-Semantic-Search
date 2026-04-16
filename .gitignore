@@ -1,5 +1,6 @@
 # Python cache
 __pycache__/
+vector_db/__pycache__/
 *.pyc
 *.pyo
 

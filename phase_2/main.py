@@ -7,20 +7,23 @@ from vector_db.chroma_db import ChromaDB
 from vector_db.qdrant_db import QdrantDB
 from vector_db.milvus_db import MilvusDB
 from query_loader import load_queries
-from query_engine import extract_texts, run_queries, extract_ids
+from query_engine import extract_texts, run_queries, extract_ids, rerank_chunks, cosine_similarity
 from display import display_summary
 from db_logger import init_db, log_result
 from rag import RAGPipeline
 
-import random
+import random, time
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
+
+from PIL import Image
+import matplotlib.pyplot as plt
 
 
 TEXT_DATA_PATH   = "wiki_dataset"
 IMAGE_META_PATH  = "wit_metadata/wit_subset_metadata.json"
 QUERY_PATH       = "queries/queries_marco.json"
-EMBED_DIM        = 512
+EMBED_DIM        = 384      # 512
 conn = init_db()
 
 # text_data_path = "wiki_sub"
@@ -36,11 +39,12 @@ def load_text_chunks():
     for doc in text_docs:
         chunks = chunk_text(doc["content"])
 
-        for chunk in chunks:
+        for i, chunk in enumerate(chunks):
             text_chunks.append({
-                "id": f"text_{chunk_counter}", 
+                "id": f"text_{chunk_counter}",
                 "doc_id": doc["doc_id"],
-                "content": chunk
+                "content": chunk,
+                "is_intro": (i == 0)
             })
             chunk_counter += 1
 
@@ -84,11 +88,10 @@ def get_image_embeddings(embedder, image_docs):
 def build_db(db_type, index_type):
     if db_type == "chroma":
         db = ChromaDB()
-        existing_ids = db.collection.get()["ids"]
-        if existing_ids:
-            db.collection.delete(existing_ids)
-        return db
-        return db
+        # client = db.collection._client
+        # client.delete_collection(db.collection.name)
+        # db.collection = client.create_collection(db.collection.name)        
+        return db        
     elif db_type == "qdrant":
         return QdrantDB(dim=EMBED_DIM)
     elif db_type == "milvus":
@@ -99,10 +102,10 @@ def build_db(db_type, index_type):
 
 
 def index_data(db, text_ids, text_embeddings, text_chunks,
-               image_ids, image_embeddings, image_texts):
+               image_ids, image_embeddings, image_texts, image_metadatas):
 
-    db.add(text_ids, text_embeddings, text_chunks)
-    db.add(image_ids, image_embeddings, image_texts)
+    db.add_text(text_ids, text_embeddings, text_chunks)
+    db.add_image(image_ids, image_embeddings, image_texts, image_metadatas)
 
 def clear_chunks_table(conn):
     conn.execute("DELETE FROM chunks")
@@ -147,31 +150,40 @@ def rag_top_k(sample_queries, db, embedder, db_type, k=3):
         query = item["query"]
         query_embedding = embedder.embed_queries([query],
                           save_path="embeddings/query_embeddings.npy",
-                          use_cache=True)[0]
+                          use_cache=False)[0]
 
         if db_type == "chroma":
-            response = db.collection.query(
+            
+            response = db.text_collection.query(
                 query_embeddings=[query_embedding],
                 n_results=k,
-                # include=["ids"]
             )
+            # response = db.collection.query(
+            #     query_embeddings=[query_embedding],
+            #     n_results=k,
+            #     # include=["ids"]
+            # )
             # print(response)
         else:
-            response = db.query(query_embedding, k)
+            response = db.query(query_embedding, k, modality="text")
             
         # retrieved_chunks = extract_texts(response, db_type)
         top_ids = extract_ids(response, db_type)
+        
         retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
+        retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
+
+        retrieved_chunks = rerank_chunks( query_embedding, top_ids, retrieved_chunks, embedder, top_k=3)
 
         answer = rag.generate_answer(query, retrieved_chunks)
 
         print("\nQuery:", query)        
         
-        print("\nRetrieved Chunks:")
-        for chunk in retrieved_chunks:
-            print("-", chunk[:200])
+        # print("\nRetrieved Chunks:")
+        # for chunk in retrieved_chunks:
+        #     print("----", chunk[:200])
 
-        print("\nGenerated Answer:")
+        print("\n====================Generated Answer:=====================\n")
         print(answer)
         # print("\n" + "="*50)
 
@@ -185,6 +197,39 @@ def rag_top_k(sample_queries, db, embedder, db_type, k=3):
     conn_chunks.close()
     return results_data
 
+def run_image_queries(db, embedder, queries, k=3):
+    print("\n------ IMAGE RETRIEVAL ------\n")
+
+    for q in queries:
+        query = q["query"]
+
+        q_emb = embedder.embed_image_query(query)
+
+        response = db.image_collection.query(
+            query_embeddings=[q_emb],
+            n_results=k,
+            include=["documents", "metadatas", "distances"]
+        )
+
+        metas = response["metadatas"][0]
+        captions = response["documents"][0]
+        
+        scores = []
+
+        for meta, caption in zip(metas, captions):
+            clean_caption = caption[:200] 
+            cap_emb = embedder.embed_image_query(clean_caption)
+            score = cosine_similarity(q_emb, cap_emb)
+            scores.append((score, meta))
+
+        scores.sort(reverse=True, key=lambda x: x[0])
+
+        best_meta = scores[0][1]
+
+        print(f"\nQuery: {query}")
+        print("Best Image:", best_meta["image_id"])
+        print("Caption   :", best_meta["caption"])
+
 
 def main(db_type="chroma", index_type="HNSW", store_chunks=True):
 
@@ -194,8 +239,15 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=True):
 
     embedder = build_embedder()
 
-    text_embeddings  = get_text_embeddings(embedder, text_chunks)
+    # ---- text embedding time ----
+    t0 = time.time()
+    text_embeddings = get_text_embeddings(embedder, text_chunks)
+    text_embed_time = round(time.time() - t0, 4)
+
+    # ---- image embedding time ----
+    t0 = time.time()
     image_embeddings = get_image_embeddings(embedder, image_docs)
+    image_embed_time = round(time.time() - t0, 4)
 
     # text_ids    = [f"text_{i}" for i in range(len(text_chunks))]
     # text_ids = [str(i) for i in range(len(text_chunks))]
@@ -205,17 +257,48 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=True):
 
     image_ids   = [doc["id"] for doc in image_docs]
     image_texts = [doc["content"] for doc in image_docs]
-
+    
+    image_metadatas = [
+        {
+            "image_id": doc["id"] or "",
+            "image_path": doc["image_path"] or "",
+            "caption": doc["content"] or ""
+        }
+        for doc in image_docs
+    ]   
 
     db = build_db(db_type, index_type)
+
+    # ---- index time ----
+    t0 = time.time()
     index_data(db, text_ids, text_embeddings, text_chunks,
-                image_ids, image_embeddings, image_texts)
+               image_ids, image_embeddings, image_metadatas, image_texts)
+    index_time = round(time.time() - t0, 4)
 
     queries = load_queries(QUERY_PATH)
-    results = run_queries(db, embedder, queries, db_type, k=10)
-    
-    sample_queries = random.sample(queries, 3)
-    rag_top_k(sample_queries, db, embedder, db_type, k=10)
+    results = run_queries(db, embedder, queries, db_type, k=3)
+        
+    # attach indexing timings to the same metrics dict
+    results["text_embed_time"]  = text_embed_time
+    results["image_embed_time"] = image_embed_time
+    results["index_time"]       = index_time
+
+    # sample_queries = random.sample(queries, 3)
+    sample_queries = [
+        { 'query': "who are mohicans", 'answer': '' },
+        { 'query': 'where is pembroke', 'answer': '' },
+        { 'query': 'who is Jackson Beardy', 'answer': ''},
+    ]
+    # print(sample_queries)
+    rag_top_k(sample_queries, db, embedder, db_type, k=3)
+
+    image_queries = [
+        {"query": "coral reef wakatobi"},
+        {"query": "volcano crater aerial view"},
+        {"query": "malaysian lamb curry"}
+    ]
+
+    run_image_queries(db, embedder, image_queries, k=3)
 
     display_summary(results)
     log_result(conn, db_type, index_type, results)
