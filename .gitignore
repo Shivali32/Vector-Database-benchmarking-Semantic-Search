@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Vector DB storage
+chroma_storage/
+qdrant_storage/
+
+# Embeddings
+embeddings/
+
+# Numpy files
+*.npy
+
+# Misc
+*.log
