@@ -17,7 +17,13 @@ def init_db(db_path="benchmark.duckdb"):
         precision_k DOUBLE,
         p50_latency DOUBLE,
         p95_latency DOUBLE,
-        p99_latency DOUBLE
+        p99_latency DOUBLE,
+        query_embed_time DOUBLE,
+        answer_embed_time DOUBLE,
+        avg_scoring_time DOUBLE,
+        text_embed_time DOUBLE,
+        image_embed_time DOUBLE,
+        index_time DOUBLE                 
     )
     """)
 
@@ -28,7 +34,7 @@ def log_result(conn, db_name, index_type, metrics):
     conn.execute("""
         INSERT INTO results VALUES (
             CURRENT_TIMESTAMP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-            ?, ?, ?, ?, ?, ?
+            ?, ?, ?, ?, ?, ?, ?
         )
     """, (
         db_name, index_type,
@@ -37,6 +43,7 @@ def log_result(conn, db_name, index_type, metrics):
         metrics["avg_latency"],
         metrics["throughput"],
         metrics["recall_k"],
+        metrics["precision_k"],
         metrics["p50_latency"],
         metrics["p95_latency"],
         metrics["p99_latency"],

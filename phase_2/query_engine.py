@@ -11,9 +11,11 @@ def extract_ids(response, db_type):
     if db_type == "chroma":
         return response["ids"][0]
     elif db_type == "qdrant":
-        return [str(hit.id) for hit in response]
+        return [hit.payload.get("original_id") for hit in response]
+        # return [str(hit.id) for hit in response]
     elif db_type == "milvus":
-        return [str(hit.id) for hit in response]
+        return [hit["original_id"] for hit in response]
+        # return [str(hit.id) for hit in response]
     
 
 def extract_texts(response, db_type):
@@ -132,7 +134,7 @@ def run_queries(db, embedder, queries, db_type, k=3):
         # embedding timings
         "query_embed_time":   query_embed_time,
         "answer_embed_time":  answer_embed_time,
-        "avg_embed_time":     round((query_embed_time + answer_embed_time) / 2, 4),
+        "avg_embed_time":   round((query_embed_time + answer_embed_time) / 2, 4),
 
         # retrieval latency (per query)
         "avg_latency":        round(ret_arr.mean(), 4),

@@ -26,7 +26,7 @@ class Embedder:
         embeddings = self.text_model.encode(
             texts,
             batch_size=batch_size,
-            show_progress_bar=True,
+            # show_progress_bar=True,
             normalize_embeddings=True
         )
 
@@ -229,7 +229,7 @@ class Embedder:
     def _save_embeddings(self, embeddings, path):
         os.makedirs(os.path.dirname(path), exist_ok=True)
         np.save(path, embeddings)
-        print(f"Saved embeddings → {path}")
+        # print(f"Saved embeddings → {path}")
 
     def _load_embeddings(self, path):
         embeddings = np.load(path)

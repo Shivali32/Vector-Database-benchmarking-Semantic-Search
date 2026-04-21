@@ -6,13 +6,13 @@ python main.py
 cd ~/Desktop/Ind_study/project/phase_2
 # source ~/Desktop/Ind_study/.venv/bin/activate
 source  /home/shimate/Ind_study/.venv/bin/activate
-python  ~/Desktop/Ind_study/project/phase_2/main.py
+python  ~/Ind_study/project/phase_2/main.py
 
 
 pip list > requirements.txt
 
 git add .
-git commit -m "chunks init"
+git commit -m "embed error"
 git push origin main
 
 
@@ -21,7 +21,7 @@ cd ~/Desktop/Ind_study/milvus-standalone
 ./start_milvus.sh
 
 
-
+cd ~/Ind_study/milvus
 docker compose up -d
 docker compose down
 
@@ -31,7 +31,7 @@ con = duckdb.connect("benchmark.duckdb")
 conn = duckdb.connect("chunks.duckdb")
 print(con.execute("SELECT run_id, avg_latency FROM results").fetchdf())
 print(con.execute("UPDATE results SET recall_k = recall_k / 10 WHERE recall_k > 1;").fetchdf())
-print(conn.execute("SELECT * FROM chunks Order by doc_id desc").fetchdf())
+print(conn.execute("SELECT * FROM chunks Order by doc_id desc limit 5").fetchdf())
 print(con.execute("Describe results").fetchdf())
 print(conn.execute("Describe chunks").fetchdf())
 print(conn.execute("Delete from chunks"))

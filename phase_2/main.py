@@ -166,10 +166,14 @@ def rag_top_k(sample_queries, db, embedder, db_type, k=3):
             # print(response)
         else:
             response = db.query(query_embedding, k, modality="text")
-            
+
+        # print("RAW RESPONSE:", response)    
         # retrieved_chunks = extract_texts(response, db_type)
+
         top_ids = extract_ids(response, db_type)
-        
+        # print("TOP IDS:", top_ids)
+
+
         retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
         retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
 
@@ -179,25 +183,25 @@ def rag_top_k(sample_queries, db, embedder, db_type, k=3):
 
         print("\nQuery:", query)        
         
-        # print("\nRetrieved Chunks:")
-        # for chunk in retrieved_chunks:
-        #     print("----", chunk[:200])
+        print("\nRetrieved Chunks:")
+        for chunk in retrieved_chunks:
+            print("----", chunk[:200])
 
         print("\n====================Generated Answer:=====================\n")
         print(answer)
-        # print("\n" + "="*50)
+        # # print("\n" + "="*50)
 
 
-        results_data.append({
-            "query": query,
-            "chunks": retrieved_chunks,
-            "answer": answer
-        })
+        # results_data.append({
+        #     "query": query,
+        #     "chunks": retrieved_chunks,
+        #     "answer": answer
+        # })
     
     conn_chunks.close()
-    return results_data
+    # return results_data
 
-def run_image_queries(db, embedder, queries, k=3):
+def run_image_queries(db, embedder, queries, db_type, k=3):
     print("\n------ IMAGE RETRIEVAL ------\n")
 
     for q in queries:
@@ -205,14 +209,28 @@ def run_image_queries(db, embedder, queries, k=3):
 
         q_emb = embedder.embed_image_query(query)
 
-        response = db.image_collection.query(
-            query_embeddings=[q_emb],
-            n_results=k,
-            include=["documents", "metadatas", "distances"]
-        )
+        if db_type == "chroma":
+            response = db.image_collection.query(
+                query_embeddings=[q_emb],
+                n_results=k,
+                include=["documents", "metadatas", "distances"]
+            )
+            metas = response["metadatas"][0]
+            captions = response["documents"][0]
+        
+        elif db_type == "qdrant":
+            response = db.query(q_emb, k, modality="image")
+            metas = [hit.payload for hit in response]
+            captions = [hit.payload.get("text", "") for hit in response]
 
-        metas = response["metadatas"][0]
-        captions = response["documents"][0]
+        elif db_type == "milvus":
+            response = db.query(q_emb, k, modality="image")
+            metas = response   # already dicts
+            captions = [hit.get("text", "") for hit in response]
+
+        else:
+            raise ValueError(f"Unsupported DB type: {db_type}")
+
         
         scores = []
 
@@ -226,12 +244,20 @@ def run_image_queries(db, embedder, queries, k=3):
 
         best_meta = scores[0][1]
 
+        image_id = (
+            best_meta.get("image_id") or
+            best_meta.get("original_id") or
+            "N/A"
+        )
+
+        caption = best_meta.get("caption") or best_meta.get("text") or "N/A"
+
         print(f"\nQuery: {query}")
-        print("Best Image:", best_meta["image_id"])
-        print("Caption   :", best_meta["caption"])
+        print("Best Image:", image_id)
+        print("Caption   :", caption)
 
 
-def main(db_type="chroma", index_type="HNSW", store_chunks=True):
+def main(db_type="chroma", index_type="HNSW", store_chunks=False):
 
     text_chunks, image_docs = get_chunks(store_chunks)
     # print(f"Loaded text chunks {text_chunks}")
@@ -272,7 +298,7 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=True):
     # ---- index time ----
     t0 = time.time()
     index_data(db, text_ids, text_embeddings, text_chunks,
-               image_ids, image_embeddings, image_metadatas, image_texts)
+               image_ids, image_embeddings, image_texts,image_metadatas)
     index_time = round(time.time() - t0, 4)
 
     queries = load_queries(QUERY_PATH)
@@ -298,26 +324,25 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=True):
         {"query": "malaysian lamb curry"}
     ]
 
-    run_image_queries(db, embedder, image_queries, k=3)
+    run_image_queries(db, embedder, image_queries, db_type, k=3)
 
     display_summary(results)
     log_result(conn, db_type, index_type, results)
 
 
 if __name__ == "__main__":
+   
+    # for db in [
+    #     "chroma", 
+    #     "qdrant"
+    # ]:
+    #     print(f"Running benchmark for: {db}")
+    #     main(db, index_type="HNSW")
 
-    # for db in ["chroma", "qdrant", "milvus"]:
-    for db in [
-        "chroma", 
-        # "qdrant"
-    ]:
-        print(f"Running benchmark for: {db}")
-        main(db, index_type="HNSW")
-
-    # db = "milvus"
-    # print(f"Running benchmark for: {db}")
-    # main(db, index_type="DISKANN")
-    # main(db, index_type="HNSW")
-    # main(db, index_type="IVF_FLAT")
+    db = "milvus"
+    print(f"Running benchmark for: {db}")
+    main(db, index_type="DISKANN")
+    main(db, index_type="HNSW")
+    main(db, index_type="IVF_FLAT")
 
     # print(conn.execute("SELECT * FROM results ORDER BY run_id DESC limit 10").fetchdf())

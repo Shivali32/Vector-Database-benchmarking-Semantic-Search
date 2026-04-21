@@ -11,35 +11,40 @@ from pymilvus import (
 
 class MilvusDB:
     def __init__(self, collection_name="wiki", dim=384, index_type="HNSW"):
-        self.collection_name = collection_name
+        self.text_collection_name = "text_collection"
+        self.image_collection_name = "image_collection"
         self.dim = dim
         self.index_type = index_type.upper()
         
         connections.connect(alias="default", host="localhost", port="19530")
 
-        if utility.has_collection(self.collection_name):
-            self.collection = Collection(self.collection_name)
-            self.collection.load()
-        else:
-            self.collection = self._create_collection()
+        if utility.has_collection("text_collection"):
+            utility.drop_collection("text_collection")
 
-    def _create_collection(self):
+        if utility.has_collection("image_collection"):
+            utility.drop_collection("image_collection")
+
+        self.text_collection = self._create_collection("text_collection", 384)
+        self.image_collection = self._create_collection("image_collection", 512)
+
+    def _create_collection(self, name, dim):
         fields = [
             FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=False),
-            FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=self.dim),
+            FieldSchema(name="vector", dtype=DataType.FLOAT_VECTOR, dim=dim),
             FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=65535),
             FieldSchema(name="original_id", dtype=DataType.VARCHAR, max_length=100),
             FieldSchema(name="type", dtype=DataType.VARCHAR, max_length=10)
         ]
 
         schema = CollectionSchema(fields)
-        collection = Collection(self.collection_name, schema)
+        collection = Collection(name, schema)
 
         index_params = self._get_index_params()
 
         collection.create_index(
             field_name="vector",
-            index_params=index_params
+            index_params=self._get_index_params(),
+            # index_params=index_params
         )
 
         collection.load()
@@ -134,12 +139,13 @@ class MilvusDB:
                 }
             }
 
-    def query(self, query_embedding, k=3):
+    def query(self, query_embedding, k=3, modality="text"):
+        collection = self.text_collection if modality == "text" else self.image_collection
+        
         search_params = self._get_search_params()
-
         query_embedding = self.normalize([query_embedding])[0]
 
-        results = self.collection.search(
+        results = collection.search(
             data=[query_embedding],
             anns_field="vector",
             param=search_params,
@@ -170,4 +176,53 @@ class MilvusDB:
     def normalize(self, vecs):
         vecs = np.array(vecs)
         return (vecs / np.linalg.norm(vecs, axis=1, keepdims=True)).tolist()
-    
+
+
+    def add_text(self, ids, embeddings, documents):
+        self._insert(self.text_collection, ids, embeddings, documents, "text")
+
+    def add_image(self, ids, embeddings, documents, metadatas=None):
+        if metadatas:
+            clean_docs = []
+            original_ids = []
+
+            for idx, doc in enumerate(documents):
+                meta = metadatas[idx]
+
+                # store ONLY clean caption text
+                clean_docs.append(meta.get("caption", doc))
+
+                # keep original_id separately
+                original_ids.append(str(ids[idx]))
+
+            self._insert(
+                self.image_collection,
+                ids,
+                embeddings,
+                clean_docs,
+                "image",
+                original_ids=original_ids
+            )
+        else:
+            self._insert(self.image_collection, ids, embeddings, documents, "image")
+
+    def _insert(self, collection, ids, embeddings, documents, dtype, original_ids=None):
+        if original_ids is None:
+            original_ids = [str(i) for i in ids]
+
+        ids = [int(abs(hash(str(i))) % (2**31)) for i in ids]
+
+        documents = [str(doc) if doc is not None else "" for doc in documents]
+        types = [dtype] * len(documents)
+
+        embeddings = self.normalize(embeddings)
+
+        collection.insert([
+            ids,
+            embeddings,
+            documents,
+            original_ids,
+            types
+        ])
+
+        collection.flush()
