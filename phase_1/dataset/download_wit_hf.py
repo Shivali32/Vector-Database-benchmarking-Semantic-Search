@@ -7,10 +7,10 @@ from PIL import Image
 from io import BytesIO
 from itertools import islice
 
-NUM_SAMPLES = 1000
-IMAGE_DIR = "wit_images"
-METADATA_DIR = "wit_metadata"
-METADATA_FILE = os.path.join(METADATA_DIR, "wit_subset_metadata.json")
+NUM_SAMPLES = 10000
+IMAGE_DIR = "wit_images_10k"
+METADATA_DIR = "wit_metadata_10k"
+METADATA_FILE = os.path.join(METADATA_DIR, "wit_metadata_10k.json")
 
 os.makedirs(IMAGE_DIR, exist_ok=True)
 os.makedirs(METADATA_DIR, exist_ok=True)
