@@ -1,3 +1,5 @@
+from tqdm import tqdm
+
 import duckdb
 
 def init_chunk_db():
@@ -15,42 +17,50 @@ def init_chunk_db():
 
     return conn
 
-def insert_text_chunks(conn, text_chunks):
-    data = []
+def insert_text_chunks(conn, text_chunks, batch_size=1000):
+    for i in tqdm(range(0, len(text_chunks), batch_size), total=len(text_chunks)//batch_size, desc="Inserting Text Chunks"):
+        
+        batch = text_chunks[i:i+batch_size]
 
-    for doc in text_chunks:
-        data.append((
-            doc["id"],
-            doc["doc_id"],
-            "text",
-            doc["content"],
-            None
-    ))
+        data = [
+            (
+                doc["id"],
+                doc["doc_id"],
+                "text",
+                doc["content"],
+                None
+            )
+            for doc in batch
+        ]
 
-    conn.executemany("""
-        INSERT OR REPLACE INTO chunks VALUES (?, ?, ?, ?, ?)
-    """, data)
+        conn.executemany("""
+            INSERT OR REPLACE INTO chunks VALUES (?, ?, ?, ?, ?)
+        """, data)
 
-    print(f"Inserted {len(data)} text chunks")
+    print(f"Inserted {len(text_chunks)} text chunks")
 
 
-def insert_image_chunks(conn, image_docs):
-    data = []
+def insert_image_chunks(conn, image_docs, batch_size=500):
+    for i in tqdm(range(0, len(image_docs), batch_size), total=len(image_docs)//batch_size, desc="Inserting Image Chunks"):
+        
+        batch = image_docs[i:i+batch_size]
 
-    for doc in image_docs:
-        data.append((
-            doc["id"],
-            doc["id"],
-            "image",
-            doc["content"],
-            doc["image_path"]
-        ))
+        data = [
+            (
+                doc["id"],
+                doc["id"],
+                "image",
+                doc["content"],
+                doc["image_path"]
+            )
+            for doc in batch
+        ]
 
-    conn.executemany("""
-        INSERT OR REPLACE INTO chunks VALUES (?, ?, ?, ?, ?)
-    """, data)
+        conn.executemany("""
+            INSERT OR REPLACE INTO chunks VALUES (?, ?, ?, ?, ?)
+        """, data)
 
-    print(f"Inserted {len(data)} image chunks")
+    print(f"Inserted {len(image_docs)} image chunks")
 
 def load_text_chunks_from_db(conn):
     result = conn.execute("""

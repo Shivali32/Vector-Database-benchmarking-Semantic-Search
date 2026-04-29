@@ -1,3 +1,5 @@
+from tqdm import tqdm
+
 from data_loader import load_documents, load_wit_images, chunk_text, os
 from chunk_db import init_chunk_db, insert_text_chunks, insert_image_chunks
 from chunk_db import init_chunk_db, load_text_chunks_from_db, load_image_chunks_from_db, fetch_chunks_by_ids
@@ -6,7 +8,7 @@ from model_loader import load_model
 from vector_db.chroma_db import ChromaDB
 from vector_db.qdrant_db import QdrantDB
 from vector_db.milvus_db import MilvusDB
-from query_loader import load_queries
+from query_loader import load_queries, map_passages_to_chunks
 from query_engine import extract_texts, run_queries, extract_ids, rerank_chunks, cosine_similarity
 from display import display_summary
 from db_logger import init_db, log_result
@@ -20,10 +22,12 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 
-TEXT_DATA_PATH   = "wiki_dataset"
+TEXT_DATA_PATH   = "wiki_en_100k" 
+# TEXT_DATA_PATH   = "wiki_dataset"
 IMAGE_META_PATH  = "wit_metadata/wit_subset_metadata.json"
 QUERY_PATH       = "queries/queries_marco.json"
-EMBED_DIM        = 384      # 512
+TEXT_EMBED_DIM        = 384
+IMAGE_EMBED_DIM       = 512
 conn = init_db()
 
 # text_data_path = "wiki_sub"
@@ -93,19 +97,40 @@ def build_db(db_type, index_type):
         # db.collection = client.create_collection(db.collection.name)        
         return db        
     elif db_type == "qdrant":
-        return QdrantDB(dim=EMBED_DIM)
+        return QdrantDB(dim=TEXT_EMBED_DIM)
     elif db_type == "milvus":
         # db.drop()
-        return MilvusDB(dim=EMBED_DIM, index_type=index_type)
+        return MilvusDB(dim=TEXT_EMBED_DIM, index_type=index_type)
     else:
         raise ValueError(f"Unknown db_type: {db_type}")
 
 
 def index_data(db, text_ids, text_embeddings, text_chunks,
-               image_ids, image_embeddings, image_texts, image_metadatas):
+               image_ids, image_embeddings, image_texts, image_metadatas,
+               batch_size=1000):
 
-    db.add_text(text_ids, text_embeddings, text_chunks)
-    db.add_image(image_ids, image_embeddings, image_texts, image_metadatas)
+    # 🔹 Text insertion
+    for i in tqdm(range(0, len(text_ids), batch_size), total=len(text_chunks)//batch_size, desc="Inserting Text"):
+        db.add_text(
+            text_ids[i:i+batch_size],
+            text_embeddings[i:i+batch_size],
+            text_chunks[i:i+batch_size]
+        )
+
+    # 🔹 Image insertion
+    for i in tqdm(range(0, len(image_ids), batch_size), total=len(image_ids)//batch_size, desc="Inserting Images"):
+        db.add_image(
+            image_ids[i:i+batch_size],
+            image_embeddings[i:i+batch_size],
+            image_texts[i:i+batch_size],
+            image_metadatas[i:i+batch_size]
+        )
+
+# def index_data(db, text_ids, text_embeddings, text_chunks,
+#                image_ids, image_embeddings, image_texts, image_metadatas):
+
+#     db.add_text(text_ids, text_embeddings, text_chunks)
+#     db.add_image(image_ids, image_embeddings, image_texts, image_metadatas)
 
 def clear_chunks_table(conn):
     conn.execute("DELETE FROM chunks")
@@ -175,7 +200,7 @@ def rag_top_k(sample_queries, db, embedder, db_type, k=3):
 
 
         retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
-        retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
+        # retrieved_chunks = fetch_chunks_by_ids(conn_chunks, top_ids)
 
         retrieved_chunks = rerank_chunks( query_embedding, top_ids, retrieved_chunks, embedder, top_k=3)
 
@@ -257,9 +282,8 @@ def run_image_queries(db, embedder, queries, db_type, k=3):
         print("Caption   :", caption)
 
 
-def main(db_type="chroma", index_type="HNSW", store_chunks=False):
-
-    text_chunks, image_docs = get_chunks(store_chunks)
+def main(db_type="chroma", index_type="HNSW", text_chunks=None, image_docs=None):
+    
     # print(f"Loaded text chunks {text_chunks}")
     # print(f"Loaded image chunks {image_docs}")
 
@@ -302,9 +326,9 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=False):
     index_time = round(time.time() - t0, 4)
 
     queries = load_queries(QUERY_PATH)
+        
     results = run_queries(db, embedder, queries, db_type, k=3)
         
-    # attach indexing timings to the same metrics dict
     results["text_embed_time"]  = text_embed_time
     results["image_embed_time"] = image_embed_time
     results["index_time"]       = index_time
@@ -316,7 +340,7 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=False):
         { 'query': 'who is Jackson Beardy', 'answer': ''},
     ]
     # print(sample_queries)
-    rag_top_k(sample_queries, db, embedder, db_type, k=3)
+    # rag_top_k(sample_queries, db, embedder, db_type, k=3)
 
     image_queries = [
         {"query": "coral reef wakatobi"},
@@ -324,7 +348,7 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=False):
         {"query": "malaysian lamb curry"}
     ]
 
-    run_image_queries(db, embedder, image_queries, db_type, k=3)
+    # run_image_queries(db, embedder, image_queries, db_type, k=3)
 
     display_summary(results)
     log_result(conn, db_type, index_type, results)
@@ -332,17 +356,19 @@ def main(db_type="chroma", index_type="HNSW", store_chunks=False):
 
 if __name__ == "__main__":
    
-    # for db in [
-    #     "chroma", 
-    #     "qdrant"
-    # ]:
-    #     print(f"Running benchmark for: {db}")
-    #     main(db, index_type="HNSW")
+    text_chunks, image_docs = get_chunks(store_chunks=False)
+
+    for db in [
+        "chroma", 
+        "qdrant"
+    ]:
+        print(f"Running benchmark for: {db}")
+        main(db, index_type="HNSW", text_chunks=text_chunks, image_docs=image_docs)
 
     db = "milvus"
     print(f"Running benchmark for: {db}")
-    main(db, index_type="DISKANN")
-    main(db, index_type="HNSW")
-    main(db, index_type="IVF_FLAT")
+    main(db, index_type="DISKANN", text_chunks=text_chunks, image_docs=image_docs)
+    main(db, index_type="HNSW", text_chunks=text_chunks, image_docs=image_docs)
+    main(db, index_type="IVF_FLAT", text_chunks=text_chunks, image_docs=image_docs)
 
     # print(conn.execute("SELECT * FROM results ORDER BY run_id DESC limit 10").fetchdf())

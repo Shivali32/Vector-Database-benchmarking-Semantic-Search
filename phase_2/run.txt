@@ -12,7 +12,7 @@ python  ~/Ind_study/project/phase_2/main.py
 pip list > requirements.txt
 
 git add .
-git commit -m "embed error"
+git commit -m "rag api"
 git push origin main
 
 
@@ -25,6 +25,8 @@ cd ~/Ind_study/milvus
 docker compose up -d
 docker compose down
 
+docker run -p 6333:6333 qdrant/qdrant
+docker run -p 8000:8000 chromadb/chroma
 
 import duckdb
 con = duckdb.connect("benchmark.duckdb")

@@ -1,4 +1,5 @@
 from PIL import Image
+from tqdm import tqdm
 import os
 import torch
 import numpy as np
@@ -13,6 +14,16 @@ class Embedder:
 
         self.text_model = SentenceTransformer("all-MiniLM-L6-v2")
 
+    @property
+    def text_dim(self):
+        """Returns dimension of text embeddings (SentenceTransformer)"""
+        return 384
+    
+    @property
+    def image_dim(self):
+        """Returns dimension of image embeddings (CLIP)"""
+        return 512
+
     def embed_documents(self, texts, batch_size=32, save_path="embeddings/text_embeddings.npy"):
 
         if save_path and self._exists(save_path):
@@ -26,7 +37,7 @@ class Embedder:
         embeddings = self.text_model.encode(
             texts,
             batch_size=batch_size,
-            # show_progress_bar=True,
+            show_progress_bar=True,
             normalize_embeddings=True
         )
 
@@ -105,7 +116,11 @@ class Embedder:
         
         all_embeddings = []
 
-        for i in range(0, len(image_docs), batch_size):
+        # for i in range(0, len(image_docs), batch_size):
+        for i in tqdm(range(0, len(image_docs), batch_size), 
+                      total=len(image_docs)//batch_size,
+                      desc="Embedding Images"):
+            
             batch = image_docs[i:i + batch_size]
             images = [Image.open(doc["image_path"]).convert("RGB") for doc in batch]
 

@@ -16,35 +16,53 @@ def load_documents(data_path):
     return documents
 
 def chunk_text(text, chunk_size=500, overlap=50):
-    
-    sentences = re.split(r'(?<=[.!?]) +', text)
-    
+
     chunks = []
-    current = ""
+    start = 0
+    step = chunk_size - overlap
 
-    for sent in sentences:
-        if len(current) + len(sent) < chunk_size:
-            current += " " + sent
-        else:
-            chunks.append(current.strip())
-            current = sent
+    if step <= 0:
+        raise ValueError("overlap must be smaller than chunk_size")
 
-    if current:
-        chunks.append(current.strip())
+    while start < len(text):
+        end = start + chunk_size
+        chunk = text[start:end]
 
-    # chunks = []
-    # start = 0
+        if chunk.strip(): 
+            chunks.append(chunk.strip())
 
-    # while start < len(text):
-    #     end = start + chunk_size
-    #     chunk = text[start:end]
-    #     if len(chunk) >= 50:
-    #         chunks.append(chunk)
-    #     start += chunk_size - overlap
+        start += step
 
-    # # print(chunks[:5])
-    
     return chunks
+    
+    # sentences = re.split(r'(?<=[.!?]) +', text)
+    
+    # chunks = []
+    # current = ""
+
+    # for sent in sentences:
+    #     if len(current) + len(sent) < chunk_size:
+    #         current += " " + sent
+    #     else:
+    #         chunks.append(current.strip())
+    #         current = sent
+
+    # if current:
+    #     chunks.append(current.strip())
+
+    # # chunks = []
+    # # start = 0
+
+    # # while start < len(text):
+    # #     end = start + chunk_size
+    # #     chunk = text[start:end]
+    # #     if len(chunk) >= 50:
+    # #         chunks.append(chunk)
+    # #     start += chunk_size - overlap
+
+    # # # print(chunks[:5])
+    
+    # # return chunks
 
 
 def load_wit_images(metadata_path):

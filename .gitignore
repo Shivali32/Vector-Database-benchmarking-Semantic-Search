@@ -5,14 +5,19 @@ vector_db/__pycache__/
 *.pyo
 
 # Vector DB storage
-chroma_storage/
-qdrant_storage/
+**/chroma_storage/
+**/qdrant_storage/
 
 # Embeddings
-embeddings/
+**/embeddings/
+
+**/chunks.duckdb
 
 # Numpy files
 *.npy
 
 # Misc
 *.log
+
+
+**/wiki_en_*/

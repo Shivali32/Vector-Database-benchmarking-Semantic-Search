@@ -3,7 +3,10 @@ from qdrant_client.models import VectorParams, Distance, PointStruct
 
 class QdrantDB:
     def __init__(self, collection_name="wiki", dim=384):
-        self.client = QdrantClient(path="qdrant_storage")
+        self.client = QdrantClient(
+            url="http://localhost:6333"
+        )
+        # self.client = QdrantClient(path="qdrant_storage")
         self.text_collection = "text_collection"
         self.image_collection = "image_collection"
         

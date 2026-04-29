@@ -1,3 +1,4 @@
+import hashlib
 import numpy as np
 from pymilvus import (
     connections,
@@ -80,11 +81,22 @@ class MilvusDB:
             }
 
         else:
-            raise ValueError(f"Unsupported index type: {self.index_type}")
+            raise ValueError(f"Unsupported index type: {self.index_type}")    
+
+    def _string_to_int_id(self, string_id):
+        """
+        Convert string ID to integer using SHA256 (no collisions).
+        Takes first 8 bytes of hash as 64-bit integer.
+        """
+        hash_bytes = hashlib.sha256(str(string_id).encode()).digest()
+        return int.from_bytes(hash_bytes[:8], 'big') % (2**63 - 1)
+
+    # Then replace the list comprehension:
 
     def add(self, ids, embeddings, documents):
         original_ids = [str(i) for i in ids]
-        ids = [int(abs(hash(str(i))) % (2**31)) for i in ids]
+        ids = [self._string_to_int_id(i) for i in ids]
+        # ids = [int(abs(hash(str(i))) % (2**31)) for i in ids]
         
         # documents = [
         #     str(doc) if doc is not None else ""

@@ -1,8 +1,10 @@
 import chromadb
+from chromadb import HttpClient
 
 class ChromaDB:
     def __init__(self, text_collection="wiki_text", image_collection="wiki_image"):
-        self.client = chromadb.PersistentClient(path="chroma_storage")
+        self.client = HttpClient(host="localhost", port=8000)
+        # self.client = chromadb.PersistentClient(path="chroma_storage")
 
         for name in [text_collection, image_collection]:
             try:
