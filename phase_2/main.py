@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 
 TEXT_DATA_PATH   = "wiki_en_100k" 
 # TEXT_DATA_PATH   = "wiki_dataset"
-IMAGE_META_PATH  = "wit_metadata/wit_subset_metadata.json"
+IMAGE_META_PATH  = "wit_metadata/wit_metadata_10k.json"
 QUERY_PATH       = "queries/queries_marco.json"
 TEXT_EMBED_DIM        = 384
 IMAGE_EMBED_DIM       = 512

@@ -12,7 +12,7 @@ python  ~/Ind_study/project/phase_2/main.py
 pip list > requirements.txt
 
 git add .
-git commit -m "rag api"
+git commit -m "10k scale image and csv"
 git push origin main
 
 
