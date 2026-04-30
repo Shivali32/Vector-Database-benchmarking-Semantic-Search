@@ -65,7 +65,7 @@ def chunk_text(text, chunk_size=500, overlap=50):
     # # return chunks
 
 
-def load_wit_images(metadata_path):
+def load_wit_images(metadata_path, wit_path):
     """
     Loads WIT metadata and prepares image documents
     in same format as text docs.
@@ -84,7 +84,7 @@ def load_wit_images(metadata_path):
         raw_path = record.get("local_path", "")
         clean_path = raw_path.replace("\\", "/")  
         filename = os.path.basename(clean_path)   
-        image_path = os.path.join("wit_images", filename)
+        image_path = os.path.join(wit_path, filename)
         image_path = os.path.normpath(image_path)
 
         documents.append({

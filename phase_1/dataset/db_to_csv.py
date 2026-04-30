@@ -1,7 +1,7 @@
 import duckdb
 import pandas as pd
 
-DB_PATH = "../phase_2/benchmark.duckdb"
+DB_PATH = "../../phase_2/benchmark.duckdb"
 OUTPUT_CSV = "benchmark_results.csv"
 
 conn = duckdb.connect(DB_PATH, read_only=True)

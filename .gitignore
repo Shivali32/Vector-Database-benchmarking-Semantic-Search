@@ -19,6 +19,6 @@ vector_db/__pycache__/
 # Misc
 *.log
 
-
+**/queries_marco**/
 **/wiki_en_*/
 **/wit_*/

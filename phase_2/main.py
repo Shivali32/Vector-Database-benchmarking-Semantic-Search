@@ -22,7 +22,8 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 
-TEXT_DATA_PATH   = "wiki_en_100k" 
+TEXT_DATA_PATH   = "wiki_en_10k" 
+IMAGE_DATA_PATH  = "wit_images_10k" 
 # TEXT_DATA_PATH   = "wiki_dataset"
 IMAGE_META_PATH  = "wit_metadata/wit_metadata_10k.json"
 QUERY_PATH       = "queries/queries_marco.json"
@@ -57,7 +58,7 @@ def load_text_chunks():
 
 
 def load_image_docs():
-    image_docs = load_wit_images(IMAGE_META_PATH)
+    image_docs = load_wit_images(IMAGE_META_PATH, IMAGE_DATA_PATH)
     # image_docs = image_docs[:2]
     return image_docs
 
@@ -356,7 +357,7 @@ def main(db_type="chroma", index_type="HNSW", text_chunks=None, image_docs=None)
 
 if __name__ == "__main__":
    
-    text_chunks, image_docs = get_chunks(store_chunks=False)
+    text_chunks, image_docs = get_chunks(store_chunks=True)
 
     for db in [
         "chroma", 
