@@ -22,7 +22,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 
-TEXT_DATA_PATH   = "wiki_en_10k" 
+TEXT_DATA_PATH   = "wiki_en_100k" 
 IMAGE_DATA_PATH  = "wit_images_10k" 
 # TEXT_DATA_PATH   = "wiki_dataset"
 IMAGE_META_PATH  = "wit_metadata/wit_metadata_10k.json"

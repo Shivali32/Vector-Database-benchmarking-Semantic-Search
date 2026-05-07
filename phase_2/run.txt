@@ -12,7 +12,7 @@ python  ~/Ind_study/project/phase_2/main.py
 pip list > requirements.txt
 
 git add .
-git commit -m "10k scale image and csv"
+git commit -m "25k scale image and csv"
 git push origin main
 
 
