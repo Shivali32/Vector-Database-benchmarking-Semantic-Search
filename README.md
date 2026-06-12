@@ -48,7 +48,7 @@ The pipeline includes:
 * **Embedding Models**: SentenceTransformers, BGE, E5
 * **Vector Databases**: Chroma, Qdrant, Milvus
 * **Libraries**: PyTorch, Transformers
-* **Environment**: Windows, WSL, IU RED (Linux)
+* **Environment**: Windows, WSL, IU RED (Linux HPC)
 
 ---
 
