@@ -32,7 +32,7 @@ The pipeline includes:
 
 ## System Architecture
 
-1. Load dataset (text files / Wikipedia corpus)
+1. Load dataset (Text Files / Wikipedia Corpus)
 2. Generate embeddings using transformer models
 3. Store embeddings with metadata in vector database
 4. Perform similarity search for queries
