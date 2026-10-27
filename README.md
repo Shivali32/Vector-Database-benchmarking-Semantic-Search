@@ -24,6 +24,8 @@ Vectors use `float32`, L2 normalization, and cosine-based comparison. Embeddings
 
 ## Retrieval Pipeline
 
+![Vector database benchmarking workflow](mom/Archi.png)
+
 The pipeline separates data preparation from database-specific operations so that each database can be evaluated with the same surrounding workload.
 
 - **Load and clean data:** read Wikipedia text or aligned image-caption records, remove empty lines and trivial boilerplate, and normalize whitespace.
