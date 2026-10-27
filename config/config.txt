@@ -1,0 +1,21 @@
+Host silo 
+    HostName silo.luddy.indiana.edu 
+    User shimate 
+    IdentityFile ~/.ssh/id_rsa 
+    MACs hmac-sha2-256,hmac-sha2-512 
+    Ciphers aes128-ctr,aes192-ctr,aes256-ctr 
+    IdentitiesOnly yes 
+    ForwardAgent yes 
+
+Host buffalo 
+    HostName buffalo.luddy.indiana.edu 
+    MACs hmac-sha2-256,hmac-sha2-512 
+    Ciphers aes128-ctr,aes192-ctr,aes256-ctr 
+    User shimate 
+    ProxyJump shimate@silo.luddy.indiana.edu 
+    IdentityFile ~/.ssh/id_rsa 
+    ServerAliveInterval 60 
+    IPQoS none 
+    IdentitiesOnly yes 
+    ForwardAgent yes 
+    ProxyCommand ssh -W %h:%p silo

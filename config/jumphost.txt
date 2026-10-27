@@ -1,0 +1,3 @@
+ssh -J shimate@silo.luddy.indiana.edu shimate@buffalo.luddy.indiana.edu
+
+ssh -J silo buffalo
